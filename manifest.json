@@ -1,0 +1,15 @@
+{
+  "name": "Cerdik Ceria",
+  "short_name": "Cerdik Ceria",
+  "description": "Kuiz seronok untuk murid sekolah rendah Tahun 1 hingga 6",
+  "id": "./?app=cerdikceria",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF8EE",
+  "theme_color": "#FFF8EE",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

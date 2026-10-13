@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#FFF8EE"/>
+  <path d="M96 330a160 160 0 0 1 320 0" fill="none" stroke="#FFC8B4" stroke-width="34" stroke-linecap="round"/>
+  <path d="M136 330a120 120 0 0 1 240 0" fill="none" stroke="#FFE79E" stroke-width="34" stroke-linecap="round"/>
+  <path d="M176 330a80 80 0 0 1 160 0" fill="none" stroke="#C5EFCF" stroke-width="34" stroke-linecap="round"/>
+  <path d="M216 330a40 40 0 0 1 80 0" fill="none" stroke="#BFE3FF" stroke-width="34" stroke-linecap="round"/>
+  <circle cx="380" cy="140" r="44" fill="#FF9DBB"/>
+  <text x="256" y="440" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="800" font-size="64" fill="#3E3A5C">ABC 123</text>
+</svg>

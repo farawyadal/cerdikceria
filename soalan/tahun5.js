@@ -3,6 +3,7 @@
    Matematik & Sains: bab ikut buku teks / DSKP KSSR Tahun 5.
    Sejarah: unit ikut DSKP Tahun 5 (Unit 2–12; Unit 1 belum disahkan).
    BM & BI: disusun ikut topik kemahiran.
+   Pendidikan Islam: ikut bidang KSSR. Bahasa Arab: ikut tema perbendaharaan kata.
 
    Format soalan:
    ["Soalan", "Jawapan BETUL", "Salah 1", "Salah 2", "Salah 3", "Penerangan (pilihan)"]
@@ -676,4 +677,256 @@ sejarah: [
   ]}
 ]
 };
+
+/* ======================= PENDIDIKAN ISLAM (ikut bidang KSSR) =======================
+   Fakta asas yang diajar di sekolah rendah Malaysia (mazhab Syafie).
+   Ayat al-Quran tidak dipetik — soalan hanya tentang fakta surah dan hukum tajwid. */
+SOALAN[5].pi = [
+  { t: "Al-Quran dan Tajwid", q: [
+    ["📖|Al-Quran mengandungi ___ surah.", "114", "113", "30", "99"],
+    ["Al-Quran dibahagikan kepada ___ juzuk.", "30", "114", "20", "40"],
+    ["Surah pertama dalam al-Quran ialah…", "al-Fatihah", "al-Baqarah", "an-Nas", "al-Ikhlas"],
+    ["Surah terakhir dalam al-Quran ialah…", "an-Nas", "al-Falaq", "al-Fatihah", "al-Ikhlas"],
+    ["Surah yang paling panjang dalam al-Quran ialah…", "al-Baqarah", "al-Fatihah", "Yasin", "al-Kahfi"],
+    ["Surah al-Fatihah mengandungi ___ ayat.", "7", "6", "5", "4"],
+    ["Surah al-Ikhlas mengandungi ___ ayat.", "4", "3", "5", "7"],
+    ["Surah al-Qadr mengandungi ___ ayat.", "5", "4", "7", "3"],
+    ["Surah al-Qadr menceritakan tentang…", "malam Lailatulqadar", "kisah Nabi Musa", "hari kiamat sahaja", "kisah Ashabul Kahfi"],
+    ["Surah al-Ikhlas menerangkan tentang…", "keesaan Allah", "kisah tentera bergajah", "adab makan", "puasa"],
+    ["Al-Quran diturunkan dalam bahasa…", "Arab", "Melayu", "Parsi", "Ibrani"],
+    ["Al-Quran mula diturunkan pada bulan…", "Ramadan", "Syawal", "Muharam", "Rejab"],
+    ["Mad asli (mad tabi'i) dibaca sepanjang…", "2 harakat", "4 harakat", "6 harakat", "1 harakat"],
+    ["Mad iwad berlaku apabila kita berhenti pada huruf yang berbaris…", "dua di atas (fathatain)", "satu di bawah", "mati", "sabdu"],
+    ["Mad badal berlaku apabila huruf hamzah diikuti oleh…", "huruf mad", "huruf qalqalah", "tanwin", "huruf sabdu"],
+    ["Huruf qalqalah ada ___ huruf.", "5", "4", "6", "3", "Huruf qalqalah: ق ط ب ج د"],
+    ["Ilmu tentang cara membaca al-Quran dengan betul dipanggil…", "tajwid", "tafsir", "fiqh", "sirah"]
+  ]},
+  { t: "Hadis", q: [
+    ["Hadis ialah sumber hukum Islam yang ___ selepas al-Quran.", "kedua", "pertama", "ketiga", "keempat"],
+    ["Hadis ialah perkataan, perbuatan dan ___ Nabi Muhammad SAW.", "pengakuan (taqrir)", "lukisan", "lagu", "pakaian sahaja"],
+    ["\"Muttafaq 'alaih\" bermaksud hadis yang diriwayatkan oleh…", "Imam Bukhari dan Imam Muslim", "Imam Syafie sahaja", "Imam Malik dan Imam Ahmad", "Imam Abu Daud sahaja"],
+    ["Menurut hadis, kita wajib mendengar dan taat kepada pemimpin dalam perkara…", "yang baik", "maksiat", "apa sahaja tanpa had", "yang merosakkan"],
+    ["Jika pemimpin menyuruh melakukan maksiat, kita…", "tidak wajib taat", "mesti taat", "perlu menyokongnya", "boleh ikut separuh"],
+    ["Orang yang meriwayatkan hadis dipanggil…", "perawi", "imam solat", "bilal", "khatib"],
+    ["Antara pengajaran hadis tentang taat kepada pemimpin ialah…", "masyarakat menjadi aman dan teratur", "masyarakat bergaduh", "pemimpin tidak perlu dihormati", "undang-undang tidak penting"],
+    ["Contoh taat kepada pemimpin sekolah ialah…", "mematuhi peraturan sekolah", "ponteng kelas", "membuang sampah merata", "melawan guru"]
+  ]},
+  { t: "Akidah", q: [
+    ["Rukun Iman ada ___ perkara.", "6", "5", "7", "4"],
+    ["Rukun Islam ada ___ perkara.", "5", "6", "4", "7"],
+    ["Rukun Iman yang pertama ialah beriman kepada…", "Allah", "malaikat", "kitab", "rasul"],
+    ["Rukun Iman yang terakhir ialah beriman kepada…", "qada' dan qadar", "hari akhirat", "rasul", "malaikat"],
+    ["Sifat wajib bagi Allah ada ___ sifat.", "20", "13", "99", "25"],
+    ["Sifat Wujud bermaksud Allah itu…", "ada", "kekal", "Esa", "berkuasa"],
+    ["Sifat Baqa' bermaksud Allah itu…", "kekal", "ada", "mendengar", "melihat"],
+    ["Sifat Wahdaniyyah bermaksud Allah itu…", "Esa", "kekal", "hidup", "berkata-kata"],
+    ["Sifat Qudrah bermaksud Allah itu…", "berkuasa", "mengetahui", "melihat", "ada"],
+    ["Sifat Mukhalafatuhu lil hawadith bermaksud Allah…", "berbeza dengan makhluk", "berdiri sendiri", "kekal", "Esa"],
+    ["Al-Malik bermaksud Allah Yang Maha…", "Menguasai (Raja)", "Pemurah", "Mendengar", "Pengampun"],
+    ["Al-Hasib bermaksud Allah Yang Maha…", "Menghitung", "Melihat", "Pencipta", "Kaya"],
+    ["Al-Akhir bermaksud Allah Yang Maha…", "Akhir", "Awal", "Kuat", "Lembut"],
+    ["Ar-Razzaq bermaksud Allah Yang Maha…", "Pemberi Rezeki", "Pencipta", "Mendengar", "Bijaksana"],
+    ["Malaikat yang menyampaikan wahyu ialah…", "Jibril", "Mikail", "Israfil", "Izrail"],
+    ["Malaikat yang menurunkan hujan dan mengagihkan rezeki ialah…", "Mikail", "Jibril", "Malik", "Ridwan"],
+    ["Malaikat yang akan meniup sangkakala ialah…", "Israfil", "Izrail", "Munkar", "Raqib"],
+    ["Malaikat yang mencatat amalan baik ialah…", "Raqib", "Atid", "Nakir", "Malik"],
+    ["Malaikat yang menjaga syurga ialah…", "Ridwan", "Malik", "Jibril", "Mikail"],
+    ["Kitab Taurat diturunkan kepada Nabi…", "Musa a.s.", "Isa a.s.", "Daud a.s.", "Muhammad SAW"],
+    ["Kitab Zabur diturunkan kepada Nabi…", "Daud a.s.", "Musa a.s.", "Isa a.s.", "Ibrahim a.s."],
+    ["Kitab Injil diturunkan kepada Nabi…", "Isa a.s.", "Musa a.s.", "Daud a.s.", "Nuh a.s."],
+    ["Nabi dan rasul yang wajib diketahui ada ___ orang.", "25", "20", "10", "5"],
+    ["Rasul Ulul Azmi ialah Nabi Nuh, Ibrahim, Musa, Isa dan…", "Muhammad SAW", "Adam a.s.", "Yusuf a.s.", "Sulaiman a.s."],
+    ["Mempercayai tangkal boleh memberi perlindungan boleh menyebabkan…", "syirik (merosakkan akidah)", "pahala", "rezeki bertambah", "pandai"]
+  ]},
+  { t: "Ibadah", q: [
+    ["Solat fardu sehari semalam ada ___ waktu.", "5", "3", "4", "6"],
+    ["Jumlah rakaat solat fardu sehari semalam ialah…", "17", "15", "20", "11"],
+    ["Solat Subuh ada ___ rakaat.", "2", "3", "4", "1"],
+    ["Solat Maghrib ada ___ rakaat.", "3", "2", "4", "5"],
+    ["Solat Zohor ada ___ rakaat.", "4", "2", "3", "5"],
+    ["Rukun solat ada ___ perkara.", "13", "6", "5", "20"],
+    ["Rukun solat yang pertama ialah…", "niat", "takbiratul ihram", "membaca al-Fatihah", "rukuk"],
+    ["Rukun wuduk ada ___ perkara.", "6", "13", "5", "4"],
+    ["Ketika berwuduk, tangan dibasuh hingga…", "ke siku", "ke pergelangan", "ke bahu", "ke jari sahaja"],
+    ["Ketika berwuduk, kaki dibasuh hingga…", "ke buku lali", "ke lutut", "ke jari", "ke betis"],
+    ["Tayamum dilakukan menggunakan…", "debu tanah yang suci", "air sabun", "pasir pantai basah", "kertas"],
+    ["Solat lima waktu ialah contoh…", "fardu ain", "fardu kifayah", "sunat", "harus"],
+    ["Solat jenazah ialah contoh…", "fardu kifayah", "fardu ain", "makruh", "haram"],
+    ["Fardu kifayah bermaksud…", "jika sebahagian melakukannya, gugur kewajipan yang lain", "wajib setiap orang", "tidak perlu dilakukan", "hanya untuk orang dewasa"],
+    ["Rukun Islam yang ketiga ialah…", "mengeluarkan zakat", "berpuasa", "menunaikan haji", "mendirikan solat"],
+    ["Rukun Islam yang keempat ialah…", "berpuasa pada bulan Ramadan", "mengeluarkan zakat", "menunaikan haji", "mengucap dua kalimah syahadah"],
+    ["Zakat fitrah wajib dibayar sebelum…", "solat sunat Aidilfitri", "bulan Ramadan bermula", "solat Jumaat", "bulan Zulhijah"],
+    ["Makan sahur ketika berpuasa hukumnya…", "sunat", "wajib", "haram", "makruh"],
+    ["Arah kiblat menghadap ke…", "Kaabah di Makkah", "Masjid Nabawi", "Baitulmaqdis", "Masjid Negara"],
+    ["Orang yang melaungkan azan dipanggil…", "bilal (muazzin)", "imam", "khatib", "makmum"]
+  ]},
+  { t: "Sirah", q: [
+    ["Nabi Muhammad SAW dilahirkan di…", "Makkah", "Madinah", "Taif", "Syam"],
+    ["Nabi Muhammad SAW lahir pada Tahun…", "Gajah", "Kuda", "Unta", "Hijrah"],
+    ["Bapa Nabi Muhammad SAW bernama…", "Abdullah", "Abu Talib", "Abdul Muttalib", "Abbas"],
+    ["Ibu Nabi Muhammad SAW bernama…", "Aminah", "Halimatus Saadiah", "Khadijah", "Fatimah"],
+    ["Ibu susuan Nabi Muhammad SAW ialah…", "Halimatus Saadiah", "Aminah", "Aisyah", "Ummu Aiman"],
+    ["Bapa saudara yang menjaga Nabi selepas datuknya meninggal dunia ialah…", "Abu Talib", "Abu Lahab", "Abdullah", "Hamzah"],
+    ["Nabi Muhammad SAW digelar al-Amin kerana baginda…", "sangat jujur dan amanah", "kaya", "kuat", "pandai berniaga sahaja"],
+    ["Isteri pertama Nabi Muhammad SAW ialah…", "Siti Khadijah", "Siti Aisyah", "Siti Hafsah", "Siti Fatimah"],
+    ["Wahyu pertama diturunkan di…", "Gua Hira'", "Gua Thur", "Masjidil Haram", "Bukit Uhud"],
+    ["Wahyu pertama ialah Surah…", "al-Alaq (ayat 1–5)", "al-Fatihah", "al-Ikhlas", "al-Baqarah"],
+    ["Sahabat yang menemani Nabi ketika berhijrah ialah…", "Abu Bakar as-Siddiq", "Umar al-Khattab", "Uthman bin Affan", "Ali bin Abi Talib"],
+    ["Ketika berhijrah, Nabi dan sahabat bersembunyi di…", "Gua Thur", "Gua Hira'", "Bukit Safa", "Padang Arafah"],
+    ["Nabi Muhammad SAW berhijrah dari Makkah ke…", "Madinah", "Taif", "Syam", "Habsyah"],
+    ["Masjid pertama yang dibina oleh Nabi Muhammad SAW ialah…", "Masjid Quba", "Masjid Nabawi", "Masjidil Haram", "Masjidil Aqsa"],
+    ["Perintah solat lima waktu diterima ketika peristiwa…", "Israk dan Mikraj", "Hijrah", "Perang Badar", "Fathu Makkah"],
+    ["Khalifah Islam yang pertama ialah…", "Abu Bakar as-Siddiq", "Umar al-Khattab", "Uthman bin Affan", "Ali bin Abi Talib"],
+    ["Nabi Muhammad SAW wafat pada usia…", "63 tahun", "40 tahun", "53 tahun", "70 tahun"]
+  ]},
+  { t: "Adab", q: [
+    ["Sebelum makan, kita disunatkan membaca…", "Bismillah", "Alhamdulillah", "Subhanallah", "Astaghfirullah"],
+    ["Selepas makan, kita disunatkan membaca…", "Alhamdulillah", "Bismillah", "Allahu Akbar", "Astaghfirullah"],
+    ["Kita makan dan minum menggunakan tangan…", "kanan", "kiri", "kedua-dua", "mana-mana sahaja"],
+    ["Ketika masuk ke masjid, kita mendahulukan kaki…", "kanan", "kiri", "mana-mana", "kedua-dua serentak"],
+    ["Ketika masuk ke tandas, kita mendahulukan kaki…", "kiri", "kanan", "mana-mana", "kedua-dua serentak"],
+    ["Jawapan kepada \"Assalamualaikum\" ialah…", "Waalaikumussalam", "Alhamdulillah", "Insya-Allah", "Masya-Allah"],
+    ["Apabila mendengar nama Nabi Muhammad SAW, kita disunatkan…", "berselawat", "diam sahaja", "ketawa", "bertepuk tangan"],
+    ["Contoh adab terhadap Allah ialah…", "bersyukur atas nikmat-Nya", "membazir", "berbohong", "malas beribadah"],
+    ["Contoh adab terhadap diri sendiri ialah…", "menjaga kebersihan dan kesihatan", "tidur lewat setiap malam", "makan berlebihan", "tidak mandi"],
+    ["Apabila ibu bapa memanggil, kita perlu…", "menyahut dengan segera dan sopan", "buat tidak dengar", "menjerit", "lari"],
+    ["Contoh adab bersosial yang baik ialah…", "menghormati jiran dan kawan", "mengejek kawan", "bergaduh", "mengambil barang tanpa izin"],
+    ["Apabila bersin, kita mengucapkan…", "Alhamdulillah", "Bismillah", "Assalamualaikum", "Subhanallah"],
+    ["Ucapan apabila berjanji untuk melakukan sesuatu pada masa hadapan ialah…", "Insya-Allah", "Alhamdulillah", "Astaghfirullah", "Masya-Allah"]
+  ]},
+  { t: "Jawi", q: [
+    ["سکوله|Perkataan Jawi ini dibaca…", "sekolah", "sekali", "sikalah", "sukalah"],
+    ["بوکو|Perkataan Jawi ini dibaca…", "buku", "bakul", "baka", "bukit"],
+    ["رومه|Perkataan Jawi ini dibaca…", "rumah", "rumai", "ramah", "remah"],
+    ["ماکن|Perkataan Jawi ini dibaca…", "makan", "mekar", "makna", "mukun"],
+    ["ايبو|Perkataan Jawi ini dibaca…", "ibu", "ubi", "abu", "ibi"],
+    ["کوچيڠ|Perkataan Jawi ini dibaca…", "kucing", "kacang", "kicap", "kuning"],
+    ["Ejaan Jawi bagi \"buku\" ialah…", "بوکو", "بکو", "بوکوه", "بوک"],
+    ["Ejaan Jawi bagi \"ibu\" ialah…", "ايبو", "ابو", "ايب", "عيبو"],
+    ["Ejaan Jawi bagi \"nasi\" ialah…", "ناسي", "نسي", "ناس", "نسا"],
+    ["ڠ|Huruf Jawi ini mewakili bunyi…", "ng", "ny", "c", "p"],
+    ["ڤ|Huruf Jawi ini mewakili bunyi…", "p", "f", "v", "ng"],
+    ["چ|Huruf Jawi ini mewakili bunyi…", "c", "j", "ng", "ny"],
+    ["Tulisan Jawi ditulis dari…", "kanan ke kiri", "kiri ke kanan", "atas ke bawah", "bawah ke atas"],
+    ["Contoh jenis khat yang dipelajari di sekolah rendah ialah…", "khat Nasakh dan Rikaah", "khat Cina", "tulisan Rumi bersambung", "tulisan Braille"]
+  ]}
+];
+
+/* ======================= BAHASA ARAB (ikut tema perbendaharaan kata) ======================= */
+SOALAN[5].ba = [
+  { t: "Salam dan Perkenalan", q: [
+    ["صَبَاحُ الْخَيْرِ|Ungkapan ini bermaksud…", "Selamat pagi", "Selamat malam", "Terima kasih", "Selamat jalan"],
+    ["مَسَاءُ الْخَيْرِ|Ungkapan ini bermaksud…", "Selamat petang", "Selamat pagi", "Apa khabar", "Sama-sama"],
+    ["شُكْرًا|Perkataan ini bermaksud…", "Terima kasih", "Maaf", "Tolong", "Selamat datang"],
+    ["عَفْوًا|Jawapan kepada \"terima kasih\" ialah perkataan ini. Maksudnya…", "Sama-sama", "Selamat pagi", "Jumpa lagi", "Saya"],
+    ["مَعَ السَّلَامَةِ|Ungkapan ini bermaksud…", "Selamat jalan", "Selamat pagi", "Terima kasih", "Apa khabar"],
+    ["كَيْفَ حَالُكَ؟|Soalan ini bermaksud…", "Apa khabar?", "Siapa nama kamu?", "Di mana kamu tinggal?", "Berapa umur kamu?"],
+    ["مَا اسْمُكَ؟|Soalan ini bermaksud…", "Siapa nama kamu?", "Apa khabar?", "Di mana rumah kamu?", "Bila kamu datang?"],
+    ["اِسْمِي أَحْمَدُ|Ayat ini bermaksud…", "Nama saya Ahmad", "Ini Ahmad", "Ahmad pergi", "Kawan saya Ahmad"],
+    ["\"Selamat datang\" dalam bahasa Arab ialah…", "أَهْلًا وَسَهْلًا", "شُكْرًا", "عَفْوًا", "مَعَ السَّلَامَةِ"]
+  ]},
+  { t: "Nombor dan Warna", q: [
+    ["وَاحِدٌ|Nombor ini ialah…", "1", "2", "3", "10"],
+    ["ثَلَاثَةٌ|Nombor ini ialah…", "3", "4", "5", "8"],
+    ["خَمْسَةٌ|Nombor ini ialah…", "5", "6", "7", "4"],
+    ["سَبْعَةٌ|Nombor ini ialah…", "7", "9", "6", "8"],
+    ["عَشَرَةٌ|Nombor ini ialah…", "10", "2", "8", "6"],
+    ["Nombor 4 dalam bahasa Arab ialah…", "أَرْبَعَةٌ", "سِتَّةٌ", "تِسْعَةٌ", "ثَمَانِيَةٌ"],
+    ["Nombor 2 dalam bahasa Arab ialah…", "اِثْنَانِ", "ثَلَاثَةٌ", "وَاحِدٌ", "عَشَرَةٌ"],
+    ["أَحْمَرُ|Warna ini ialah…", "merah", "biru", "hijau", "kuning"],
+    ["أَخْضَرُ|Warna ini ialah…", "hijau", "putih", "hitam", "merah"],
+    ["أَزْرَقُ|Warna ini ialah…", "biru", "kuning", "merah", "hijau"],
+    ["أَبْيَضُ|Warna ini ialah…", "putih", "hitam", "biru", "merah"],
+    ["🟡|Warna ini dalam bahasa Arab ialah…", "أَصْفَرُ", "أَسْوَدُ", "أَحْمَرُ", "أَخْضَرُ"],
+    ["⚫|Warna ini dalam bahasa Arab ialah…", "أَسْوَدُ", "أَبْيَضُ", "أَزْرَقُ", "أَصْفَرُ"]
+  ]},
+  { t: "Keluarga dan Diri", q: [
+    ["أَبٌ|Perkataan ini bermaksud…", "bapa", "ibu", "datuk", "abang"],
+    ["أُمٌّ|Perkataan ini bermaksud…", "ibu", "bapa", "nenek", "kakak"],
+    ["أَخٌ|Perkataan ini bermaksud…", "saudara lelaki", "saudara perempuan", "bapa", "datuk"],
+    ["أُخْتٌ|Perkataan ini bermaksud…", "saudara perempuan", "saudara lelaki", "ibu", "nenek"],
+    ["جَدٌّ|Perkataan ini bermaksud…", "datuk", "bapa", "abang", "pak cik"],
+    ["جَدَّةٌ|Perkataan ini bermaksud…", "nenek", "ibu", "kakak", "mak cik"],
+    ["👁️|Mata dalam bahasa Arab ialah…", "عَيْنٌ", "أُذُنٌ", "أَنْفٌ", "فَمٌ"],
+    ["👂|Telinga dalam bahasa Arab ialah…", "أُذُنٌ", "عَيْنٌ", "يَدٌ", "رَأْسٌ"],
+    ["✋|Tangan dalam bahasa Arab ialah…", "يَدٌ", "رِجْلٌ", "فَمٌ", "أَنْفٌ"],
+    ["رَأْسٌ|Perkataan ini bermaksud…", "kepala", "kaki", "hidung", "mulut"],
+    ["أَنَا|Perkataan ini bermaksud…", "saya", "kamu", "dia", "kami"],
+    ["هُوَ|Perkataan ini bermaksud…", "dia (lelaki)", "dia (perempuan)", "saya", "kamu"],
+    ["هِيَ|Perkataan ini bermaksud…", "dia (perempuan)", "dia (lelaki)", "kami", "mereka"],
+    ["نَحْنُ|Perkataan ini bermaksud…", "kami / kita", "saya", "kamu", "dia"]
+  ]},
+  { t: "Sekolah", q: [
+    ["مَدْرَسَةٌ|Perkataan ini bermaksud…", "sekolah", "masjid", "rumah", "pasar"],
+    ["كِتَابٌ|Perkataan ini bermaksud…", "buku", "pen", "beg", "meja"],
+    ["قَلَمٌ|Perkataan ini bermaksud…", "pen", "buku", "pembaris", "kerusi"],
+    ["مِسْطَرَةٌ|Perkataan ini bermaksud…", "pembaris", "pemadam", "beg", "papan hitam"],
+    ["حَقِيبَةٌ|Perkataan ini bermaksud…", "beg", "buku", "meja", "pintu"],
+    ["كُرْسِيٌّ|Perkataan ini bermaksud…", "kerusi", "meja", "tingkap", "pintu"],
+    ["مُدَرِّسٌ|Perkataan ini bermaksud…", "guru (lelaki)", "murid", "doktor", "polis"],
+    ["طَالِبٌ|Perkataan ini bermaksud…", "murid (lelaki)", "guru", "petani", "bapa"],
+    ["مَكْتَبَةٌ|Perkataan ini bermaksud…", "perpustakaan", "kelas", "kantin", "padang"],
+    ["فَصْلٌ|Perkataan ini bermaksud…", "kelas", "sekolah", "buku", "guru"],
+    ["📚|\"Buku\" dalam bahasa Arab ialah…", "كِتَابٌ", "قَلَمٌ", "بَابٌ", "بَيْتٌ"]
+  ]},
+  { t: "Hari dan Masa", q: [
+    ["الْأَحَدُ|Hari ini ialah…", "Ahad", "Isnin", "Jumaat", "Sabtu"],
+    ["الْاِثْنَيْنِ|Hari ini ialah…", "Isnin", "Selasa", "Ahad", "Khamis"],
+    ["الثُّلَاثَاءُ|Hari ini ialah…", "Selasa", "Rabu", "Isnin", "Sabtu"],
+    ["الْأَرْبِعَاءُ|Hari ini ialah…", "Rabu", "Khamis", "Selasa", "Ahad"],
+    ["الْخَمِيسُ|Hari ini ialah…", "Khamis", "Jumaat", "Rabu", "Isnin"],
+    ["الْجُمُعَةُ|Hari ini ialah…", "Jumaat", "Sabtu", "Khamis", "Ahad"],
+    ["السَّبْتُ|Hari ini ialah…", "Sabtu", "Ahad", "Jumaat", "Selasa"],
+    ["\"Jumaat\" dalam bahasa Arab ialah…", "الْجُمُعَةُ", "الْخَمِيسُ", "السَّبْتُ", "الْأَحَدُ"],
+    ["يَوْمٌ|Perkataan ini bermaksud…", "hari", "minggu", "bulan", "tahun"],
+    ["صَبَاحٌ|Perkataan ini bermaksud…", "pagi", "petang", "malam", "tengah hari"],
+    ["لَيْلٌ|Perkataan ini bermaksud…", "malam", "pagi", "siang", "petang"]
+  ]},
+  { t: "Makanan dan Tempat", q: [
+    ["مَاءٌ|Perkataan ini bermaksud…", "air", "susu", "nasi", "roti"],
+    ["خُبْزٌ|Perkataan ini bermaksud…", "roti", "nasi", "ikan", "telur"],
+    ["أَرُزٌّ|Perkataan ini bermaksud…", "nasi / beras", "roti", "air", "buah"],
+    ["حَلِيبٌ|Perkataan ini bermaksud…", "susu", "air", "jus", "teh"],
+    ["تُفَّاحٌ|Perkataan ini bermaksud…", "epal", "pisang", "anggur", "oren"],
+    ["🐟|Ikan dalam bahasa Arab ialah…", "سَمَكٌ", "دَجَاجٌ", "بَيْضٌ", "خُبْزٌ"],
+    ["🥚|Telur dalam bahasa Arab ialah…", "بَيْضٌ", "مَاءٌ", "أَرُزٌّ", "مَوْزٌ"],
+    ["بَيْتٌ|Perkataan ini bermaksud…", "rumah", "sekolah", "masjid", "pasar"],
+    ["مَسْجِدٌ|Perkataan ini bermaksud…", "masjid", "rumah", "hospital", "taman"],
+    ["سُوقٌ|Perkataan ini bermaksud…", "pasar", "sekolah", "dapur", "taman"],
+    ["مَطْبَخٌ|Perkataan ini bermaksud…", "dapur", "bilik tidur", "pasar", "kelas"],
+    ["حَدِيقَةٌ|Perkataan ini bermaksud…", "taman", "rumah", "masjid", "dapur"]
+  ]},
+  { t: "Haiwan dan Pekerjaan", q: [
+    ["🐈|Kucing dalam bahasa Arab ialah…", "قِطٌّ", "كَلْبٌ", "أَسَدٌ", "فِيلٌ"],
+    ["🐘|Gajah dalam bahasa Arab ialah…", "فِيلٌ", "جَمَلٌ", "حِصَانٌ", "أَسَدٌ"],
+    ["🦁|Singa dalam bahasa Arab ialah…", "أَسَدٌ", "قِطٌّ", "بَقَرَةٌ", "فِيلٌ"],
+    ["🐪|Unta dalam bahasa Arab ialah…", "جَمَلٌ", "حِصَانٌ", "فِيلٌ", "أَسَدٌ"],
+    ["حِصَانٌ|Haiwan ini ialah…", "kuda", "unta", "lembu", "kambing"],
+    ["طَائِرٌ|Haiwan ini ialah…", "burung", "ikan", "kucing", "singa"],
+    ["طَبِيبٌ|Pekerjaan ini ialah…", "doktor", "guru", "polis", "petani"],
+    ["شُرْطِيٌّ|Pekerjaan ini ialah…", "polis", "doktor", "tukang masak", "jurutera"],
+    ["فَلَّاحٌ|Pekerjaan ini ialah…", "petani", "nelayan", "guru", "pemandu"],
+    ["طَبَّاخٌ|Pekerjaan ini ialah…", "tukang masak", "doktor", "petani", "polis"],
+    ["مُهَنْدِسٌ|Pekerjaan ini ialah…", "jurutera", "doktor", "guru", "juruterbang"]
+  ]},
+  { t: "Tatabahasa Asas", q: [
+    ["هَذَا|Kata tunjuk ini bermaksud…", "ini (lelaki)", "ini (perempuan)", "itu (lelaki)", "itu (perempuan)"],
+    ["هَذِهِ|Kata tunjuk ini bermaksud…", "ini (perempuan)", "ini (lelaki)", "itu (lelaki)", "itu (perempuan)"],
+    ["ذَلِكَ|Kata tunjuk ini bermaksud…", "itu (lelaki)", "ini (lelaki)", "ini (perempuan)", "itu (perempuan)"],
+    ["Kata tunjuk yang sesuai untuk \"مَدْرَسَةٌ\" (ini) ialah…", "هَذِهِ", "هَذَا", "ذَلِكَ", "هُوَ"],
+    ["Kata tunjuk yang sesuai untuk \"كِتَابٌ\" (ini) ialah…", "هَذَا", "هَذِهِ", "تِلْكَ", "هِيَ"],
+    ["Perkataan yang berakhir dengan ة (ta marbutah) biasanya ialah perkataan…", "muannas (perempuan)", "muzakkar (lelaki)", "kata kerja", "kata tanya"],
+    ["مَا|Kata tanya ini bermaksud…", "apa", "siapa", "di mana", "berapa"],
+    ["مَنْ|Kata tanya ini bermaksud…", "siapa", "apa", "bila", "bagaimana"],
+    ["أَيْنَ|Kata tanya ini bermaksud…", "di mana", "bila", "siapa", "berapa"],
+    ["كَمْ|Kata tanya ini bermaksud…", "berapa", "apa", "di mana", "mengapa"],
+    ["فِي|Kata sendi ini bermaksud…", "di dalam", "di atas", "di bawah", "di belakang"],
+    ["عَلَى|Kata sendi ini bermaksud…", "di atas", "di dalam", "di bawah", "di hadapan"],
+    ["تَحْتَ|Kata sendi ini bermaksud…", "di bawah", "di atas", "di dalam", "di sebelah"],
+    ["كَتَبَ|Kata kerja ini bermaksud…", "telah menulis", "telah membaca", "telah makan", "telah pergi"],
+    ["قَرَأَ|Kata kerja ini bermaksud…", "telah membaca", "telah menulis", "telah duduk", "telah tidur"],
+    ["ذَهَبَ|Kata kerja ini bermaksud…", "telah pergi", "telah datang", "telah minum", "telah makan"]
+  ]}
+];
+
 })();

@@ -10,7 +10,7 @@
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@500;700;800&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#FFF8EE; --card:#FFFFFF; --ink:#3E3A5C; --soft:#8A86A8; --line:#EFE7DA;
@@ -19,6 +19,9 @@
   --math:#FFE79E; --math-d:#C99A13;
   --sains:#C5EFCF; --sains-d:#3E9E5B;
   --sejarah:#E3D3FF; --sejarah-d:#8A63D2;
+  --pi:#BFEDE4; --pi-d:#2E9C86;
+  --ba:#FFD9EA; --ba-d:#D2638F;
+  --arab:"Noto Naskh Arabic","Amiri","Traditional Arabic","Geeza Pro",serif;
   --ok:#5CC08A; --ok-bg:#E3F7EA; --no:#EF7B7B; --no-bg:#FDE6E6;
   --accent:#FF9DBB;
   --r:22px;
@@ -84,7 +87,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sub.wide{grid-column:1/-1;min-height:100px;flex-direction:row;align-items:center;gap:14px;justify-content:flex-start}
 .sub.wide h3{margin:0}
 .sub.lock{filter:grayscale(.7);opacity:.6}
-.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)}
+.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)}
+.sub.soon{opacity:.55}
 .section-t{display:flex;justify-content:space-between;align-items:baseline;margin:24px 0 10px}
 .section-t h2{font-size:21px}
 .hist{display:flex;flex-direction:column;gap:10px}
@@ -159,6 +163,12 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .ans.emo{flex-direction:column;gap:4px;padding:10px 8px 14px;justify-content:center}
 .ans.emo .k{flex:0 0 auto;width:30px;height:30px;align-self:flex-start}
 .ans.emo .v{font-size:60px;line-height:1.1;text-align:center}
+.ar{font-family:var(--arab);direction:rtl;unicode-bidi:isolate}
+.pic.ar{font-size:56px;line-height:1.6;letter-spacing:0;text-align:center;padding:10px 12px}
+.pic.ar.long{font-size:34px}
+.ans .v.ar{font-size:26px;line-height:1.5;text-align:right}
+.pill .ar{font-size:22px}
+.rv .rpic.ar{font-size:36px;line-height:1.6}
 .ans.pick{border-color:var(--ink);background:#F4F1FF}
 .ans.pick .k{background:var(--ink);color:#fff}
 
@@ -354,7 +364,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "3";
+const VER = "4";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -362,6 +372,8 @@ const SUBJECTS = [
   {id:"bi", name:"English", em:"🔤", unit:"topik"},
   {id:"math", name:"Matematik", em:"🔢", unit:"bab"},
   {id:"sains", name:"Sains", em:"🔬", unit:"bab"},
+  {id:"pi", name:"Pendidikan Islam", em:"🕌", unit:"bidang"},
+  {id:"ba", name:"Bahasa Arab", em:"📜", unit:"tema"},
   {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4}
 ];
 const SUB = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
@@ -396,6 +408,8 @@ function emojiOnly(s){
   const gs = graphemes(String(s).replace(/\s+/g, ""));
   return gs.length > 0 && gs.length <= 3 && gs.every(isEmoji);
 }
+const AR = /[\u0600-\u06FF\u0750-\u077F]/;
+const isAr = t => AR.test(t) && !/[A-Za-z]/.test(t);
 function splitQ(text){
   const i = text.indexOf("|");
   return i > 0 ? { pic: text.slice(0, i), q: text.slice(i + 1) } : { pic: "", q: text };
@@ -532,10 +546,13 @@ function renderHome(){
       const b = document.createElement("button");
       b.className = `sub s-${s.id}` + (i === SUBJECTS.length - 1 ? " wide" : "") + (locked ? " lock" : "");
       const best = bestScore(p, s.id, p.year);
-      const info = locked ? "Bermula Tahun " + s.from : `${chs.length} ${s.unit}` + (best != null ? ` · Terbaik ${best}%` : "");
+      const soon = !locked && !chs.length;
+      if(soon) b.classList.add("soon");
+      const info = locked ? "Bermula Tahun " + s.from : soon ? "Akan datang" : `${chs.length} ${s.unit}` + (best != null ? ` · Terbaik ${best}%` : "");
       b.innerHTML = `<span class="em">${locked ? "🔒" : s.em}</span><div><h3>${s.name}</h3><small>${info}</small></div>`;
       b.onclick = () => {
         if(locked){ confirmBox("🏰", "Sejarah bermula Tahun 4", "Dalam KSSR, subjek Sejarah diajar mulai Tahun 4. Tukar ke Tahun 4?", () => { p.year = 4; save(); renderHome(); }); return; }
+        if(soon){ toast(`${s.name} Tahun ${p.year} akan datang 🙂`); return; }
         openSetup(s.id);
       };
       subs.appendChild(b);
@@ -678,7 +695,7 @@ function renderQ(){
   $("#progBar").style.width = (quiz.i / n * 100) + "%";
   $("#qTag").textContent = `${SUB[quiz.sub].name} · Tahun ${quiz.year} · ${q.bab}`;
   const pic = $("#qPic");
-  if(q.pic){ pic.style.display = ""; pic.className = "pic " + picClass(q.pic); pic.textContent = q.pic; }
+  if(q.pic){ pic.style.display = ""; pic.className = "pic " + (AR.test(q.pic) ? "ar" + (graphemes(q.pic).length > 14 ? " long" : "") : picClass(q.pic)); pic.textContent = q.pic; }
   else pic.style.display = "none";
   $("#qText").textContent = q.q;
   const box = $("#answers"); box.innerHTML = "";
@@ -687,7 +704,7 @@ function renderQ(){
   q.options.forEach((o, k) => {
     const b = document.createElement("button"); b.className = "ans" + (allEmo ? " emo" : "");
     b.innerHTML = `<span class="k">${"ABCD"[k]}</span><span class="v"></span>`;
-    b.querySelector(".v").textContent = o;
+    const v = b.querySelector(".v"); v.textContent = o; if(isAr(o)) v.classList.add("ar");
     b.onclick = () => pick(o, b);
     box.appendChild(b);
   });
@@ -768,11 +785,11 @@ function renderReview(f){
     const ok = q.picked === q.right;
     const d = document.createElement("div"); d.className = "rv" + (ok ? "" : " bad");
     d.innerHTML = `<div class="h"><span>Soalan ${i + 1} · ${q.bab}</span><span>${ok ? "✅ Betul" : "❌ Salah"}</span></div>`;
-    if(q.pic){ const pc = document.createElement("div"); pc.className = "rpic" + (["p3","p4"].includes(picClass(q.pic)) ? " sm" : ""); pc.textContent = q.pic; d.appendChild(pc); }
+    if(q.pic){ const pc = document.createElement("div"); pc.className = "rpic" + (AR.test(q.pic) ? " ar" : ["p3","p4"].includes(picClass(q.pic)) ? " sm" : ""); pc.textContent = q.pic; d.appendChild(pc); }
     const h = document.createElement("h3"); h.textContent = q.q; d.appendChild(h);
     const add = (cls, label, val) => {
       const s = document.createElement("span"); s.className = "pill " + cls; s.textContent = label;
-      const v = document.createElement("span"); v.textContent = val; if(emojiOnly(val)) v.className = "e";
+      const v = document.createElement("span"); v.textContent = val; if(emojiOnly(val)) v.className = "e"; else if(isAr(val)) v.className = "ar";
       s.appendChild(v); d.appendChild(s);
     };
     if(ok) add("y", "Jawapan kamu: ", q.right);

@@ -1,6 +1,6 @@
 # Cerdik Ceria 🌈
 
-Kuiz seronok untuk murid sekolah rendah (Tahun 1–6): Bahasa Melayu, English, Matematik, Sains dan Sejarah (Tahun 4–6).
+Kuiz seronok untuk murid sekolah rendah (Tahun 1–6): Bahasa Melayu, English, Matematik, Sains, Pendidikan Islam, Bahasa Arab dan Sejarah (Tahun 4–6).
 
 App: https://farawyadal.github.io/cerdikceria/
 
@@ -17,7 +17,7 @@ App: https://farawyadal.github.io/cerdikceria/
 |---|---|
 | 1 | ✅ Ikut bab (Sains 10 bab, Matematik 8 bab, BM 6 topik, BI 7 topik) |
 | 2–4 | Versi awal, akan disusun ikut bab |
-| 5 | ✅ Ikut bab (Matematik 8 bab, Sains 10 bab, Sejarah Unit 2–12, BM 7 topik, BI 7 topik) |
+| 5 | ✅ Ikut bab (Matematik 8 bab, Sains 10 bab, Sejarah Unit 2–12, BM 7 topik, BI 7 topik, Pendidikan Islam 7 bidang, Bahasa Arab 8 tema) |
 | 6 | Versi awal, akan disusun ikut bab |
 
 ## Tambah soalan

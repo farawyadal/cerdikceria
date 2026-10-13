@@ -2,6 +2,7 @@
    TAHUN 1 — Cerdik Ceria
    Bab Sains & Matematik ikut susunan buku teks KSSR.
    BM & BI disusun ikut topik kemahiran.
+   Pendidikan Islam ikut bidang KSSR; Bahasa Arab ikut tema.
 
    Format soalan:
    ["Soalan", "Jawapan BETUL", "Salah 1", "Salah 2", "Salah 3", "Penerangan (pilihan)"]
@@ -544,4 +545,150 @@ sains: [
 
 sejarah: []
 };
+
+/* ======================= PENDIDIKAN ISLAM TAHUN 1 (ikut bidang KSSR) ======================= */
+const HIJAIYAH = [["ا","alif"],["ب","ba"],["ت","ta"],["ث","tha"],["ج","jim"],["ح","ha (ح)"],["خ","kha"],["د","dal"],["ذ","zal"],["ر","ra"],["ز","zai"],["س","sin"],["ش","syin"],["ص","sod"],["ض","dhod"],["ط","to"],["ظ","zo"],["ع","ain"],["غ","ghain"],["ف","fa"],["ق","qaf"],["ك","kaf"],["ل","lam"],["م","mim"],["ن","nun"],["و","wau"],["ه","ha (ه)"],["ي","ya"]];
+const BUNYI = [["ب","b"],["ت","t"],["ج","j"],["د","d"],["ر","r"],["س","s"],["ف","f"],["ك","k"],["ل","l"],["م","m"],["ن","n"]];
+const BARIS = [["َ","a","fathah"],["ِ","i","kasrah"],["ُ","u","dhammah"]];
+SOALAN[1].pi = [
+  { t: "Al-Quran (Huruf Hijaiyah)",
+    q: [
+      ["Baris di atas huruf dipanggil…", "fathah", "kasrah", "dhammah", "sukun"],
+      ["Baris di bawah huruf dipanggil…", "kasrah", "fathah", "dhammah", "tanwin"],
+      ["Baris depan dipanggil…", "dhammah", "fathah", "kasrah", "sabdu"],
+      ["Huruf hijaiyah dibaca dari…", "kanan ke kiri", "kiri ke kanan", "atas ke bawah", "bawah ke atas"],
+      ["Surah al-Fatihah mengandungi ___ ayat.", "7", "5", "4", "6"],
+      ["Surah yang wajib dibaca dalam setiap rakaat solat ialah…", "al-Fatihah", "al-Ikhlas", "an-Nas", "al-Kauthar"],
+      ["Sebelum membaca al-Quran, kita perlu…", "berwuduk", "makan", "tidur", "bermain"],
+      ["Kitab suci umat Islam ialah…", "al-Quran", "buku cerita", "kamus", "majalah"]
+    ],
+    g: [
+      () => { const [h, n] = pick(HIJAIYAH); return from(`${h}|Huruf hijaiyah ini ialah…`, n, HIJAIYAH.map(x => x[1])); },
+      () => { const [h, n] = pick(HIJAIYAH); return from(`Yang manakah huruf \"${n}\"?`, h, HIJAIYAH.map(x => x[0])); },
+      () => { const [h, b] = pick(BUNYI), [bs, v] = pick(BARIS); const right = b + v; const ws = BARIS.filter(x => x[1] !== v).map(x => b + x[1]).concat(BUNYI.filter(x => x[1] !== b).map(x => x[1] + v)); return from(`${h}${bs}|Huruf berbaris ini dibaca…`, right, ws); }
+    ] },
+  { t: "Akidah", q: [
+    ["Tuhan kita ialah…", "Allah", "matahari", "bulan", "patung"],
+    ["Allah itu…", "Esa (satu)", "dua", "tiga", "ramai"],
+    ["Siapakah yang mencipta langit dan bumi?", "Allah", "manusia", "malaikat", "haiwan"],
+    ["Rukun Iman ada ___ perkara.", "6", "5", "4", "3"],
+    ["Rukun Islam ada ___ perkara.", "5", "6", "3", "7"],
+    ["Rukun Islam yang pertama ialah…", "mengucap dua kalimah syahadah", "berpuasa", "menunaikan haji", "mengeluarkan zakat"],
+    ["Rukun Islam yang kedua ialah…", "mendirikan solat", "berpuasa", "mengeluarkan zakat", "menunaikan haji"],
+    ["Nabi kita ialah…", "Nabi Muhammad SAW", "Nabi Adam a.s.", "Nabi Musa a.s.", "Nabi Isa a.s."],
+    ["Agama kita ialah…", "Islam", "agama datuk", "agama rakan", "tiada"],
+    ["Allah memberi kita mata untuk…", "melihat", "mendengar", "makan", "berjalan"],
+    ["Kita wajib bersyukur kepada…", "Allah", "kawan", "kucing", "guru sahaja"],
+    ["Ucapan memuji Allah ialah…", "Alhamdulillah", "Astaghfirullah", "Assalamualaikum", "Insya-Allah"]
+  ]},
+  { t: "Ibadah", q: [
+    ["Sebelum solat, kita perlu mengambil…", "wuduk", "makan", "mandi sungai", "tidur"],
+    ["Wuduk dimulakan dengan…", "niat", "membasuh kaki", "menyapu kepala", "berkumur"],
+    ["Antara anggota wuduk yang wajib dibasuh ialah…", "muka", "perut", "belakang", "rambut keseluruhan"],
+    ["Solat fardu sehari semalam ada ___ waktu.", "5", "3", "4", "7"],
+    ["Solat fardu yang dilakukan pada waktu pagi ialah…", "Subuh", "Zohor", "Asar", "Isyak"],
+    ["Solat fardu selepas matahari terbenam ialah…", "Maghrib", "Subuh", "Zohor", "Asar"],
+    ["Solat fardu yang terakhir pada waktu malam ialah…", "Isyak", "Maghrib", "Asar", "Subuh"],
+    ["Ketika solat, kita menghadap ke arah…", "kiblat", "pintu", "tingkap", "matahari"],
+    ["🕌|Tempat umat Islam bersolat beramai-ramai ialah…", "masjid", "pasar", "sekolah", "padang"],
+    ["Selepas membuang air, kita perlu…", "beristinjak (membersihkan diri)", "terus keluar", "bermain", "makan"],
+    ["Air yang boleh digunakan untuk berwuduk ialah air…", "bersih (mutlak)", "kotor", "teh", "sirap"],
+    ["Bulan umat Islam berpuasa ialah…", "Ramadan", "Syawal", "Muharam", "Zulhijah"]
+  ]},
+  { t: "Sirah", q: [
+    ["Nabi yang pertama ialah Nabi…", "Adam a.s.", "Muhammad SAW", "Nuh a.s.", "Ibrahim a.s."],
+    ["Nabi yang terakhir ialah Nabi…", "Muhammad SAW", "Adam a.s.", "Isa a.s.", "Musa a.s."],
+    ["Nabi Muhammad SAW dilahirkan di…", "Makkah", "Madinah", "Mesir", "Malaysia"],
+    ["Ibu Nabi Muhammad SAW bernama…", "Aminah", "Khadijah", "Fatimah", "Aisyah"],
+    ["Bapa Nabi Muhammad SAW bernama…", "Abdullah", "Abu Talib", "Abu Bakar", "Umar"],
+    ["Nabi Muhammad SAW digelar al-Amin kerana baginda sangat…", "jujur dan amanah", "kaya", "tinggi", "garang"],
+    ["Apabila menyebut nama Nabi Muhammad, kita ucapkan…", "Sallallahu 'alaihi wasallam", "Alhamdulillah", "Bismillah", "Assalamualaikum"]
+  ]},
+  { t: "Adab", q: [
+    ["Sebelum makan, kita membaca…", "Bismillah", "Alhamdulillah", "Astaghfirullah", "Subhanallah"],
+    ["Selepas makan, kita membaca…", "Alhamdulillah", "Bismillah", "Assalamualaikum", "Allahu Akbar"],
+    ["🍽️|Kita makan menggunakan tangan…", "kanan", "kiri", "kedua-dua", "mana-mana"],
+    ["Apabila berjumpa kawan, kita memberi…", "salam", "tumbukan", "jelingan", "ejekan"],
+    ["Jawapan kepada \"Assalamualaikum\" ialah…", "Waalaikumussalam", "Alhamdulillah", "Bismillah", "Terima kasih"],
+    ["Sebelum masuk rumah, kita…", "memberi salam", "menjerit", "mengetuk dengan kuat", "terus berlari masuk"],
+    ["Apabila ibu bapa bercakap, kita…", "mendengar dengan sopan", "menyampuk", "bermain telefon", "lari"],
+    ["😴|Sebelum tidur, kita disunatkan…", "membaca doa tidur", "makan banyak", "bermain", "menonton TV"],
+    ["Apabila bersin, kita mengucapkan…", "Alhamdulillah", "Bismillah", "Astaghfirullah", "Allahu Akbar"],
+    ["Selepas bermain, kita perlu…", "mengemas mainan", "membiarkan bersepah", "membuang mainan", "menyorok mainan"]
+  ]},
+  { t: "Jawi (Huruf Tunggal)",
+    q: [
+      ["Tulisan Jawi ditulis dari…", "kanan ke kiri", "kiri ke kanan", "atas ke bawah", "bawah ke atas"],
+      ["چ|Huruf Jawi ini ialah…", "ca", "ja", "nga", "pa"],
+      ["ڠ|Huruf Jawi ini ialah…", "nga", "nya", "ca", "ga"],
+      ["ڤ|Huruf Jawi ini ialah…", "pa", "fa", "qaf", "wau"],
+      ["ڽ|Huruf Jawi ini ialah…", "nya", "nga", "nun", "ya"],
+      ["ايبو|Perkataan Jawi ini dibaca…", "ibu", "abu", "ubi", "ibi"],
+      ["باڤ|Perkataan Jawi ini dibaca…", "bapa", "baba", "papa", "baja"],
+      ["بوکو|Perkataan Jawi ini dibaca…", "buku", "baku", "bukit", "bubu"]
+    ],
+    g: [
+      () => { const L = [["ا","alif"],["ب","ba"],["ت","ta"],["ج","jim"],["د","dal"],["ر","ra"],["س","sin"],["ك","kaf"],["ل","lam"],["م","mim"],["ن","nun"],["و","wau"],["ي","ya"],["چ","ca"],["ڠ","nga"],["ڤ","pa"],["ڽ","nya"]]; const [h, n] = pick(L); return from(`${h}|Huruf Jawi ini ialah…`, n, L.map(x => x[1])); }
+    ] }
+];
+
+/* ======================= BAHASA ARAB TAHUN 1 (ikut tema) ======================= */
+SOALAN[1].ba = [
+  { t: "Salam", q: [
+    ["السَّلَامُ عَلَيْكُمْ|Ucapan ini ialah…", "Assalamualaikum", "Terima kasih", "Selamat tinggal", "Apa khabar"],
+    ["صَبَاحُ الْخَيْرِ|Ucapan ini bermaksud…", "Selamat pagi", "Selamat malam", "Terima kasih", "Sama-sama"],
+    ["شُكْرًا|Perkataan ini bermaksud…", "Terima kasih", "Maaf", "Ya", "Tidak"],
+    ["نَعَمْ|Perkataan ini bermaksud…", "Ya", "Tidak", "Terima kasih", "Saya"],
+    ["لَا|Perkataan ini bermaksud…", "Tidak", "Ya", "Saya", "Ini"],
+    ["\"Terima kasih\" dalam bahasa Arab ialah…", "شُكْرًا", "نَعَمْ", "لَا", "أَنَا"],
+    ["أَنَا|Perkataan ini bermaksud…", "saya", "kamu", "dia", "ini"]
+  ]},
+  { t: "Nombor", q: [
+    ["وَاحِدٌ|Nombor ini ialah…", "1", "2", "3", "4"],
+    ["اِثْنَانِ|Nombor ini ialah…", "2", "1", "3", "5"],
+    ["ثَلَاثَةٌ|Nombor ini ialah…", "3", "2", "4", "5"],
+    ["أَرْبَعَةٌ|Nombor ini ialah…", "4", "3", "5", "1"],
+    ["خَمْسَةٌ|Nombor ini ialah…", "5", "4", "3", "2"],
+    ["⭐⭐⭐|Berapa bintang? (dalam bahasa Arab)", "ثَلَاثَةٌ", "وَاحِدٌ", "خَمْسَةٌ", "اِثْنَانِ"],
+    ["🍎|Satu epal. \"Satu\" dalam bahasa Arab ialah…", "وَاحِدٌ", "اِثْنَانِ", "أَرْبَعَةٌ", "ثَلَاثَةٌ"],
+    ["✋|Berapa jari? (dalam bahasa Arab)", "خَمْسَةٌ", "أَرْبَعَةٌ", "ثَلَاثَةٌ", "وَاحِدٌ"]
+  ]},
+  { t: "Warna", q: [
+    ["🔴|Warna ini dalam bahasa Arab ialah…", "أَحْمَرُ", "أَزْرَقُ", "أَخْضَرُ", "أَصْفَرُ"],
+    ["🔵|Warna ini dalam bahasa Arab ialah…", "أَزْرَقُ", "أَحْمَرُ", "أَبْيَضُ", "أَسْوَدُ"],
+    ["🟢|Warna ini dalam bahasa Arab ialah…", "أَخْضَرُ", "أَصْفَرُ", "أَحْمَرُ", "أَزْرَقُ"],
+    ["🟡|Warna ini dalam bahasa Arab ialah…", "أَصْفَرُ", "أَخْضَرُ", "أَسْوَدُ", "أَبْيَضُ"],
+    ["أَبْيَضُ|Warna ini ialah…", "putih", "hitam", "merah", "biru"],
+    ["أَسْوَدُ|Warna ini ialah…", "hitam", "putih", "kuning", "hijau"]
+  ]},
+  { t: "Diri dan Keluarga", q: [
+    ["أَبٌ|Perkataan ini bermaksud…", "bapa", "ibu", "adik", "datuk"],
+    ["أُمٌّ|Perkataan ini bermaksud…", "ibu", "bapa", "kakak", "nenek"],
+    ["👁️|Mata dalam bahasa Arab ialah…", "عَيْنٌ", "يَدٌ", "أَنْفٌ", "فَمٌ"],
+    ["👃|Hidung dalam bahasa Arab ialah…", "أَنْفٌ", "عَيْنٌ", "أُذُنٌ", "رَأْسٌ"],
+    ["👄|Mulut dalam bahasa Arab ialah…", "فَمٌ", "أَنْفٌ", "يَدٌ", "عَيْنٌ"],
+    ["✋|Tangan dalam bahasa Arab ialah…", "يَدٌ", "فَمٌ", "رَأْسٌ", "أُذُنٌ"],
+    ["رَأْسٌ|Perkataan ini bermaksud…", "kepala", "tangan", "kaki", "mata"]
+  ]},
+  { t: "Di Kelas", q: [
+    ["📖|Buku dalam bahasa Arab ialah…", "كِتَابٌ", "قَلَمٌ", "بَابٌ", "كُرْسِيٌّ"],
+    ["🖊️|Pen dalam bahasa Arab ialah…", "قَلَمٌ", "كِتَابٌ", "مَكْتَبٌ", "بَابٌ"],
+    ["🚪|Pintu dalam bahasa Arab ialah…", "بَابٌ", "قَلَمٌ", "كِتَابٌ", "بَيْتٌ"],
+    ["🪑|Kerusi dalam bahasa Arab ialah…", "كُرْسِيٌّ", "بَابٌ", "قَلَمٌ", "كِتَابٌ"],
+    ["مَدْرَسَةٌ|Perkataan ini bermaksud…", "sekolah", "rumah", "masjid", "kedai"],
+    ["مُدَرِّسٌ|Perkataan ini bermaksud…", "guru (lelaki)", "murid", "bapa", "doktor"],
+    ["هَذَا قَلَمٌ|Ayat ini bermaksud…", "Ini pen", "Ini buku", "Itu pen", "Saya pen"]
+  ]},
+  { t: "Haiwan dan Buah", q: [
+    ["🐈|Kucing dalam bahasa Arab ialah…", "قِطٌّ", "أَسَدٌ", "فِيلٌ", "سَمَكٌ"],
+    ["🐟|Ikan dalam bahasa Arab ialah…", "سَمَكٌ", "قِطٌّ", "طَائِرٌ", "فِيلٌ"],
+    ["🐘|Gajah dalam bahasa Arab ialah…", "فِيلٌ", "جَمَلٌ", "قِطٌّ", "أَسَدٌ"],
+    ["🐦|Burung dalam bahasa Arab ialah…", "طَائِرٌ", "سَمَكٌ", "أَسَدٌ", "جَمَلٌ"],
+    ["🍎|Epal dalam bahasa Arab ialah…", "تُفَّاحٌ", "مَوْزٌ", "عِنَبٌ", "بُرْتُقَالٌ"],
+    ["🍌|Pisang dalam bahasa Arab ialah…", "مَوْزٌ", "تُفَّاحٌ", "عِنَبٌ", "مَاءٌ"],
+    ["🍇|Anggur dalam bahasa Arab ialah…", "عِنَبٌ", "مَوْزٌ", "تُفَّاحٌ", "خُبْزٌ"],
+    ["أَسَدٌ|Haiwan ini ialah…", "singa", "kucing", "gajah", "unta"]
+  ]}
+];
+
 })();

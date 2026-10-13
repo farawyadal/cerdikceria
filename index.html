@@ -320,7 +320,8 @@ window.MK = (() => {
   const r = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
   const pick = arr => arr[r(0, arr.length - 1)];
   const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-  const fmt = n => Number.isInteger(n) ? n.toLocaleString("en-MY") : n.toLocaleString("en-MY", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  // format KSSR: ruang (tak putus baris) untuk ribu, titik untuk perpuluhan → 1 234 567.50
+  const fmt = n => (Number.isInteger(n) ? n.toLocaleString("en-MY") : n.toLocaleString("en-MY", { minimumFractionDigits: 2, maximumFractionDigits: 2 })).replace(/,/g, "\u00a0");
   function wrong(ans, offsets, dec) {
     const set = new Set(); let t = 0;
     while (set.size < 3 && t < 80) {
@@ -353,7 +354,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "2";
+const VER = "3";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -361,7 +362,7 @@ const SUBJECTS = [
   {id:"bi", name:"English", em:"🔤", unit:"topik"},
   {id:"math", name:"Matematik", em:"🔢", unit:"bab"},
   {id:"sains", name:"Sains", em:"🔬", unit:"bab"},
-  {id:"sejarah", name:"Sejarah", em:"🏰", unit:"bab", from:4}
+  {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4}
 ];
 const SUB = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
 
@@ -581,7 +582,7 @@ function openSetup(sub){
   const chs = chaptersOf(p.year, sub);
   $("#suTitle").textContent = `${SUB[sub].em} ${SUB[sub].name}`;
   $("#suSub").textContent = `Tahun ${p.year}`;
-  $("#babLbl").textContent = SUB[sub].unit === "bab" ? "Pilih bab" : "Pilih topik";
+  $("#babLbl").textContent = "Pilih " + SUB[sub].unit;
   renderBabs();
   renderCounts();
   chips($("#optTime"), [0, 20, 30, 60], setup.time, v => v ? `⏱️ ${v} saat / soalan` : "😌 Tanpa masa", v => setup.time = v);
@@ -599,7 +600,7 @@ function openSetup(sub){
       const b = document.createElement("button");
       b.className = "bab" + (setup.babs.includes(i) ? " on" : "");
       const n = c.g && c.g.length ? "Soalan dijana rawak" : `${(c.q || []).length} soalan`;
-      b.innerHTML = `<span class="no">${i + 1}</span><span class="tt"><span class="t"></span><small>${n}</small></span><span class="ck">✓</span>`;
+      b.innerHTML = `<span class="no">${c.n || i + 1}</span><span class="tt"><span class="t"></span><small>${n}</small></span><span class="ck">✓</span>`;
       b.querySelector(".t").textContent = c.t;
       b.onclick = () => {
         const k = setup.babs.indexOf(i);
@@ -657,7 +658,7 @@ function buildQuestions(p, sub, year, babs, n){
 function babLabel(sub, year, babs){
   const chs = chaptersOf(year, sub);
   if(!babs.length) return chs.length > 1 ? `Semua ${SUB[sub].unit}` : "";
-  if(babs.length === 1) return `${SUB[sub].unit === "bab" ? "Bab" : "Topik"} ${babs[0] + 1}: ${chs[babs[0]].t}`;
+  if(babs.length === 1){ const c = chs[babs[0]]; return `${sub === "sejarah" ? "Unit" : SUB[sub].unit === "bab" ? "Bab" : "Topik"} ${c.n || babs[0] + 1}: ${c.t}`; }
   return `${babs.length} ${SUB[sub].unit}`;
 }
 function startQuiz(){

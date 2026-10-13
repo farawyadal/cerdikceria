@@ -16,7 +16,9 @@ App: https://farawyadal.github.io/cerdikceria/
 | Tahun | Status |
 |---|---|
 | 1 | ✅ Ikut bab (Sains 10 bab, Matematik 8 bab, BM 6 topik, BI 7 topik) |
-| 2–6 | Versi awal, akan disusun ikut bab |
+| 2–4 | Versi awal, akan disusun ikut bab |
+| 5 | ✅ Ikut bab (Matematik 8 bab, Sains 10 bab, Sejarah Unit 2–12, BM 7 topik, BI 7 topik) |
+| 6 | Versi awal, akan disusun ikut bab |
 
 ## Tambah soalan
 Setiap tahun ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`).

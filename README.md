@@ -13,14 +13,20 @@ App: https://farawyadal.github.io/cerdikceria/
 - Butang **⬇ App** untuk pasang di telefon (muncul bila pelayar benarkan)
 
 ## Status soalan
-| Tahun | Status |
-|---|---|
-| 1 | ✅ Ikut bab (Sains 10 bab, Matematik 8 bab, BM 6 topik, BI 7 topik, Pendidikan Islam 6 bidang, Bahasa Arab 6 tema) |
-| 2 | ✅ Ikut bab (Matematik 8 bab, Sains 9 bab, BM 6 topik, BI 7 topik, Pendidikan Islam 6 bidang, Bahasa Arab 7 tema) |
-| 3 | ✅ Ikut bab (Matematik 9 bab, Sains 9 bab, BM 6 topik, BI 7 topik, Pendidikan Islam 6 bidang, Bahasa Arab 6 tema) |
-| 4 | ✅ Ikut bab (Matematik 8 bab, Sains 10 bab, Sejarah Unit 1–11, BM 6 topik, BI 6 topik, Pendidikan Islam 6 bidang, Bahasa Arab 6 tema) |
-| 5 | ✅ Ikut bab (Matematik 8 bab, Sains 10 bab, Sejarah Unit 2–12, BM 7 topik, BI 7 topik, Pendidikan Islam 7 bidang, Bahasa Arab 8 tema) |
-| 6 | Versi awal, akan disusun ikut bab |
+Semua tahun disusun ikut bab/topik. Matematik & Sains ikut bab buku teks/DSKP KSSR, Sejarah ikut unit DSKP,
+BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab ikut tema.
+
+| Tahun | BM | BI | Matematik | Sains | P. Islam | B. Arab | Sejarah |
+|---|---|---|---|---|---|---|---|
+| 1 | 6 topik | 7 topik | 8 bab | 10 bab | 6 bidang | 6 tema | — |
+| 2 | 6 topik | 7 topik | 8 bab | 9 bab | 6 bidang | 7 tema | — |
+| 3 | 6 topik | 7 topik | 9 bab | 9 bab | 6 bidang | 6 tema | — |
+| 4 | 6 topik | 6 topik | 8 bab | 10 bab | 6 bidang | 6 tema | Unit 1–11 |
+| 5 | 7 topik | 7 topik | 8 bab | 10 bab | 7 bidang | 8 tema | Unit 2–12 |
+| 6 | 5 topik | 6 topik | 8 bab | 13 bab | 6 bidang | 6 tema | Unit 1–10 |
+
+Kira-kira 2 700 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
+Kandungan agama (Pendidikan Islam, Jawi, Bahasa Arab) elok disemak oleh guru sebelum dikongsi secara meluas.
 
 ## Tambah soalan
 Setiap tahun ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`).

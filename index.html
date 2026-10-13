@@ -350,7 +350,7 @@ window.MK = (() => {
   }
   // pilih 3 jawapan salah daripada senarai
   function from(text, right, pool, exp) {
-    const w = shuffle(pool.filter(x => x !== right)).slice(0, 3);
+    const w = shuffle([...new Set(pool.map(String))].filter(x => x !== String(right))).slice(0, 3);
     return [text, right, ...w, exp || ""];
   }
   const add = max => { const a = r(1, max), b = r(1, max); return q(`${fmt(a)} + ${fmt(b)} = ?`, a + b, [1, 2, 10, 11]); };

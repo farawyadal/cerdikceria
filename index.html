@@ -242,7 +242,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     </div>
     <div class="profiles" id="profiles"></div>
     <button class="mgr" id="btnManage">Urus profil</button>
-    <button class="sokong" data-derma>☕ Sokong Cerdik Ceria</button>
+    <button class="sokong" data-sumbangan>☕ Sokong Cerdik Ceria</button>
     <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
@@ -260,7 +260,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <div class="subs" id="subs"></div>
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
     <div class="hist" id="hist"></div>
-    <button class="sokong" data-derma>☕ Sokong Cerdik Ceria</button>
+    <button class="sokong" data-sumbangan>☕ Sokong Cerdik Ceria</button>
     <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
@@ -335,14 +335,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <button class="btn ghost" data-close>Batal</button>
 </div></div>
 
-<!-- Derma -->
-<div class="overlay" id="ovDerma"><div class="sheet" style="text-align:center">
+<!-- Sumbangan -->
+<div class="overlay" id="ovSumbangan"><div class="sheet" style="text-align:center">
   <div style="font-size:42px">☕</div>
   <h2>Sokong Cerdik Ceria</h2>
   <p class="dnote">Cerdik Ceria kekal <b>percuma</b> untuk semua.<br>Jika sudi, sumbangan ikhlas anda membantu kami menambah soalan dan subjek baharu. Terima kasih! 🤲</p>
-  <div class="qrbox"><img src="duitnow-qr.png" alt="Kod QR DuitNow untuk derma" loading="lazy"></div>
+  <div class="qrbox"><img src="duitnow-qr.png" alt="Kod QR DuitNow untuk sumbangan" loading="lazy"></div>
   <p class="dnote">Imbas dengan mana-mana app bank atau e-wallet (DuitNow QR).<br><b>Guna telefon yang sama?</b> Simpan QR, kemudian pilih gambar dari galeri dalam app bank anda.</p>
-  <a class="btn pink" href="duitnow-qr.png" download="Derma-Cerdik-Ceria-DuitNow.png" style="text-decoration:none" id="btnSaveQr">💾 Simpan QR</a>
+  <a class="btn pink" href="duitnow-qr.png" download="Sumbangan-Cerdik-Ceria-DuitNow.png" style="text-decoration:none" id="btnSaveQr">💾 Simpan QR</a>
   <div style="height:10px"></div>
   <button class="btn ghost" data-close>Tutup</button>
 </div></div>
@@ -920,9 +920,9 @@ instBtns().forEach(b => b.addEventListener("click", async () => {
 }));
 window.addEventListener("appinstalled", () => { pasangTunda = null; instBtns().forEach(b => b.hidden = true); toast("Cerdik Ceria sudah dipasang 🎉"); track("install", "App dipasang"); });
 
-/* ---------- derma (sukarela) ---------- */
-document.querySelectorAll("[data-derma]").forEach(b => b.onclick = () => { open("#ovDerma"); track("derma/buka", "Paparan derma dibuka"); });
-$("#btnSaveQr").addEventListener("click", () => track("derma/simpan-qr", "QR derma disimpan"));
+/* ---------- sumbangan (sukarela) ---------- */
+document.querySelectorAll("[data-sumbangan]").forEach(b => b.onclick = () => { open("#ovSumbangan"); track("sumbangan/buka", "Paparan sumbangan dibuka"); });
+$("#btnSaveQr").addEventListener("click", () => track("sumbangan/simpan-qr", "QR sumbangan disimpan"));
 
 /* ---------- tukar peringkat ---------- */
 function chooseLevel(l){

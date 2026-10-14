@@ -97,6 +97,11 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .who .av{font-size:38px}
 .who small{display:block;color:var(--soft);font-size:13px}
 .who b{font-size:19px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dlprow{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:var(--card);border:2px solid var(--line);border-radius:16px;padding:8px 12px;margin:0 0 12px}
+.dlprow .tx{flex:1;min-width:0}.dlprow b{font-size:15px;display:block}.dlprow small{color:var(--soft);font-size:12.5px;font-weight:700}
+.sw{flex:0 0 46px;height:26px;border-radius:999px;background:var(--line);position:relative;transition:background .2s}
+.sw i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
+.sw.on{background:var(--ok)}.sw.on i{left:23px}
 .lvl{display:flex;gap:4px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:4px;margin-bottom:10px}
 .lvl button{flex:1;padding:10px 4px;border-radius:14px;font-weight:800;font-size:14px;color:var(--soft);white-space:nowrap}
 .lvl button.on{background:var(--ink);color:#fff}
@@ -278,6 +283,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     </div>
     <div class="lvl" id="lvl"><button data-l="prasekolah">🧸 Prasekolah</button><button data-l="rendah">🎒 Rendah</button><button data-l="menengah">🏫 Menengah</button></div>
     <div class="years" id="years"></div>
+    <button class="dlprow" id="dlpRow" hidden><span class="tx"><b>🇬🇧 DLP</b><small>Matematik &amp; Sains dalam English</small></span><span class="sw" id="dlpSw"><i></i></span></button>
     <div class="subs" id="subs"></div>
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
     <div class="hist" id="hist"></div>
@@ -405,6 +411,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <li>Markah, bintang dan <b>semakan jawapan</b> selepas setiap kuiz.</li>
     <li>Profil untuk setiap anak, boleh letak <b>PIN</b>.</li>
     <li>Gambar besar dan tulisan Arab/Jawi yang jelas.</li>
+    <li><b>🇬🇧 Suis DLP</b> (Tahun 1 – Tingkatan 3): hidupkan untuk menjawab soalan Matematik dan Sains dalam bahasa Inggeris.</li>
   </ul>
   <h3>📱 Cara guna</h3>
   <ol>
@@ -517,7 +524,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "19";
+const VER = "20";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -572,19 +579,30 @@ const me = () => db.profiles.find(p => p.id === db.current);
 
 /* ---------- muat soalan ikut tahun ---------- */
 const loading = {};
-function loadYear(y){
-  if(SOALAN[y]) return Promise.resolve(SOALAN[y]);
-  if(loading[y]) return loading[y];
-  loading[y] = new Promise((ok, no) => {
+function loadKey(key, file){
+  if(SOALAN[key]) return Promise.resolve(SOALAN[key]);
+  if(loading[key]) return loading[key];
+  loading[key] = new Promise((ok, no) => {
     const s = document.createElement("script");
-    s.src = `${gradeFile(y)}?v=${VER}`;
-    s.onload = () => SOALAN[y] ? ok(SOALAN[y]) : no();
-    s.onerror = () => { delete loading[y]; no(); };
+    s.src = `${file}?v=${VER}`;
+    s.onload = () => SOALAN[key] ? ok(SOALAN[key]) : no();
+    s.onerror = () => { delete loading[key]; no(); };
     document.head.appendChild(s);
   });
-  return loading[y];
+  return loading[key];
 }
-const chaptersOf = (y, sub) => (SOALAN[y] && SOALAN[y][sub]) || [];
+const loadYear = y => loadKey(y, gradeFile(y));
+/* ---------- DLP (Dual Language Programme): Matematik & Sains dalam English, Tahun 1 – Tingkatan 3 ---------- */
+const DLP_SUBS = ["math", "sains"];
+const DLP_NAME = { math: "Mathematics", sains: "Science" };
+const DLP_READY = ["1"];   // gred yang sudah ada fail soalan/dlp/*.js
+const isDlpGrade = g => DLP_READY.includes(String(g));
+const dlpOn = (p, g) => !!(p && p.dlp && isDlpGrade(g));
+const dlpKey = g => "dlp" + g;
+const loadDlp = g => loadKey(dlpKey(g), `soalan/dlp/${gradeSlug(g)}.js`);
+const isDlpQuiz = (sub, g) => DLP_SUBS.includes(sub) && dlpOn(me(), g);
+const subName = (sub, g) => isDlpQuiz(sub, g) ? DLP_NAME[sub] : SUB[sub].name;
+const chaptersOf = (y, sub) => isDlpQuiz(sub, y) ? ((SOALAN[dlpKey(y)] || {})[sub] || []) : ((SOALAN[y] && SOALAN[y][sub]) || []);
 
 /* ---------- emoji helpers ---------- */
 const seg = window.Intl && Intl.Segmenter ? new Intl.Segmenter() : null;
@@ -724,8 +742,15 @@ function renderHome(){
   }
   yrs.style.display = LEVELS[lv].n > 1 ? "" : "none";
   requestAnimationFrame(() => { const on = yrs.querySelector(".on"); if(on) yrs.scrollLeft = on.offsetLeft - 20; });
+  const dl = $("#dlpRow");
+  dl.hidden = !isDlpGrade(G);
+  $("#dlpSw").classList.toggle("on", dlpOn(p, G));
   const subs = $("#subs");
-  if(!SOALAN[G]){
+  if(dlpOn(p, G) && !SOALAN[dlpKey(G)]){
+    subs.innerHTML = `<div class="loading">⏳ Loading DLP questions…</div>`;
+    loadDlp(G).then(() => { if(me() && curGrade(me()) === G) renderHome(); })
+      .catch(() => { subs.innerHTML = `<div class="loading">😕 Tak dapat muat soalan DLP. Semak internet dan cuba lagi.</div>`; });
+  } else if(!SOALAN[G]){
     subs.innerHTML = `<div class="loading">⏳ Memuatkan soalan ${gradeLabel(G)}…</div>`;
     loadYear(G).then(() => { if(me() && curGrade(me()) === G) renderHome(); })
       .catch(() => { subs.innerHTML = `<div class="loading">😕 Tak dapat muat soalan. Semak internet dan cuba lagi.</div>`; });
@@ -741,7 +766,7 @@ function renderHome(){
       const soon = !locked && !chs.length;
       if(soon) b.classList.add("soon");
       const info = locked ? "Bermula Tahun " + s.from : soon ? "Akan datang" : `${chs.length} ${lv === "prasekolah" ? "topik" : s.unit}` + (best != null ? ` · Terbaik ${best}%` : "");
-      b.innerHTML = `<span class="em">${locked ? "🔒" : s.em}</span><div><h3>${s.name}</h3><small>${info}</small></div>`;
+      b.innerHTML = `<span class="em">${locked ? "🔒" : s.em}</span><div><h3>${subName(s.id, G)}</h3><small>${info}</small></div>`;
       b.onclick = () => {
         if(locked){ confirmBox("🏰", "Sejarah bermula Tahun 4", "Dalam KSSR, subjek Sejarah diajar mulai Tahun 4. Tukar ke Tahun 4?", () => { p.year = 4; save(); renderHome(); }); return; }
         if(soon){ toast(`${s.name} ${gradeLabel(G)} akan datang 🙂`); return; }
@@ -757,7 +782,7 @@ function renderHome(){
   list.forEach(r => {
     const d = document.createElement("div"); d.className = "hi";
     const pct = Math.round(r.score / r.total * 100);
-    d.innerHTML = `<span class="em">${SUB[r.sub].em}</span><div class="tx"><b>${SUB[r.sub].name} · ${gradeShort(r.year)}</b><small></small></div><span class="sc" style="color:${pct >= 80 ? "var(--ok)" : pct >= 50 ? "var(--math-d)" : "var(--no)"}">${r.score}/${r.total}</span>`;
+    d.innerHTML = `<span class="em">${SUB[r.sub].em}</span><div class="tx"><b>${r.dlp ? DLP_NAME[r.sub] + " (DLP)" : SUB[r.sub].name} · ${gradeShort(r.year)}</b><small></small></div><span class="sc" style="color:${pct >= 80 ? "var(--ok)" : pct >= 50 ? "var(--math-d)" : "var(--no)"}">${r.score}/${r.total}</span>`;
     d.querySelector("small").textContent = (r.bab ? r.bab + " · " : "") + fmtDate(r.at) + (r.timed ? " · ⏱️ " + r.timed + "s" : "");
     h.appendChild(d);
   });
@@ -789,8 +814,8 @@ function poolSize(year, sub, babs){
 function openSetup(sub){
   const p = me(); setup.sub = sub; setup.babs = [];
   const chs = chaptersOf(curGrade(p), sub);
-  $("#suTitle").textContent = `${SUB[sub].em} ${SUB[sub].name}`;
-  $("#suSub").textContent = gradeLabel(curGrade(p));
+  $("#suTitle").textContent = `${SUB[sub].em} ${subName(sub, curGrade(p))}`;
+  $("#suSub").textContent = gradeLabel(curGrade(p)) + (isDlpQuiz(sub, curGrade(p)) ? " · DLP (English)" : "");
   $("#babLbl").textContent = "Pilih " + SUB[sub].unit;
   renderBabs();
   renderCounts();
@@ -867,12 +892,12 @@ function buildQuestions(p, sub, year, babs, n){
 function babLabel(sub, year, babs){
   const chs = chaptersOf(year, sub);
   if(!babs.length) return chs.length > 1 ? `Semua ${SUB[sub].unit}` : "";
-  if(babs.length === 1){ const c = chs[babs[0]]; return `${sub === "sejarah" ? "Unit" : SUB[sub].unit === "bab" ? "Bab" : "Topik"} ${c.n || babs[0] + 1}: ${c.t}`; }
+  if(babs.length === 1){ const c = chs[babs[0]]; return `${sub === "sejarah" ? "Unit" : isDlpQuiz(sub, year) ? "Chapter" : SUB[sub].unit === "bab" ? "Bab" : "Topik"} ${c.n || babs[0] + 1}: ${c.t}`; }
   return `${babs.length} ${SUB[sub].unit}`;
 }
 function startQuiz(){
   const p = me();
-  quiz = { sub: setup.sub, year: curGrade(p), time: setup.time, babs: setup.babs.slice(), i: 0 };
+  quiz = { sub: setup.sub, year: curGrade(p), time: setup.time, babs: setup.babs.slice(), i: 0, dlp: isDlpQuiz(setup.sub, curGrade(p)) };
   quiz.qs = buildQuestions(p, quiz.sub, quiz.year, quiz.babs, setup.count);
   if(!quiz.qs.length){ toast("Tiada soalan untuk pilihan ini"); return; }
   const col = getComputedStyle(document.documentElement);
@@ -885,7 +910,7 @@ function renderQ(){
   const q = quiz.qs[quiz.i], n = quiz.qs.length;
   $("#qNum").textContent = `${quiz.i + 1}/${n}`;
   $("#progBar").style.width = (quiz.i / n * 100) + "%";
-  $("#qTag").textContent = `${SUB[quiz.sub].name} · ${gradeLabel(quiz.year)} · ${q.bab}`;
+  $("#qTag").textContent = `${quiz.dlp ? DLP_NAME[quiz.sub] : SUB[quiz.sub].name} · ${gradeLabel(quiz.year)} · ${q.bab}`;
   const pic = $("#qPic");
   if(q.pic){ pic.style.display = ""; pic.className = "pic " + (AR.test(q.pic) ? "ar" + (graphemes(q.pic).length > 14 ? " long" : "") : picClass(q.pic)); pic.textContent = q.pic; }
   else pic.style.display = "none";
@@ -946,7 +971,7 @@ function finish(){
   const score = quiz.qs.filter(q => q.picked === q.right).length, total = quiz.qs.length;
   const pct = Math.round(score / total * 100);
   const bab = babLabel(quiz.sub, quiz.year, quiz.babs);
-  p.history.unshift({ sub: quiz.sub, year: quiz.year, score, total, timed: quiz.time, bab, at: Date.now() });
+  p.history.unshift({ sub: quiz.sub, year: quiz.year, score, total, timed: quiz.time, bab, at: Date.now(), dlp: quiz.dlp || undefined });
   p.history = p.history.slice(0, 60);
   // ingat soalan yang sudah keluar supaya kuiz seterusnya beri soalan lain dulu
   const keys = quiz.qs.filter(q => !q.gen).map(q => keyOf(quiz.sub, quiz.year, q.raw));
@@ -957,11 +982,11 @@ function finish(){
   $("#rScore").innerHTML = `${score}<small>/${total}</small>`;
   const msgs = pct === 100 ? ["🏆","Hebat! Semua betul!"] : pct >= 80 ? ["🎉","Syabas! Cemerlang!"] : pct >= 50 ? ["👍","Bagus! Teruskan usaha!"] : ["💪","Tak apa, cuba lagi ya!"];
   $("#rEmoji").textContent = msgs[0]; $("#rMsg").textContent = msgs[1];
-  $("#rMeta").textContent = `${SUB[quiz.sub].name} · ${gradeLabel(quiz.year)}${bab ? " · " + bab : ""} · ${pct}%`;
+  $("#rMeta").textContent = `${quiz.dlp ? DLP_NAME[quiz.sub] + " (DLP)" : SUB[quiz.sub].name} · ${gradeLabel(quiz.year)}${bab ? " · " + bab : ""} · ${pct}%`;
   show("s-result");
   if(pct >= 80) confetti();
   maybeAskRating();
-  track(`kuiz/${gradeSlug(quiz.year)}/${quiz.sub}`, `Kuiz selesai: ${SUB[quiz.sub].name} ${gradeLabel(quiz.year)}`);
+  track(`kuiz/${gradeSlug(quiz.year)}/${quiz.sub}${quiz.dlp ? "-dlp" : ""}`, `Kuiz selesai: ${SUB[quiz.sub].name} ${gradeLabel(quiz.year)}`);
 }
 $("#btnRetry").onclick = () => { setup.sub = quiz.sub; setup.babs = quiz.babs.slice(); setup.count = quiz.qs.length; setup.time = quiz.time; startQuiz(); };
 $("#btnHome").onclick = () => { renderHome(); show("s-home"); };
@@ -1147,6 +1172,14 @@ function maybeAskRating(){
     }, 1400);
   }catch(e){}
 }
+
+/* ---------- suis DLP ---------- */
+$("#dlpRow").onclick = () => {
+  const p = me(); if(!p) return;
+  p.dlp = !p.dlp; save(); renderHome();
+  toast(p.dlp ? "DLP ON: Matematik & Sains dalam English 🇬🇧" : "DLP OFF: Matematik & Sains dalam Bahasa Melayu");
+  track(p.dlp ? "dlp/on" : "dlp/off", p.dlp ? "DLP dihidupkan" : "DLP dimatikan");
+};
 
 /* ---------- tentang app ---------- */
 document.querySelectorAll("[data-about]").forEach(b => b.onclick = () => { $("#abVer").textContent = "Versi " + VER; open("#ovAbout"); track("tentang/buka", "Paparan tentang app dibuka"); });

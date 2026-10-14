@@ -31,7 +31,10 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 |---|---|---|---|---|---|---|---|---|
 | 1 | 7 topik | 7 topik | 13 bab | 9 bab | 8 bab | 13 bab | 7 bidang | 6 tema |
 | 2 | 5 topik | 6 topik | 13 bab | 13 bab | 10 bab | 10 bab | 7 bidang | 6 tema |
-| 3–5 | akan datang | | | | | | | |
+| 3 | 5 topik | 5 topik | 9 bab | 10 bab | 8 bab | 7 topik* | 7 bidang | 6 tema |
+| 4–5 | akan datang | | | | | | | |
+
+\* Geografi Tingkatan 3 disusun ikut topik; susunan bab rasmi belum disahkan.
 
 Kira-kira 3 200 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
 Kandungan agama (Pendidikan Islam, Jawi, Bahasa Arab) elok disemak oleh guru sebelum dikongsi secara meluas.

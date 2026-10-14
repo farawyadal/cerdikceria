@@ -59,6 +59,11 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .top .acts{display:flex;gap:8px}
 .chip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;font-size:15px}
 .chip.inst{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.sok{background:#FFF1D6;border-color:#F5D9A6}
+.top .acts{flex:0 0 auto}
+.top .acts{gap:6px}
+.top .acts .chip{padding:6px 10px;font-size:14px}
+.top .acts .chip.sok{padding:6px 9px;font-size:16px}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px 18px;border-radius:18px;font-weight:800;font-size:18px;font-family:var(--baloo);background:var(--ink);color:#fff;box-shadow:0 5px 0 #24213b;transition:transform .08s}
 .btn:active{transform:translateY(3px);box-shadow:0 2px 0 #24213b}
 .btn.ghost{background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:0 4px 0 var(--line)}
@@ -252,6 +257,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
       <div class="who"><span class="av" id="hAv"></span><div style="min-width:0"><small>Hai,</small><b id="hName"></b></div></div>
       <div class="acts">
         <button class="chip inst" hidden title="Pasang app">⬇ App</button>
+        <button class="chip sok" data-sumbangan title="Sokong Cerdik Ceria" aria-label="Sokong Cerdik Ceria">☕</button>
         <button class="chip" id="btnLogout">🔄 Tukar</button>
       </div>
     </div>

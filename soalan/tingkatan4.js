@@ -529,8 +529,495 @@ kimia: [
   ]}
 ],
 
-/* ---- Biologi, Sejarah, BM, BI, PI, BA diisi di bawah ---- */
-bio: [], sejarah: [], bm: [], bi: [], pi: [], ba: [],
+/* ======================= BIOLOGI (KSSM T4) ======================= */
+bio: [
+  { t: "Pengenalan kepada Biologi dan Peraturan Makmal", q: [
+    ["Biologi ialah kajian tentang…", "benda hidup", "bintang dan planet", "bahan kimia sahaja", "batuan"],
+    ["Bidang biologi yang mengkaji mikroorganisma ialah…", "mikrobiologi", "zoologi", "botani", "geologi"],
+    ["Bidang biologi yang mengkaji tumbuhan ialah…", "botani", "zoologi", "anatomi", "ekologi"],
+    ["Bidang biologi yang mengkaji haiwan ialah…", "zoologi", "botani", "virologi", "genetik"],
+    ["Sisa biologi seperti kultur bakteria perlu dinyahkan dengan…", "autoklaf sebelum dibuang", "dibuang ke sinki", "dibakar di dalam makmal", "disimpan di dalam laci"],
+    ["Langkah pertama kaedah saintifik selepas memerhati ialah…", "mengenal pasti masalah", "membuat kesimpulan", "menulis laporan", "mentafsir data"],
+    ["Pemboleh ubah yang sengaja diubah dalam eksperimen ialah pemboleh ubah…", "dimanipulasikan", "bergerak balas", "dimalarkan", "tetap"]
+  ]},
+  { t: "Biologi Sel dan Organisasi Sel", q: [
+    ["Organel yang menjalankan respirasi sel untuk menghasilkan tenaga ialah…", "mitokondrion", "ribosom", "vakuol", "kloroplas"],
+    ["Organel tempat sintesis protein ialah…", "ribosom", "lisosom", "jasad Golgi", "nukleus"],
+    ["Struktur yang terdapat dalam sel tumbuhan tetapi TIDAK dalam sel haiwan ialah…", "dinding sel", "membran plasma", "mitokondrion", "nukleus"],
+    ["Kloroplas mengandungi pigmen…", "klorofil", "hemoglobin", "melanin", "karotena sahaja"],
+    ["Organel yang mengandungi enzim hidrolitik untuk mencernakan bahan ialah…", "lisosom", "ribosom", "sentriol", "kloroplas"],
+    ["Jasad Golgi berfungsi untuk…", "memproses, membungkus dan mengangkut protein", "fotosintesis", "menghasilkan tenaga", "menyimpan air"],
+    ["Contoh organisma unisel ialah…", "Amoeba sp.", "ikan", "pokok mangga", "manusia"],
+    ["Susunan organisasi sel yang betul ialah…", "sel → tisu → organ → sistem → organisma", "tisu → sel → organ → sistem", "organ → sel → tisu → sistem", "sistem → organ → tisu → sel"],
+    ["Sel darah merah tidak mempunyai nukleus supaya…", "lebih banyak ruang untuk hemoglobin", "lebih berat", "boleh membahagi", "lebih kuat"]
+  ]},
+  { t: "Pergerakan Bahan Merentasi Membran Plasma", q: [
+    ["Struktur membran plasma diterangkan oleh model…", "mozek bendalir", "kunci dan mangga", "atom Bohr", "heliks ganda dua"],
+    ["Resapan ringkas ialah pergerakan molekul dari kawasan…", "kepekatan tinggi ke rendah", "kepekatan rendah ke tinggi", "bertenaga rendah ke tinggi", "gelap ke cerah"],
+    ["Osmosis ialah resapan molekul… melalui membran separa telap.", "air", "glukosa", "protein", "kanji"],
+    ["Pengangkutan aktif memerlukan…", "tenaga (ATP) dan protein pembawa", "tiada tenaga", "air sahaja", "cahaya"],
+    ["Sel darah merah dalam larutan hipotonik akan…", "mengembang dan pecah (hemolisis)", "mengecut (krenasi)", "kekal sama", "bertukar warna"],
+    ["Sel tumbuhan dalam larutan hipertonik mengalami…", "plasmolisis", "hemolisis", "segah", "pembahagian"],
+    ["Larutan yang mempunyai kepekatan zat terlarut sama dengan sitoplasma dipanggil…", "isotonik", "hipotonik", "hipertonik", "neutral"],
+    ["Ikan masin tahan lama kerana bakteria kehilangan air melalui…", "osmosis", "fotosintesis", "respirasi", "pencernaan"]
+  ]},
+  { t: "Komposisi Kimia dalam Sel", q: [
+    ["Unsur utama dalam karbohidrat ialah…", "karbon, hidrogen dan oksigen", "karbon dan nitrogen sahaja", "natrium dan klorin", "besi dan zink"],
+    ["Contoh monosakarida ialah…", "glukosa", "maltosa", "kanji", "selulosa"],
+    ["Maltosa terbentuk daripada dua molekul…", "glukosa", "fruktosa", "galaktosa", "sukrosa"],
+    ["Unit asas protein ialah…", "asid amino", "glukosa", "asid lemak", "nukleotida"],
+    ["Lipid terdiri daripada gliserol dan…", "asid lemak", "asid amino", "glukosa", "nukleotida"],
+    ["Unit asas asid nukleik (DNA) ialah…", "nukleotida", "asid amino", "gliserol", "monosakarida"],
+    ["Ikatan yang menyambungkan dua asid amino ialah ikatan…", "peptida", "glikosidik", "ester", "hidrogen"],
+    ["Air penting dalam sel kerana ia ialah…", "pelarut universal", "sumber tenaga utama", "enzim", "hormon"]
+  ]},
+  { t: "Metabolisme dan Enzim", q: [
+    ["Metabolisme terdiri daripada anabolisme dan…", "katabolisme", "osmosis", "resapan", "fotosintesis"],
+    ["Enzim ialah sejenis…", "protein", "lipid", "karbohidrat", "vitamin"],
+    ["Enzim bertindak sebagai…", "mangkin biologi", "hormon", "sumber tenaga", "pelarut"],
+    ["Model tindakan enzim yang menerangkan tapak aktif sepadan dengan substrat ialah…", "hipotesis kunci dan mangga", "model mozek bendalir", "teori atom", "hukum Hooke"],
+    ["Enzim akan ternyahasli pada suhu…", "terlalu tinggi", "bilik", "rendah", "badan"],
+    ["Pepsin berfungsi paling baik dalam keadaan…", "berasid", "beralkali", "neutral", "bergaram"],
+    ["Amilase menghidrolisiskan kanji kepada…", "maltosa", "asid amino", "gliserol", "sukrosa"],
+    ["Suhu optimum kebanyakan enzim dalam badan manusia ialah sekitar…", "37 °C", "0 °C", "60 °C", "100 °C"]
+  ]},
+  { t: "Pembahagian Sel", q: [
+    ["Mitosis menghasilkan… sel anak yang serupa.", "2", "4", "1", "8"],
+    ["Meiosis menghasilkan… sel anak.", "4", "2", "1", "6"],
+    ["Meiosis berlaku untuk menghasilkan…", "gamet", "sel kulit", "sel tulang", "sel darah"],
+    ["Bilangan kromosom sel anak hasil meiosis ialah…", "separuh (haploid)", "sama (diploid)", "dua kali ganda", "tiada"],
+    ["Peringkat mitosis di mana kromosom tersusun di satah khatulistiwa ialah…", "metafasa", "profasa", "anafasa", "telofasa"],
+    ["Pindah silang berlaku semasa…", "profasa I meiosis", "metafasa mitosis", "interfasa", "telofasa II"],
+    ["Pembahagian sitoplasma dipanggil…", "sitokinesis", "kariokinesis", "interfasa", "replikasi"],
+    ["Pembahagian sel yang tidak terkawal boleh menyebabkan…", "kanser", "anemia", "diabetes", "asma"]
+  ]},
+  { t: "Respirasi Sel", q: [
+    ["Persamaan respirasi aerob: glukosa + oksigen → karbon dioksida + air + …", "tenaga", "kanji", "asid laktik", "etanol"],
+    ["Respirasi anaerob dalam otot manusia menghasilkan…", "asid laktik", "etanol", "oksigen", "glukosa"],
+    ["Penapaian oleh yis menghasilkan etanol dan…", "karbon dioksida", "oksigen", "asid laktik", "air"],
+    ["Respirasi aerob berlaku di dalam…", "mitokondrion", "ribosom", "kloroplas", "nukleus"],
+    ["Respirasi aerob menghasilkan tenaga yang… berbanding respirasi anaerob.", "lebih banyak", "lebih sedikit", "sama", "tiada"],
+    ["Hutang oksigen berlaku selepas…", "senaman cergas", "tidur", "makan", "minum air"],
+    ["Penapaian oleh yis digunakan dalam pembuatan…", "roti", "keju sahaja", "garam", "gula"]
+  ]},
+  { t: "Sistem Respirasi dalam Manusia dan Haiwan", q: [
+    ["Struktur respirasi pada serangga ialah…", "sistem trakea", "insang", "peparu", "kulit sahaja"],
+    ["Ikan bernafas menggunakan…", "insang", "peparu", "trakea", "spirakel"],
+    ["Pertukaran gas dalam peparu manusia berlaku di…", "alveolus", "trakea", "bronkus", "laring"],
+    ["Semasa menarik nafas, diafragma…", "mengecut dan mendatar", "mengendur dan melengkung ke atas", "tidak bergerak", "pecah"],
+    ["Katak dewasa bernafas melalui peparu dan…", "kulit lembap", "insang", "trakea", "sisik"],
+    ["Ciri alveolus yang membantu pertukaran gas ialah dindingnya…", "nipis satu sel", "tebal", "kering", "keras"],
+    ["Oksigen diangkut dalam darah sebagai…", "oksihemoglobin", "karbaminohemoglobin", "glukosa", "plasma sahaja"],
+    ["Penyakit peparu yang berkaitan dengan asap rokok ialah…", "emfisema", "rabies", "malaria", "denggi"]
+  ]},
+  { t: "Nutrisi dan Sistem Pencernaan Manusia", q: [
+    ["Pencernaan kanji bermula di…", "mulut", "perut", "usus besar", "esofagus"],
+    ["Pencernaan protein bermula di…", "perut", "mulut", "usus besar", "rektum"],
+    ["Hempedu dihasilkan oleh… dan disimpan dalam pundi hempedu.", "hati", "pankreas", "perut", "limpa"],
+    ["Hempedu membantu… lemak.", "mengemulsikan", "menyerap", "membakar", "menyimpan"],
+    ["Penyerapan makanan tercerna berlaku di…", "usus kecil (vilus)", "perut", "esofagus", "usus besar"],
+    ["Usus besar terutamanya menyerap…", "air", "glukosa", "asid amino", "protein"],
+    ["Pengecutan otot esofagus yang menolak makanan dipanggil…", "peristalsis", "osmosis", "emulsi", "asimilasi"],
+    ["Kekurangan vitamin C menyebabkan…", "skurvi", "rabun malam", "riket", "beri-beri"],
+    ["Gizi seimbang mengandungi semua kelas makanan dalam…", "kuantiti yang betul", "jumlah berlebihan", "satu kelas sahaja", "bentuk minuman"]
+  ]},
+  { t: "Pengangkutan dalam Manusia dan Haiwan", q: [
+    ["Sistem peredaran darah manusia ialah sistem…", "tertutup dan ganda dua", "terbuka", "tunggal", "tiada jantung"],
+    ["Serangga mempunyai sistem peredaran…", "terbuka", "tertutup ganda dua", "tertutup tunggal", "tiada"],
+    ["Ikan mempunyai sistem peredaran…", "tertutup tunggal", "terbuka", "ganda dua", "tiada"],
+    ["Salur darah yang membawa darah keluar dari jantung ialah…", "arteri", "vena", "kapilari", "limfa"],
+    ["Vena mempunyai… untuk mengelak darah mengalir balik.", "injap", "otot tebal", "dinding satu sel", "hemoglobin"],
+    ["Sel darah yang membantu pembekuan darah ialah…", "platlet", "sel darah merah", "neutrofil", "limfosit"],
+    ["Ruang jantung yang mengepam darah ke seluruh badan ialah…", "ventrikel kiri", "ventrikel kanan", "atrium kiri", "atrium kanan"],
+    ["Bendalir yang kembali ke salur darah melalui sistem limfa ialah…", "bendalir tisu (limfa)", "air liur", "hempedu", "air kencing"]
+  ]},
+  { t: "Keimunan Manusia", q: [
+    ["Barisan pertahanan pertama badan termasuk…", "kulit dan membran mukus", "antibodi", "limfosit", "vaksin"],
+    ["Fagositosis dilakukan oleh…", "neutrofil dan monosit", "sel darah merah", "platlet", "sel saraf"],
+    ["Antibodi dihasilkan oleh…", "limfosit", "neutrofil", "platlet", "eritrosit"],
+    ["Imunisasi melalui suntikan vaksin memberi keimunan…", "aktif buatan", "pasif semula jadi", "aktif semula jadi", "pasif buatan"],
+    ["Bayi mendapat antibodi melalui susu ibu. Ini ialah keimunan…", "pasif semula jadi", "aktif buatan", "aktif semula jadi", "pasif buatan"],
+    ["Suntikan serum antibodi (antiserum) memberi keimunan…", "pasif buatan", "aktif buatan", "aktif semula jadi", "pasif semula jadi"],
+    ["AIDS disebabkan oleh virus…", "HIV", "denggi", "influenza", "rabies"],
+    ["Bahan asing yang merangsang penghasilan antibodi dipanggil…", "antigen", "enzim", "hormon", "vitamin"]
+  ]},
+  { t: "Koordinasi dan Gerak Balas dalam Manusia", q: [
+    ["Unit asas sistem saraf ialah…", "neuron", "nefron", "alveolus", "vilus"],
+    ["Neuron yang membawa impuls dari reseptor ke sistem saraf pusat ialah neuron…", "aferen (deria)", "eferen (motor)", "geganti", "otot"],
+    ["Bahagian otak yang mengawal keseimbangan badan ialah…", "serebelum", "serebrum", "medula oblongata", "hipotalamus"],
+    ["Medula oblongata mengawal…", "kadar denyutan jantung dan pernafasan", "pemikiran", "keseimbangan", "penglihatan"],
+    ["Hormon insulin dirembeskan oleh…", "pankreas", "tiroid", "adrenal", "pituitari"],
+    ["Hormon adrenalina dirembeskan semasa…", "kecemasan atau takut", "tidur", "makan", "berehat"],
+    ["Tindakan refleks melibatkan…", "saraf tunjang", "serebrum", "kelenjar tiroid", "hati"],
+    ["Kelenjar yang dikenali sebagai 'kelenjar induk' ialah…", "pituitari", "adrenal", "tiroid", "pankreas"],
+    ["Ruang kecil antara dua neuron dipanggil…", "sinaps", "akson", "dendrit", "nodus"]
+  ]},
+  { t: "Homeostasis dan Sistem Urinari Manusia", q: [
+    ["Homeostasis ialah pengekalan… persekitaran dalam badan.", "keadaan yang stabil", "suhu tinggi", "air yang banyak", "gula yang tinggi"],
+    ["Unit fungsi ginjal ialah…", "nefron", "neuron", "alveolus", "vilus"],
+    ["Ultraturasan berlaku di…", "glomerulus", "tubul berlingkar distal", "salur pengumpul", "pundi kencing"],
+    ["Hormon ADH meningkatkan penyerapan semula…", "air", "glukosa", "garam", "urea"],
+    ["Apabila aras glukosa darah tinggi, pankreas merembeskan…", "insulin", "glukagon", "adrenalina", "ADH"],
+    ["Apabila badan panas, kita…", "berpeluh dan salur darah kulit mengembang", "menggigil", "salur darah mengecut", "bulu roma tegak"],
+    ["Bahan buangan bernitrogen utama dalam air kencing ialah…", "urea", "glukosa", "protein", "lemak"],
+    ["Rawatan bagi kegagalan ginjal ialah…", "hemodialisis", "vaksin", "pembedahan mata", "terapi cahaya"]
+  ]},
+  { t: "Sokongan dan Pergerakan dalam Manusia dan Haiwan", q: [
+    ["Rangka manusia ialah jenis…", "endorangka", "eksorangka", "rangka hidrostatik", "tiada rangka"],
+    ["Cacing tanah mempunyai rangka…", "hidrostatik", "endorangka", "eksorangka", "tulang"],
+    ["Serangga mempunyai…", "eksorangka", "endorangka", "rangka hidrostatik", "rangka rawan"],
+    ["Tisu yang menyambung otot kepada tulang ialah…", "tendon", "ligamen", "rawan", "saraf"],
+    ["Tisu yang menyambung tulang kepada tulang ialah…", "ligamen", "tendon", "otot", "kulit"],
+    ["Sendi pada lutut ialah sendi…", "engsel", "lesung", "tidak bergerak", "pelana"],
+    ["Sendi bahu ialah sendi…", "lesung", "engsel", "tidak bergerak", "pasak"],
+    ["Penyakit tulang rapuh akibat kekurangan kalsium ialah…", "osteoporosis", "artritis", "skurvi", "anemia"],
+    ["Apabila otot biseps mengecut, lengan…", "membengkok", "melurus", "berpusing", "tidak bergerak"]
+  ]},
+  { t: "Pembiakan Seks, Perkembangan dan Pertumbuhan dalam Manusia dan Haiwan", q: [
+    ["Gamet jantan manusia ialah…", "sperma", "ovum", "zigot", "embrio"],
+    ["Persenyawaan dalam manusia biasanya berlaku di…", "tiub Falopio", "uterus", "ovari", "faraj"],
+    ["Hasil persenyawaan sperma dan ovum ialah…", "zigot", "gamet", "plasenta", "fetus"],
+    ["Struktur yang membekalkan nutrien dan oksigen kepada fetus ialah…", "plasenta", "ovari", "testis", "tiub Falopio"],
+    ["Kembar seiras terbentuk daripada…", "satu zigot yang terbahagi dua", "dua ovum berbeza", "dua sperma dan satu ovum", "tiga zigot"],
+    ["Hormon yang merangsang ovulasi ialah…", "LH", "insulin", "ADH", "tiroksina"],
+    ["Lengkung pertumbuhan manusia berbentuk…", "sigmoid (S)", "garis lurus", "bulatan", "zigzag"],
+    ["Pertumbuhan serangga dengan pertukaran kulit (ekdisis) menghasilkan lengkung…", "berperingkat (tangga)", "sigmoid licin", "lurus", "menurun"]
+  ]}
+],
+
+/* ======================= SEJARAH (KSSM T4) ======================= */
+sejarah: [
+  { n: 1, t: "Warisan Negara Bangsa", q: [
+    ["Negara bangsa bermaksud negara berdaulat yang didiami rakyat yang…", "bersatu dengan identiti yang sama", "tidak mempunyai kerajaan", "dijajah", "tiada sempadan"],
+    ["Kerajaan Melayu Melaka diasaskan oleh…", "Parameswara", "Hang Tuah", "Sultan Mahmud Shah", "Tun Perak"],
+    ["Ciri negara bangsa Kesultanan Melayu Melaka termasuk mempunyai…", "kedaulatan, undang-undang dan wilayah", "tiada pemimpin", "tiada rakyat", "tiada bahasa"],
+    ["Undang-undang bertulis Kesultanan Melayu Melaka ialah Hukum Kanun Melaka dan…", "Undang-undang Laut Melaka", "Perlembagaan 1957", "Kanun Keseksaan", "Undang-undang Tubuh Johor"],
+    ["Bahasa yang menjadi lingua franca di Melaka ialah…", "bahasa Melayu", "bahasa Inggeris", "bahasa Portugis", "bahasa Belanda"],
+    ["Konsep daulat bermaksud kuasa… raja.", "tertinggi", "terendah", "sementara", "terhad kepada istana"],
+    ["Warisan kerajaan Melayu tradisional yang kekal hingga kini ialah…", "institusi raja", "sistem kerah", "perhambaan", "cukai kepala"]
+  ]},
+  { n: 2, t: "Kebangkitan Nasionalisme", q: [
+    ["Nasionalisme bermaksud perasaan… terhadap tanah air.", "cinta dan taat setia", "benci", "takut", "tidak peduli"],
+    ["Antara faktor kebangkitan nasionalisme di Tanah Melayu ialah…", "peranan akhbar dan majalah", "kedatangan Jepun sahaja", "kekurangan makanan", "pertandingan sukan"],
+    ["Majalah Al-Imam diterbitkan oleh golongan…", "Kaum Muda (reformis Islam)", "British", "pedagang Cina", "Jepun"],
+    ["Kesatuan Melayu Muda (KMM) ditubuhkan pada tahun…", "1938", "1946", "1957", "1926"],
+    ["Pengasas Kesatuan Melayu Muda ialah…", "Ibrahim Haji Yaakob", "Dato' Onn Jaafar", "Tunku Abdul Rahman", "Tan Cheng Lock"],
+    ["Pendidikan di Maktab Perguruan Sultan Idris (MPSI) melahirkan tokoh nasionalis kerana…", "menanam semangat cinta akan bangsa", "mengajar bahasa Inggeris sahaja", "dibiayai Jepun", "hanya untuk bangsawan"],
+    ["Kesatuan Melayu Singapura ditubuhkan pada tahun 1926 oleh…", "Mohammad Eunos Abdullah", "Burhanuddin al-Helmi", "Ahmad Boestamam", "Onn Jaafar"]
+  ]},
+  { n: 3, t: "Konflik Dunia dan Pendudukan Jepun di Negara Kita", q: [
+    ["Jepun mendarat di Kota Bharu, Kelantan pada…", "8 Disember 1941", "31 Ogos 1957", "15 Februari 1942", "2 September 1945"],
+    ["British menyerah kalah kepada Jepun di Singapura pada…", "15 Februari 1942", "8 Disember 1941", "15 Ogos 1945", "1 April 1946"],
+    ["Jepun menggunakan dasar 'Asia untuk…'", "orang Asia", "orang Eropah", "Jepun sahaja", "British"],
+    ["Mata wang yang dikeluarkan Jepun dikenali sebagai…", "duit pisang", "ringgit", "dolar Selat", "rupiah"],
+    ["Jepun menyerah kalah selepas bom atom digugurkan di Hiroshima dan…", "Nagasaki", "Tokyo", "Osaka", "Kyoto"],
+    ["Gerakan penentangan Jepun yang terkenal ialah…", "Force 136", "UMNO", "MCA", "Kesatuan Melayu Muda"],
+    ["Selepas Jepun menyerah kalah, berlaku zaman… selama 14 hari.", "Bintang Tiga", "Darurat", "Merdeka", "Malayan Union"]
+  ]},
+  { n: 4, t: "Era Peralihan Kuasa British di Negara Kita", q: [
+    ["Malayan Union diisytiharkan pada…", "1 April 1946", "31 Ogos 1957", "1 Februari 1948", "16 September 1963"],
+    ["Pegawai British yang ditugaskan mendapatkan tandatangan raja-raja Melayu untuk Malayan Union ialah…", "Sir Harold MacMichael", "Sir Edward Gent", "Sir Gerald Templer", "Francis Light"],
+    ["Malayan Union ditentang kerana…", "melucutkan kuasa raja-raja Melayu", "memberi kemerdekaan", "memajukan ekonomi", "mengurangkan cukai"],
+    ["UMNO ditubuhkan pada 11 Mei 1946 di…", "Istana Besar Johor Bahru", "Kuala Lumpur", "Melaka", "Pulau Pinang"],
+    ["Presiden pertama UMNO ialah…", "Dato' Onn Jaafar", "Tunku Abdul Rahman", "Tun Abdul Razak", "Tun Hussein Onn"],
+    ["Kerakyatan Malayan Union berasaskan prinsip…", "jus soli", "jus sanguinis", "keturunan raja", "agama"],
+    ["Orang Melayu memakai kain putih di songkok sebagai tanda… Malayan Union.", "berkabung menentang", "menyokong", "merayakan", "menerima"]
+  ]},
+  { n: 5, t: "Persekutuan Tanah Melayu 1948", q: [
+    ["Persekutuan Tanah Melayu ditubuhkan pada…", "1 Februari 1948", "1 April 1946", "31 Ogos 1957", "16 September 1963"],
+    ["Persekutuan Tanah Melayu 1948 menggantikan…", "Malayan Union", "Negeri-negeri Selat", "Negeri Melayu Bersekutu sahaja", "Malaysia"],
+    ["Ketua kerajaan Persekutuan Tanah Melayu 1948 ialah…", "Pesuruhjaya Tinggi British", "Perdana Menteri", "Yang di-Pertuan Agong", "Gabenor Jeneral"],
+    ["Dalam Persekutuan 1948, kedudukan raja-raja Melayu…", "dikembalikan", "dihapuskan", "diserahkan kepada Jepun", "tidak berubah dari Malayan Union"],
+    ["Syarat kerakyatan Persekutuan 1948 lebih…", "ketat", "longgar", "mudah", "tiada syarat"],
+    ["Pergerakan yang menentang Persekutuan 1948 dan mengemukakan Perlembagaan Rakyat ialah gabungan…", "AMCJA-PUTERA", "UMNO-MCA", "Perikatan", "Barisan Nasional"],
+    ["Persekutuan Tanah Melayu 1948 terdiri daripada 9 negeri Melayu serta…", "Pulau Pinang dan Melaka", "Singapura dan Sabah", "Sarawak dan Brunei", "Singapura sahaja"]
+  ]},
+  { n: 6, t: "Ancaman Komunis dan Perisytiharan Darurat", q: [
+    ["Darurat diisytiharkan pada tahun…", "1948", "1957", "1960", "1941"],
+    ["Darurat diisytiharkan selepas peristiwa pembunuhan pengurus ladang di…", "Sungai Siput, Perak", "Kota Bharu", "Bukit Kepong", "Melaka"],
+    ["Rancangan Briggs memindahkan penduduk ke…", "kampung baru", "bandar besar", "luar negara", "kawasan hutan"],
+    ["Tujuan Rancangan Briggs ialah memutuskan bekalan kepada…", "pengganas komunis", "British", "penduduk kampung", "pedagang"],
+    ["Peristiwa Bukit Kepong berlaku pada tahun…", "1950", "1948", "1957", "1960"],
+    ["Darurat ditamatkan secara rasmi pada…", "31 Julai 1960", "31 Ogos 1957", "1 Februari 1948", "16 September 1963"],
+    ["Rundingan Baling 1955 diadakan antara Tunku Abdul Rahman dengan…", "Chin Peng", "Harold Briggs", "Gerald Templer", "Onn Jaafar"],
+    ["Pesuruhjaya Tinggi yang memperkenalkan konsep 'memenangi hati dan fikiran rakyat' ialah…", "Sir Gerald Templer", "Sir Henry Gurney", "Sir Harold MacMichael", "Sir Edward Gent"]
+  ]},
+  { n: 7, t: "Usaha Ke Arah Kemerdekaan", q: [
+    ["Sistem Ahli diperkenalkan pada tahun 1951 untuk…", "melatih pemimpin tempatan mentadbir", "menghapuskan raja", "mengusir British", "menubuhkan tentera"],
+    ["Jawatankuasa Hubungan Antara Kaum (CLC) ditubuhkan untuk…", "memupuk perpaduan kaum", "membina jalan", "mengutip cukai", "melawan Jepun"],
+    ["Parti Perikatan pada awalnya ialah gabungan UMNO dan…", "MCA", "MIC", "PAS", "Parti Negara"],
+    ["MIC menyertai Perikatan pada tahun…", "1954", "1946", "1957", "1963"],
+    ["Rombongan kemerdekaan ke London diketuai oleh…", "Tunku Abdul Rahman", "Dato' Onn Jaafar", "Tan Cheng Lock", "V.T. Sambanthan"],
+    ["Rombongan kemerdekaan ke London berlangsung pada awal tahun…", "1956", "1955", "1957", "1950"],
+    ["Kerjasama kaum dalam Perikatan berasaskan semangat…", "tolak ansur", "persaingan", "permusuhan", "penjajahan"]
+  ]},
+  { n: 8, t: "Pilihan Raya", q: [
+    ["Pilihan raya pertama di peringkat bandaran diadakan di George Town pada tahun…", "1951", "1955", "1959", "1948"],
+    ["Pilihan Raya Umum Majlis Perundangan Persekutuan yang pertama diadakan pada tahun…", "1955", "1957", "1959", "1963"],
+    ["Dalam pilihan raya 1955, Perikatan memenangi… daripada 52 kerusi.", "51", "52", "40", "26"],
+    ["Pilihan raya umum pertama selepas merdeka diadakan pada tahun…", "1959", "1955", "1957", "1964"],
+    ["Badan yang mengendalikan pilihan raya di Malaysia ialah…", "Suruhanjaya Pilihan Raya (SPR)", "Polis Diraja Malaysia", "Mahkamah Persekutuan", "Dewan Rakyat"],
+    ["Pilihan raya membolehkan rakyat…", "memilih wakil rakyat", "melantik raja", "menggubal undang-undang sendiri", "mengutip cukai"]
+  ]},
+  { n: 9, t: "Perlembagaan Persekutuan Tanah Melayu 1957", q: [
+    ["Suruhanjaya yang merangka Perlembagaan Persekutuan 1957 ialah…", "Suruhanjaya Reid", "Suruhanjaya Cobbold", "Suruhanjaya Pilihan Raya", "Suruhanjaya Hak Asasi"],
+    ["Pengerusi Suruhanjaya Reid ialah…", "Lord Reid", "Lord Cobbold", "Sir Gerald Templer", "Harold Briggs"],
+    ["Perlembagaan ialah… negara.", "undang-undang tertinggi", "lagu", "bendera", "mata wang"],
+    ["Unsur tradisi dalam perlembagaan termasuk…", "institusi raja, agama Islam, bahasa Melayu dan kedudukan istimewa orang Melayu", "cukai pendapatan", "sistem pendidikan Inggeris", "hak mengundi sahaja"],
+    ["Ketua Negara Persekutuan Tanah Melayu ialah…", "Yang di-Pertuan Agong", "Perdana Menteri", "Ketua Hakim", "Pesuruhjaya Tinggi"],
+    ["Yang di-Pertuan Agong dipilih oleh…", "Majlis Raja-Raja", "rakyat", "Dewan Rakyat", "Perdana Menteri"],
+    ["Prinsip yang menjadi asas kerjasama kaum dalam perlembagaan ialah…", "kontrak sosial", "pecah dan perintah", "monopoli", "perhambaan"]
+  ]},
+  { n: 10, t: "Pemasyhuran Kemerdekaan", q: [
+    ["Tarikh kemerdekaan Persekutuan Tanah Melayu ialah…", "31 Ogos 1957", "16 September 1963", "1 Februari 1948", "8 Februari 1956"],
+    ["Kemerdekaan dimasyhurkan di…", "Stadium Merdeka", "Dataran Merdeka", "Istana Negara", "Parlimen"],
+    ["Pengisytiharan tarikh kemerdekaan dibuat oleh Tunku Abdul Rahman di Padang Pahlawan, Bandar Hilir…", "Melaka", "Johor Bahru", "Kuala Lumpur", "Pulau Pinang"],
+    ["Perdana Menteri pertama Persekutuan Tanah Melayu ialah…", "Tunku Abdul Rahman", "Tun Abdul Razak", "Tun Hussein Onn", "Dato' Onn Jaafar"],
+    ["Yang di-Pertuan Agong pertama ialah Tuanku Abdul Rahman, Yang di-Pertuan Besar…", "Negeri Sembilan", "Johor", "Selangor", "Perak"],
+    ["Laungan yang dilaungkan Tunku semasa pemasyhuran kemerdekaan ialah…", "Merdeka!", "Hidup Melayu!", "Bersatu!", "Malaysia Boleh!"],
+    ["Lagu kebangsaan Persekutuan Tanah Melayu ialah…", "Negaraku", "Jalur Gemilang", "Tanah Pusaka", "Keranamu Malaysia"]
+  ]}
+],
+
+/* ======================= BAHASA MELAYU ======================= */
+bm: [
+  { t: "Golongan Kata dan Imbuhan", q: [
+    ["Imbuhan apitan \"ke-…-an\" + \"adil\" menjadi…", "keadilan", "berkeadilan", "pengadilan", "diadili"],
+    ["Imbuhan apitan \"per-…-an\" + \"satu\" menjadi…", "persatuan", "kesatuan", "penyatuan", "bersatu"],
+    ["Kata majmuk yang dieja bercantum ialah…", "kakitangan", "kapal terbang", "ibu bapa", "rumah sakit"],
+    ["Kata majmuk yang betul ialah…", "tanggungjawab", "tanggung jawab", "tanggung-jawab", "tanggong jawab"],
+    ["Kata ganda separa ialah…", "lelaki", "rumah-rumah", "sayur-mayur", "kuih-muih"],
+    ["Kata ganda berentak ialah…", "sayur-mayur", "lelaki", "buku-buku", "kanak-kanak"],
+    ["Kata adjektif dalam \"Rumah itu sangat besar.\" ialah…", "besar", "rumah", "sangat", "itu"],
+    ["Kata penguat dalam \"Dia amat rajin.\" ialah…", "amat", "dia", "rajin", "tiada"],
+    ["Penggunaan \"para\" yang betul ialah…", "para pelajar", "para-para pelajar", "para pelajar-pelajar", "pelajar para"]
+  ]},
+  { t: "Ayat dan Ragam Ayat", q: [
+    ["Ayat pasif ialah ayat yang mengutamakan…", "objek atau penyambut", "pelaku", "kata kerja tak transitif", "kata adjektif"],
+    ["Ayat pasif bagi \"Ali menulis surat itu.\" ialah…", "Surat itu ditulis oleh Ali.", "Ali ditulis surat itu.", "Surat itu menulis Ali.", "Ditulis Ali surat."],
+    ["Ayat pasif dengan kata ganti diri pertama yang betul ialah…", "Buku itu saya baca.", "Buku itu dibaca oleh saya.", "Buku itu dibaca saya.", "Saya dibaca buku itu."],
+    ["Ayat majmuk gabungan menggunakan kata hubung…", "dan, tetapi, atau", "kerana, supaya", "yang", "apabila, jika"],
+    ["Ayat majmuk pancangan relatif menggunakan kata hubung…", "yang", "dan", "tetapi", "atau"],
+    ["Ayat yang betul ialah…", "Semua murid dikehendaki hadir.", "Semua murid-murid dikehendaki hadir.", "Murid-murid semua-semua hadir.", "Semua para murid hadir."],
+    ["Ayat yang betul ialah…", "Kerajaan sedang membina jambatan itu.", "Kerajaan sedang dibina jambatan itu.", "Jambatan itu sedang membina kerajaan.", "Kerajaan sedang bina-bina jambatan."],
+    ["Kesalahan dalam \"Mereka-mereka itu sudah pulang.\" ialah…", "kata ganti nama tidak boleh digandakan", "tiada kesalahan", "salah tanda baca", "salah kata kerja"]
+  ]},
+  { t: "Peribahasa", q: [
+    ["Maksud \"bagai aur dengan tebing\":", "saling membantu", "bermusuhan", "sombong", "malas"],
+    ["Maksud \"seperti katak di bawah tempurung\":", "berpengetahuan sempit", "rajin belajar", "kaya raya", "pandai bercakap"],
+    ["Maksud \"bulat air kerana pembetung, bulat manusia kerana muafakat\":", "kesepakatan membawa kejayaan", "air sungai jernih", "manusia suka bergaduh", "pembetung tersumbat"],
+    ["Maksud \"hendak seribu daya, tak hendak seribu dalih\":", "jika mahu pasti ada cara", "malas bekerja", "banyak wang", "pandai berdalih"],
+    ["Maksud \"melentur buluh biarlah dari rebungnya\":", "mendidik anak sejak kecil", "menebang buluh", "membuat kerja tangan", "membina rumah"],
+    ["Maksud \"genggam bara api biar sampai jadi arang\":", "membuat sesuatu biar sampai berjaya", "bermain api", "mudah berputus asa", "takut mencuba"],
+    ["Maksud simpulan bahasa \"buah hati\":", "kekasih atau anak tersayang", "buah-buahan", "jantung", "doktor"],
+    ["Maksud simpulan bahasa \"tangan terbuka\":", "pemurah", "kedekut", "pencuri", "malas"],
+    ["Maksud \"air dicincang tidak akan putus\":", "pertalian saudara sukar diputuskan", "air sukar dipotong", "sungai yang panjang", "orang yang kuat"]
+  ]},
+  { t: "Ejaan, Tanda Baca dan Istilah", q: [
+    ["Ejaan yang betul ialah…", "kualiti", "kwaliti", "qualiti", "kualitee"],
+    ["Ejaan yang betul ialah…", "sistem", "sistim", "system", "sisteem"],
+    ["Ejaan yang betul ialah…", "teknologi", "teknoloji", "tehnologi", "teknolugi"],
+    ["Ejaan yang betul ialah…", "nasihat", "nasehat", "nasihaat", "nesihat"],
+    ["Ejaan yang betul ialah…", "di samping", "disamping", "di-samping", "dsamping"],
+    ["Penggunaan tanda koma bertitik (;) ialah untuk…", "memisahkan klausa yang setara dalam ayat panjang", "menamatkan ayat", "menunjukkan soalan", "memulakan dialog"],
+    ["Istilah bahasa Melayu bagi \"database\" ialah…", "pangkalan data", "dasar data", "perpustakaan data", "simpan data"],
+    ["Istilah bahasa Melayu bagi \"globalisation\" ialah…", "globalisasi", "globalisme", "pengglobalan dunia", "duniawi"]
+  ]},
+  { t: "Laras Bahasa dan Penulisan", q: [
+    ["Laras bahasa yang digunakan dalam surat kiriman rasmi ialah laras…", "formal", "basahan", "slanga", "pasar"],
+    ["Rencana biasanya mengandungi…", "tajuk, pendahuluan, isi dan penutup", "salam pembuka sahaja", "dialog sahaja", "puisi"],
+    ["Ucapan dimulakan dengan…", "kata sapaan kepada hadirin", "kesimpulan", "rujukan", "tandatangan"],
+    ["Ringkasan karangan mestilah…", "padat dan tidak melebihi bilangan patah perkataan", "lebih panjang daripada teks", "menyalin semua contoh", "mengandungi pendapat sendiri sahaja"],
+    ["Penanda wacana untuk memulakan isi ialah…", "Pertama sekali", "Kesimpulannya", "Oleh itu", "Akhir sekali"],
+    ["Penanda wacana untuk penutup ialah…", "Kesimpulannya", "Pertama sekali", "Selain itu", "Di samping itu"],
+    ["Ayat topik dalam perenggan ialah ayat yang menyatakan…", "isi utama perenggan", "contoh sahaja", "kesimpulan karangan", "tajuk buku"],
+    ["Bahasa yang sesuai dalam laporan ialah…", "ringkas, tepat dan formal", "berbunga-bunga", "bahasa SMS", "bahasa pasar"]
+  ]}
+],
+
+/* ======================= ENGLISH ======================= */
+bi: [
+  { t: "Vocabulary", q: [
+    ["Choose the synonym of \"abundant\".", "plentiful", "scarce", "tiny", "empty"],
+    ["Choose the antonym of \"ancient\".", "modern", "old", "historic", "antique"],
+    ["Choose the synonym of \"diligent\".", "hardworking", "lazy", "careless", "slow"],
+    ["Choose the antonym of \"optimistic\".", "pessimistic", "hopeful", "positive", "cheerful"],
+    ["\"A person who designs buildings\" is an…", "architect", "engineer", "accountant", "author"],
+    ["\"A place where planes take off and land\" is an…", "airport", "harbour", "station", "terminal bus"],
+    ["The word \"environmentally friendly\" means…", "not harmful to nature", "very friendly", "full of plants", "expensive"],
+    ["Choose the correct collocation: ___ a decision.", "make", "do", "take up", "give"]
+  ]},
+  { t: "Tenses", q: [
+    ["She ___ in Penang since 2015.", "has lived", "lives", "lived", "is living"],
+    ["By the time we arrived, the movie ___.", "had started", "has started", "starts", "will start"],
+    ["Look! The children ___ in the rain.", "are playing", "play", "played", "have played"],
+    ["I ___ my homework before dinner yesterday.", "finished", "finish", "have finished", "will finish"],
+    ["Next year, they ___ a new school.", "will build", "built", "have built", "build"],
+    ["While I ___ , the phone rang.", "was cooking", "cooked", "am cooking", "cook"],
+    ["He usually ___ to school by bus.", "goes", "go", "going", "gone"],
+    ["They ___ for two hours when the bus finally came.", "had been waiting", "have waited", "waits", "are waiting"]
+  ]},
+  { t: "Passive Voice and Reported Speech", q: [
+    ["Passive: \"The cat chased the mouse.\"", "The mouse was chased by the cat.", "The mouse chased the cat.", "The mouse is chased by the cat.", "The cat was chased by the mouse."],
+    ["Passive: \"They will announce the results tomorrow.\"", "The results will be announced tomorrow.", "The results will announce tomorrow.", "The results are announced tomorrow.", "The results was announced tomorrow."],
+    ["Passive: \"Someone has stolen my bicycle.\"", "My bicycle has been stolen.", "My bicycle was stealing.", "My bicycle has stolen.", "My bicycle is steal."],
+    ["Reported: She said, \"I am tired.\"", "She said that she was tired.", "She said that I am tired.", "She said she is tiring.", "She says I was tired."],
+    ["Reported: He said, \"I will come tomorrow.\"", "He said that he would come the next day.", "He said that he will come tomorrow.", "He said that I would come tomorrow.", "He says he came the next day."],
+    ["Reported: \"Do you like durians?\" she asked me.", "She asked me if I liked durians.", "She asked me do I like durians.", "She asked me if you like durians.", "She asked did I liked durians."],
+    ["Reported: The teacher said, \"Close the door.\"", "The teacher told us to close the door.", "The teacher said close the door.", "The teacher told us closing the door.", "The teacher told that we closed the door."]
+  ]},
+  { t: "Conditionals and Modals", q: [
+    ["If it rains, we ___ at home.", "will stay", "would stay", "stayed", "had stayed"],
+    ["If I were rich, I ___ a big house.", "would buy", "will buy", "buy", "bought"],
+    ["If she had studied, she ___ the exam.", "would have passed", "will pass", "passed", "would pass"],
+    ["If you heat ice, it ___.", "melts", "melted", "will melted", "would melt"],
+    ["You ___ wear a helmet when riding a motorcycle. It's the law.", "must", "might", "could", "may"],
+    ["It ___ rain later, so bring an umbrella.", "might", "must", "should not", "can't"],
+    ["You ___ see a doctor if you feel unwell.", "should", "mustn't", "needn't", "couldn't"],
+    ["Unless you hurry, you ___ the bus.", "will miss", "missed", "would miss", "miss"]
+  ]},
+  { t: "Idioms and Phrasal Verbs", q: [
+    ["\"Break the ice\" means…", "start a conversation in an awkward situation", "smash something", "feel cold", "stop talking"],
+    ["\"Hit the books\" means…", "study hard", "throw books", "buy books", "sell books"],
+    ["\"Once in a blue moon\" means…", "very rarely", "every night", "at full moon", "always"],
+    ["\"Piece of cake\" means something is…", "very easy", "delicious", "expensive", "broken"],
+    ["\"Look after\" means…", "take care of", "search for", "admire", "ignore"],
+    ["\"Give up\" means…", "stop trying", "donate", "lift", "continue"],
+    ["\"Put off\" the meeting means…", "postpone it", "cancel forever", "start it", "attend it"],
+    ["\"Run out of\" sugar means…", "have no more sugar", "buy sugar", "spill sugar", "sell sugar"],
+    ["\"Turn down\" an offer means…", "reject it", "accept it", "improve it", "copy it"]
+  ]},
+  { t: "Reading and Writing Skills", q: [
+    ["The main idea of a paragraph is usually found in the…", "topic sentence", "last word", "title only", "footnote"],
+    ["A formal email should begin with…", "a proper greeting such as 'Dear Sir/Madam'", "'Hey bro'", "an emoji", "no greeting"],
+    ["Which connector shows contrast?", "However", "Moreover", "Therefore", "Firstly"],
+    ["Which connector shows result?", "Therefore", "However", "Although", "Meanwhile"],
+    ["Which connector adds information?", "Furthermore", "Nevertheless", "Despite", "Unless"],
+    ["A summary should…", "include only the main points", "copy the whole text", "add your own story", "list every example"],
+    ["An article usually has a…", "title, introduction, body and conclusion", "date and signature only", "dialogue only", "recipe"]
+  ]}
+],
+
+/* ======================= PENDIDIKAN ISLAM ======================= */
+pi: [
+  { t: "Tilawah dan Tajwid", q: [
+    ["Mad lazim kalimi muthaqqal dibaca sepanjang…", "6 harakat", "2 harakat", "4 harakat", "1 harakat"],
+    ["Mad wajib muttasil berlaku apabila huruf mad bertemu hamzah dalam…", "satu kalimah", "dua kalimah", "akhir ayat", "huruf qalqalah"],
+    ["Mad jaiz munfasil berlaku apabila huruf mad bertemu hamzah dalam…", "dua kalimah", "satu kalimah", "huruf syamsiah", "huruf qamariah"],
+    ["Mad 'arid lissukun berlaku apabila huruf mad diikuti huruf yang dimatikan kerana…", "waqaf", "tasydid", "tanwin", "idgham"],
+    ["Huruf qalqalah ialah…", "ق ط ب ج د", "ا و ي", "ل ر", "م ن"],
+    ["Hukum alif lam syamsiah dibaca…", "idgham (lam tidak dibaca)", "izhar (lam dibaca jelas)", "ikhfa'", "iqlab"],
+    ["Hukum alif lam qamariah dibaca…", "izhar (lam dibaca jelas)", "idgham", "ikhfa'", "dengung"]
+  ]},
+  { t: "Hadis", q: [
+    ["Hadis ialah segala yang disandarkan kepada Nabi Muhammad SAW sama ada perkataan, perbuatan atau…", "pengakuan (taqrir)", "mimpi", "cerita rakyat", "pendapat sahabat sahaja"],
+    ["Sumber hukum Islam yang kedua selepas al-Quran ialah…", "hadis (sunnah)", "ijmak", "qias", "adat"],
+    ["Kitab hadis yang dihimpunkan oleh Imam al-Bukhari dinamakan…", "Sahih al-Bukhari", "Muwatta'", "Sunan Abi Daud", "Riyadhus Solihin"],
+    ["Hadis yang menyeru menuntut ilmu menegaskan bahawa menuntut ilmu ialah…", "wajib bagi setiap Muslim", "sunat", "harus", "makruh"],
+    ["Hadis tentang menjaga lidah mengajar kita supaya…", "berkata baik atau diam", "banyak bercakap", "mengumpat", "berbohong"],
+    ["Hadis \"Agama itu nasihat\" mengajar kita untuk…", "saling menasihati dengan ikhlas", "mencela orang", "berdiam diri", "mementingkan diri"]
+  ]},
+  { t: "Akidah", q: [
+    ["Beriman kepada qada' dan qadar ialah rukun iman yang ke-…", "6", "5", "4", "3"],
+    ["Qada' bermaksud…", "ketetapan Allah sejak azali", "usaha manusia", "doa", "nasib baik sahaja"],
+    ["Perkara yang boleh membatalkan iman ialah…", "syirik", "bersedekah", "membaca al-Quran", "berpuasa"],
+    ["Syirik ialah…", "menyekutukan Allah", "beriman kepada Allah", "berdoa kepada Allah", "membantu jiran"],
+    ["Sifat wajib Allah \"Wahdaniyyah\" bermaksud…", "Esa", "Kekal", "Mendengar", "Melihat"],
+    ["Hari Akhirat juga dikenali sebagai…", "Yaumul Qiyamah", "Yaumul Jumu'ah", "Lailatul Qadar", "Aidilfitri"],
+    ["Antara tanda kiamat besar ialah…", "matahari terbit dari barat", "hujan lebat", "gerhana bulan biasa", "musim kemarau"]
+  ]},
+  { t: "Ibadah", q: [
+    ["Rukun haji yang dilakukan pada 9 Zulhijjah ialah…", "wukuf di Arafah", "tawaf", "sa'ie", "bercukur"],
+    ["Sa'ie dilakukan antara Bukit Safa dan Bukit…", "Marwah", "Uhud", "Tursina", "Arafah"],
+    ["Umrah berbeza dengan haji kerana umrah tidak mempunyai…", "wukuf di Arafah", "ihram", "tawaf", "sa'ie"],
+    ["Zakat fitrah wajib dikeluarkan pada bulan…", "Ramadan", "Syawal sahaja", "Muharam", "Zulhijjah"],
+    ["Nisab zakat emas ialah…", "85 gram", "20 gram", "100 gram", "500 gram"],
+    ["Korban disembelih pada hari raya…", "Aidiladha dan hari tasyrik", "Aidilfitri", "Maulidur Rasul", "Awal Muharam"],
+    ["Hukum melaksanakan haji bagi yang berkemampuan ialah…", "wajib sekali seumur hidup", "sunat", "harus", "setiap tahun"]
+  ]},
+  { t: "Sirah", q: [
+    ["Perjanjian Hudaibiyah dimeterai pada tahun Hijrah ke-…", "6", "2", "8", "10"],
+    ["Pembukaan kota Makkah (Fathu Makkah) berlaku pada tahun Hijrah ke-…", "8", "6", "2", "10"],
+    ["Peperangan pertama dalam sejarah Islam ialah Perang…", "Badar", "Uhud", "Khandak", "Hunain"],
+    ["Perang Khandak juga dikenali sebagai Perang…", "Ahzab", "Badar", "Tabuk", "Mu'tah"],
+    ["Cadangan menggali parit dalam Perang Khandak dikemukakan oleh…", "Salman al-Farisi", "Abu Bakar", "Umar", "Ali"],
+    ["Haji Wida' (haji perpisahan) Rasulullah SAW berlaku pada tahun Hijrah ke-…", "10", "8", "6", "2"],
+    ["Khalifah pertama selepas wafat Rasulullah SAW ialah…", "Saidina Abu Bakar as-Siddiq", "Saidina Umar", "Saidina Uthman", "Saidina Ali"]
+  ]},
+  { t: "Adab dan Akhlak", q: [
+    ["Adab menggunakan media sosial termasuk…", "menyemak kesahihan berita sebelum berkongsi", "menyebarkan fitnah", "mengecam orang", "berkongsi maklumat peribadi orang lain"],
+    ["Tabayyun bermaksud…", "menyelidik kesahihan berita", "menyebar berita", "mempercayai semua berita", "mengabaikan berita"],
+    ["Sifat amanah bermaksud…", "boleh dipercayai", "pemarah", "pemalas", "penakut"],
+    ["Adab bergaul dengan rakan berlainan jantina ialah…", "menjaga batas pergaulan", "bebas tanpa batas", "bersentuhan", "berdua-duaan"],
+    ["Akhlak terhadap ibu bapa termasuk…", "berbuat baik dan mendoakan mereka", "meninggikan suara", "mengabaikan mereka", "membantah"],
+    ["Sifat mazmumah (keji) ialah…", "hasad dengki", "sabar", "syukur", "ikhlas"],
+    ["Ihsan bermaksud beribadah seolah-olah…", "kita melihat Allah", "orang melihat kita", "untuk dipuji", "tidak perlu niat"]
+  ]},
+  { t: "Jawi", q: [
+    ["ماليسيا|Perkataan Jawi ini dibaca…", "Malaysia", "Melaka", "Melayu", "Malam"],
+    ["نڬارا|Perkataan Jawi ini dibaca…", "negara", "negeri", "nangka", "naga"],
+    ["Ejaan Jawi bagi \"sekolah\" ialah…", "سکوله", "سکولا", "سيکوله", "سکوڠ"],
+    ["Ejaan Jawi bagi \"buku\" ialah…", "بوکو", "بکو", "بوکوه", "بوکق"],
+    ["Ejaan Jawi bagi \"ibu\" ialah…", "ايبو", "ابو", "عيبو", "ايبوه"],
+    ["Huruf Jawi tambahan yang melambangkan bunyi \"ng\" ialah…", "ڠ", "ڽ", "ڤ", "ڬ"],
+    ["Huruf Jawi tambahan yang melambangkan bunyi \"ny\" ialah…", "ڽ", "ڠ", "چ", "ۏ"]
+  ]}
+],
+
+/* ======================= BAHASA ARAB ======================= */
+ba: [
+  { t: "Kesihatan", q: [
+    ["صِحَّةٌ|Perkataan ini bermaksud…", "kesihatan", "makanan", "sekolah", "rumah"],
+    ["مَرِيضٌ|Perkataan ini bermaksud…", "sakit", "sihat", "gembira", "lapar"],
+    ["طَبِيبٌ|Perkataan ini bermaksud…", "doktor", "guru", "jururawat", "polis"],
+    ["دَوَاءٌ|Perkataan ini bermaksud…", "ubat", "air", "makanan", "buah"],
+    ["مُسْتَشْفَى|Perkataan ini bermaksud…", "hospital", "sekolah", "pasar", "masjid"],
+    ["رِيَاضَةٌ|Perkataan ini bermaksud…", "sukan / bersenam", "tidur", "makan", "belajar"],
+    ["أَشْعُرُ بِالصُّدَاعِ|Ayat ini bermaksud…", "Saya berasa sakit kepala", "Saya berasa lapar", "Saya berasa gembira", "Saya berasa sejuk"]
+  ]},
+  { t: "Pelancongan", q: [
+    ["سِيَاحَةٌ|Perkataan ini bermaksud…", "pelancongan", "perdagangan", "pertanian", "pendidikan"],
+    ["مَطَارٌ|Perkataan ini bermaksud…", "lapangan terbang", "stesen bas", "pelabuhan", "hotel"],
+    ["فُنْدُقٌ|Perkataan ini bermaksud…", "hotel", "hospital", "kedai", "taman"],
+    ["طَائِرَةٌ|Perkataan ini bermaksud…", "kapal terbang", "kereta", "kapal", "kereta api"],
+    ["جَزِيرَةٌ|Perkataan ini bermaksud…", "pulau", "gunung", "sungai", "bandar"],
+    ["جَوَازُ السَّفَرِ|Frasa ini bermaksud…", "pasport", "tiket", "beg", "peta"],
+    ["سَافَرْتُ إِلَى مَكَّةَ|Ayat ini bermaksud…", "Saya telah bermusafir ke Makkah", "Saya akan ke Makkah", "Saya tinggal di Makkah", "Saya belajar di Makkah"]
+  ]},
+  { t: "Teknologi", q: [
+    ["حَاسُوبٌ|Perkataan ini bermaksud…", "komputer", "telefon", "televisyen", "radio"],
+    ["هَاتِفٌ|Perkataan ini bermaksud…", "telefon", "komputer", "kamera", "jam"],
+    ["شَبَكَةٌ|Perkataan ini bermaksud…", "rangkaian / jaringan", "skrin", "papan kekunci", "tetikus"],
+    ["بَرِيدٌ إِلِكْتُرُونِيٌّ|Frasa ini bermaksud…", "e-mel", "surat khabar", "laman web", "pejabat pos"],
+    ["شَاشَةٌ|Perkataan ini bermaksud…", "skrin", "buku", "meja", "kerusi"],
+    ["أَسْتَخْدِمُ الْحَاسُوبَ|Ayat ini bermaksud…", "Saya menggunakan komputer", "Saya membeli komputer", "Saya membaiki komputer", "Saya menjual komputer"]
+  ]},
+  { t: "Isim Mausul (Kata Nama Penghubung)", q: [
+    ["Isim mausul bagi mufrad muzakkar ialah…", "الَّذِي", "الَّتِي", "الَّذِينَ", "اللَّاتِي"],
+    ["Isim mausul bagi mufrad muannas ialah…", "الَّتِي", "الَّذِي", "الَّذِينَ", "اللَّذَانِ"],
+    ["Isim mausul bagi jamak muzakkar ialah…", "الَّذِينَ", "الَّذِي", "الَّتِي", "اللَّتَانِ"],
+    ["هٰذَا الطَّالِبُ ___ نَجَحَ|Pilih isim mausul yang sesuai.", "الَّذِي", "الَّتِي", "الَّذِينَ", "اللَّاتِي"],
+    ["هٰذِهِ الطَّالِبَةُ ___ نَجَحَتْ|Pilih isim mausul yang sesuai.", "الَّتِي", "الَّذِي", "الَّذِينَ", "اللَّذَانِ"],
+    ["Maksud الَّذِي dalam bahasa Melayu ialah…", "yang", "dan", "di", "ke"]
+  ]},
+  { t: "Fi'il Mudhari' Mansub", q: [
+    ["Fi'il mudhari' menjadi mansub apabila didahului oleh huruf seperti…", "أَنْ، لَنْ، كَيْ", "لَمْ، لَا", "مِنْ، إِلَى", "فِي، عَلَى"],
+    ["Tanda i'rab mansub bagi fi'il mudhari' mufrad ialah…", "baris atas (fathah)", "baris hadapan (dhammah)", "sukun", "baris bawah"],
+    ["لَنْ أَكْذِبَ|Ayat ini bermaksud…", "Saya tidak akan berbohong", "Saya sedang berbohong", "Saya telah berbohong", "Jangan berbohong"],
+    ["أُرِيدُ أَنْ أَدْرُسَ|Ayat ini bermaksud…", "Saya mahu belajar", "Saya telah belajar", "Saya tidak belajar", "Saya sedang tidur"],
+    ["Bentuk yang betul: لَنْ ___ (يَذْهَبُ)", "يَذْهَبَ", "يَذْهَبُ", "يَذْهَبْ", "ذَهَبَ"],
+    ["Maksud huruf لَنْ ialah…", "tidak akan", "telah", "sedang", "jangan"]
+  ]},
+  { t: "Adad (Nombor)", q: [
+    ["ثَلَاثَةٌ|Nombor ini ialah…", "3", "4", "5", "6"],
+    ["سَبْعَةٌ|Nombor ini ialah…", "7", "6", "8", "9"],
+    ["عَشَرَةٌ|Nombor ini ialah…", "10", "9", "11", "12"],
+    ["عِشْرُونَ|Nombor ini ialah…", "20", "12", "30", "200"],
+    ["مِائَةٌ|Nombor ini ialah…", "100", "1000", "10", "50"],
+    ["Bahasa Arab bagi \"lima\" ialah…", "خَمْسَةٌ", "سِتَّةٌ", "أَرْبَعَةٌ", "ثَمَانِيَةٌ"],
+    ["Bahasa Arab bagi \"pertama\" ialah…", "الْأَوَّلُ", "الثَّانِي", "الثَّالِثُ", "الْأَخِيرُ"]
+  ]}
+],
 geo: []
 };
 })();

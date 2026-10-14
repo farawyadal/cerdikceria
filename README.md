@@ -1,6 +1,6 @@
 # Cerdik Ceria 📚
 
-Kuiz seronok untuk murid **Sekolah Rendah** (Tahun 1–6, KSSR) dan **Sekolah Menengah** (Tingkatan 1–5, KSSM): Bahasa Melayu, English, Matematik, Sains, Sejarah, Geografi (menengah), Pendidikan Islam dan Bahasa Arab.
+Kuiz seronok untuk murid **Sekolah Rendah** (Tahun 1–6, KSSR) dan **Sekolah Menengah** (Tingkatan 1–5, KSSM): Bahasa Melayu, English, Matematik, Sains, Sejarah, Geografi (menengah), Pendidikan Islam dan Bahasa Arab, serta Matematik Tambahan, Fizik, Kimia dan Biologi untuk Tingkatan 4–5.
 
 App: https://farawyadal.github.io/cerdikceria/
 
@@ -32,7 +32,15 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 | 1 | 7 topik | 7 topik | 13 bab | 9 bab | 8 bab | 13 bab | 7 bidang | 6 tema |
 | 2 | 5 topik | 6 topik | 13 bab | 13 bab | 10 bab | 10 bab | 7 bidang | 6 tema |
 | 3 | 5 topik | 5 topik | 9 bab | 10 bab | 8 bab | 7 topik* | 7 bidang | 6 tema |
-| 4–5 | akan datang | | | | | | | |
+| 4 | 5 topik | 6 topik | 10 bab | 12 bab | 10 bab | elektif (akan datang) | 7 bidang | 6 tema |
+| 5 | akan datang | | | | | | | |
+
+Aliran sains Tingkatan 4–5:
+
+| Tingkatan | Matematik Tambahan | Fizik | Kimia | Biologi |
+|---|---|---|---|---|
+| 4 | 10 bab | 6 bab | 8 bab | 15 bab |
+| 5 | akan datang | | | |
 
 \* Geografi Tingkatan 3 disusun ikut topik; susunan bab rasmi belum disahkan.
 

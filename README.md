@@ -37,3 +37,6 @@ Setiap tahun ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`).
 - Jawapan betul sentiasa di tempat kedua; pilihan dikocok dalam app.
 - Gambar besar: tulis `"🐱|Soalan…"` — bahagian sebelum `|` dipaparkan besar.
 - Soalan ditulis sendiri berdasarkan topik setiap bab, bukan disalin daripada buku teks KPM.
+
+---
+Developed by FaridAssamani · ©2026

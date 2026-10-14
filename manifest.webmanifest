@@ -1,7 +1,7 @@
 {
   "name": "Cerdik Ceria",
   "short_name": "Cerdik Ceria",
-  "description": "Kuiz seronok untuk murid sekolah rendah Tahun 1 hingga 6, ikut bab KSSR.",
+  "description": "Kuiz seronok untuk murid sekolah rendah Tahun 1 hingga 6, ikut bab KSSR. Developed by FaridAssamani.",
   "lang": "ms",
   "start_url": "./",
   "scope": "./",

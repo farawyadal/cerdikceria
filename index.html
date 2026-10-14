@@ -4,7 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cerdik Ceria</title>
-<meta name="description" content="Kuiz seronok untuk murid sekolah rendah Tahun 1 hingga 6, ikut bab KSSR.">
+<meta name="description" content="Kuiz seronok untuk murid sekolah rendah Tahun 1 hingga 6, ikut bab KSSR. Developed by FaridAssamani.">
+<meta name="author" content="FaridAssamani">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cerdik Ceria">
+<meta property="og:title" content="Cerdik Ceria — Kuiz seronok sekolah rendah 🌈">
+<meta property="og:description" content="Tahun 1–6 ikut bab KSSR: BM, English, Matematik, Sains, Pendidikan Islam, Bahasa Arab dan Sejarah. Developed by FaridAssamani.">
+<meta property="og:url" content="https://farawyadal.github.io/cerdikceria/">
+<meta property="og:image" content="https://farawyadal.github.io/cerdikceria/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ms_MY">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-mobile-web-app-title" content="Cerdik Ceria">
 <meta name="theme-color" content="#FFF8EE">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png" type="image/png">
@@ -197,6 +209,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .empty{text-align:center;color:var(--soft);padding:20px;background:var(--card);border-radius:16px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-weight:700;z-index:40;opacity:0;transition:opacity .25s;pointer-events:none}
 .toast.on{opacity:1}
+.credit{text-align:center;color:var(--soft);font-size:12px;font-weight:700;margin:28px 0 4px;opacity:.85}
 </style>
 </head>
 <body>
@@ -214,6 +227,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     </div>
     <div class="profiles" id="profiles"></div>
     <button class="mgr" id="btnManage">Urus profil</button>
+    <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
   <!-- HOME -->
@@ -229,6 +243,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <div class="subs" id="subs"></div>
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
     <div class="hist" id="hist"></div>
+    <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
   <!-- QUIZ -->

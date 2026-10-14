@@ -220,7 +220,7 @@ sains: [
     ["Cahaya membias apabila bergerak dari udara ke…", "air", "udara", "vakum", "cermin"],
     ["Bayang-bayang terbentuk kerana cahaya…", "bergerak lurus dan dihalang", "membengkok", "dipantul", "berwarna"],
     ["Permukaan yang paling baik memantulkan cahaya ialah…", "cermin", "kain hitam", "kayu kasar", "kertas pasir"],
-    ["🌈|Pelangi terbentuk apabila cahaya matahari melalui…", "titisan air", "batu", "kayu", "plastik legap"],
+    ["🔍|Kanta pembesar membesarkan imej objek melalui…", "pembiasan cahaya", "pantulan bunyi", "magnet", "elektrik"],
     ["Cermin sisi kereta membantu pemandu melihat ke belakang melalui…", "pantulan cahaya", "pembiasan", "bunyi", "magnet"]
   ]},
   { t: "Bunyi", q: [

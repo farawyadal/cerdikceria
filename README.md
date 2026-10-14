@@ -1,4 +1,4 @@
-# Cerdik Ceria 🌈
+# Cerdik Ceria 📚
 
 Kuiz seronok untuk murid sekolah rendah (Tahun 1–6): Bahasa Melayu, English, Matematik, Sains, Pendidikan Islam, Bahasa Arab dan Sejarah (Tahun 4–6).
 

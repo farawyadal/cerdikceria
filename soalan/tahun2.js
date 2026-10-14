@@ -114,7 +114,7 @@ bm: [
     ["🥥|Ini ialah…", "kelapa", "durian", "manggis", "rambutan"],
     ["🚑|Ini ialah…", "ambulans", "bas", "lori", "teksi"],
     ["⛵|Ini ialah…", "perahu layar", "kapal terbang", "kereta api", "basikal"],
-    ["🌈|Ini ialah…", "pelangi", "awan", "kilat", "bintang"],
+    ["🌋|Ini ialah…", "gunung berapi", "awan", "kilat", "bintang"],
     ["Ejaan yang betul ialah…", "rambutan", "rambotan", "rembutan", "rambutaan"],
     ["Ejaan yang betul ialah…", "kereta api", "keretapi", "kreta api", "kereta-api"],
     ["Ejaan yang betul ialah…", "perpustakaan", "perpustakan", "pepustakaan", "perpustakaam"],

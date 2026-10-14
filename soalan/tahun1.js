@@ -463,7 +463,7 @@ sains: [
     ["🧊|Kita tahu ais itu sejuk menggunakan…", "kulit", "hidung", "telinga", "mata"],
     ["🌹|Kita dapat menghidu bau bunga menggunakan…", "hidung", "lidah", "telinga", "mata"],
     ["🔔|Bunyi loceng dapat dikesan oleh…", "telinga", "mata", "lidah", "hidung"],
-    ["🌈|Kita melihat warna pelangi menggunakan…", "mata", "telinga", "hidung", "kulit"],
+    ["🎨|Kita melihat warna-warni lukisan menggunakan…", "mata", "telinga", "hidung", "kulit"],
     ["Cara menjaga mata ialah…", "tidak menonton TV terlalu dekat", "menggosok mata dengan kuat", "merenung matahari", "membaca dalam gelap"],
     ["Cara menjaga telinga ialah…", "tidak mendengar bunyi yang terlalu kuat", "memasukkan pensel ke dalam telinga", "menjerit di telinga kawan", "tidak membersihkannya"],
     ["Orang yang tidak dapat melihat membaca menggunakan…", "tulisan Braille", "cermin mata hitam", "radio", "teropong"]

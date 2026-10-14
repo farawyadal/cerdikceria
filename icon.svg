@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#FFF8EE"/>
-  <path d="M96 330a160 160 0 0 1 320 0" fill="none" stroke="#FFB59C" stroke-width="36" stroke-linecap="round"/>
-  <path d="M136 330a120 120 0 0 1 240 0" fill="none" stroke="#FFD86B" stroke-width="36" stroke-linecap="round"/>
-  <path d="M176 330a80 80 0 0 1 160 0" fill="none" stroke="#9FE0AE" stroke-width="36" stroke-linecap="round"/>
-  <path d="M216 330a40 40 0 0 1 80 0" fill="none" stroke="#9CCFF7" stroke-width="36" stroke-linecap="round"/>
-  <circle cx="392" cy="128" r="40" fill="#FF9DBB"/>
-  <text x="256" y="438" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-weight="900" font-size="66" fill="#3E3A5C">ABC 123</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#FFF8EE"/><g transform="translate(0 24)">
+  <path d="M256 190 C206 160 150 152 104 160 L104 372 C150 364 206 372 256 402 Z" fill="#BFE3FF" stroke="#3E3A5C" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M256 190 C306 160 362 152 408 160 L408 372 C362 364 306 372 256 402 Z" fill="#FFC8B4" stroke="#3E3A5C" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M140 220 C170 214 200 218 226 230 M140 262 C170 256 200 260 226 272 M140 304 C170 298 200 302 226 314" stroke="#3E3A5C" stroke-width="9" stroke-linecap="round" fill="none" opacity=".45"/>
+  <path d="M286 230 C312 218 342 214 372 220 M286 272 C312 260 342 256 372 262 M286 314 C312 302 342 298 372 304" stroke="#3E3A5C" stroke-width="9" stroke-linecap="round" fill="none" opacity=".45"/>
+  <path d="M256 62 L278 108 L328 114 L291 148 L301 198 L256 174 L211 198 L221 148 L184 114 L234 108 Z" fill="#FFD86B" stroke="#3E3A5C" stroke-width="12" stroke-linejoin="round"/>
+  <circle cx="122" cy="110" r="14" fill="#FF9DBB"/><circle cx="398" cy="96" r="10" fill="#9FE0AE"/><circle cx="420" cy="430" r="12" fill="#FF9DBB"/><circle cx="92" cy="428" r="10" fill="#9CCFF7"/></g></svg>

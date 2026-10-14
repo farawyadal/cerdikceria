@@ -220,7 +220,11 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .empty{text-align:center;color:var(--soft);padding:20px;background:var(--card);border-radius:16px}
 .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-weight:700;z-index:40;opacity:0;transition:opacity .25s;pointer-events:none}
 .toast.on{opacity:1}
-.credit{text-align:center;color:var(--soft);font-size:12px;font-weight:700;margin:28px 0 4px;opacity:.85}
+.credit{text-align:center;color:var(--soft);font-size:12px;font-weight:700;margin:10px 0 4px;opacity:.85}
+.sokong{display:flex;align-items:center;justify-content:center;gap:6px;margin:28px auto 0;padding:9px 16px;border-radius:999px;background:var(--card);border:2px solid var(--line);font-weight:800;font-size:14px;color:var(--ink)}
+.qrbox{background:#fff;border-radius:22px;padding:10px;margin:14px auto;max-width:300px;box-shadow:0 6px 18px rgba(62,58,92,.08)}
+.qrbox img{display:block;width:100%;height:auto;border-radius:14px}
+.dnote{font-size:14px;color:var(--soft);text-align:center;line-height:1.45;margin:0 0 12px}
 </style>
 </head>
 <body>
@@ -238,6 +242,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     </div>
     <div class="profiles" id="profiles"></div>
     <button class="mgr" id="btnManage">Urus profil</button>
+    <button class="sokong" data-derma>☕ Sokong Cerdik Ceria</button>
     <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
@@ -255,6 +260,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <div class="subs" id="subs"></div>
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
     <div class="hist" id="hist"></div>
+    <button class="sokong" data-derma>☕ Sokong Cerdik Ceria</button>
     <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
@@ -329,6 +335,18 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <button class="btn ghost" data-close>Batal</button>
 </div></div>
 
+<!-- Derma -->
+<div class="overlay" id="ovDerma"><div class="sheet" style="text-align:center">
+  <div style="font-size:42px">☕</div>
+  <h2>Sokong Cerdik Ceria</h2>
+  <p class="dnote">Cerdik Ceria kekal <b>percuma</b> untuk semua.<br>Jika sudi, sumbangan ikhlas anda membantu kami menambah soalan dan subjek baharu. Terima kasih! 🤲</p>
+  <div class="qrbox"><img src="duitnow-qr.png" alt="Kod QR DuitNow untuk derma" loading="lazy"></div>
+  <p class="dnote">Imbas dengan mana-mana app bank atau e-wallet (DuitNow QR).<br><b>Guna telefon yang sama?</b> Simpan QR, kemudian pilih gambar dari galeri dalam app bank anda.</p>
+  <a class="btn pink" href="duitnow-qr.png" download="Derma-Cerdik-Ceria-DuitNow.png" style="text-decoration:none" id="btnSaveQr">💾 Simpan QR</a>
+  <div style="height:10px"></div>
+  <button class="btn ghost" data-close>Tutup</button>
+</div></div>
+
 <!-- Pilih peringkat -->
 <div class="overlay center" id="ovLevel"><div class="sheet" style="max-width:400px">
   <div style="text-align:center"><div style="font-size:46px" id="lvAv"></div><h2>Sekolah apa?</h2><div class="muted">Boleh tukar bila-bila masa di skrin utama</div></div>
@@ -400,7 +418,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "9";
+const VER = "10";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -901,6 +919,10 @@ instBtns().forEach(b => b.addEventListener("click", async () => {
   try{ e.prompt(); await e.userChoice; }catch(err){}
 }));
 window.addEventListener("appinstalled", () => { pasangTunda = null; instBtns().forEach(b => b.hidden = true); toast("Cerdik Ceria sudah dipasang 🎉"); track("install", "App dipasang"); });
+
+/* ---------- derma (sukarela) ---------- */
+document.querySelectorAll("[data-derma]").forEach(b => b.onclick = () => { open("#ovDerma"); track("derma/buka", "Paparan derma dibuka"); });
+$("#btnSaveQr").addEventListener("click", () => track("derma/simpan-qr", "QR derma disimpan"));
 
 /* ---------- tukar peringkat ---------- */
 function chooseLevel(l){

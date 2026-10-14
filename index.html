@@ -229,6 +229,12 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sokong{display:flex;align-items:center;justify-content:center;gap:6px;margin:28px auto 0;padding:9px 16px;border-radius:999px;background:var(--card);border:2px solid var(--line);font-weight:800;font-size:14px;color:var(--ink)}
 .qrbox{background:#fff;border-radius:22px;padding:10px;margin:14px auto;max-width:300px;box-shadow:0 6px 18px rgba(62,58,92,.08)}
 .qrbox img{display:block;width:100%;height:auto;border-radius:14px}
+.fbrow{display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.fbrow button{font-size:13px;font-weight:800;color:var(--soft);padding:6px 10px;border-radius:999px;border:2px solid var(--line);background:transparent}
+.stars5{display:flex;justify-content:center;gap:6px;margin:16px 0 8px}
+.stars5 button{font-size:42px;line-height:1;filter:grayscale(1);opacity:.35;transition:transform .12s,filter .12s,opacity .12s}
+.stars5 button.on{filter:none;opacity:1;transform:scale(1.08)}
+.rlabel{text-align:center;font-weight:800;min-height:24px;margin-bottom:10px}
 .dnote{font-size:14px;color:var(--soft);text-align:center;line-height:1.45;margin:0 0 12px}
 </style>
 </head>
@@ -248,6 +254,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <div class="profiles" id="profiles"></div>
     <button class="mgr" id="btnManage">Urus profil</button>
     <button class="sokong" data-sumbangan>☕ Sokong Cerdik Ceria</button>
+    <div class="fbrow"><button data-rate>⭐ Beri bintang</button><button data-mail>✉️ Hantar cadangan</button></div>
     <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
@@ -267,6 +274,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
     <div class="hist" id="hist"></div>
     <button class="sokong" data-sumbangan>☕ Sokong Cerdik Ceria</button>
+    <div class="fbrow"><button data-rate>⭐ Beri bintang</button><button data-mail>✉️ Hantar cadangan</button></div>
     <footer class="credit"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</footer>
   </section>
 
@@ -353,6 +361,24 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <button class="btn ghost" data-close>Tutup</button>
 </div></div>
 
+<!-- Rating -->
+<div class="overlay" id="ovRate"><div class="sheet" style="text-align:center">
+  <div style="font-size:40px">💬</div>
+  <h2>Suka Cerdik Ceria?</h2>
+  <p class="dnote" id="rIntro">Beri bintang untuk app ini. Pendapat anda membantu kami menambah baik Cerdik Ceria.</p>
+  <div class="stars5" id="stars5"></div>
+  <div class="rlabel" id="rLabel"></div>
+  <div id="rAfter" hidden>
+    <p class="dnote" id="rThanks"></p>
+    <a class="btn pink" id="rMail" style="text-decoration:none" hidden>✉️ Beritahu apa yang boleh diperbaiki</a>
+    <a class="btn pink" id="rShare" style="text-decoration:none" target="_blank" rel="noopener" hidden>📲 Kongsi dengan rakan di WhatsApp</a>
+    <div style="height:10px"></div>
+  </div>
+  <button class="btn" id="rSend" disabled>Hantar</button>
+  <div style="height:10px"></div>
+  <button class="btn ghost" data-close>Tutup</button>
+</div></div>
+
 <!-- Pilih peringkat -->
 <div class="overlay center" id="ovLevel"><div class="sheet" style="max-width:400px">
   <div style="text-align:center"><div style="font-size:46px" id="lvAv"></div><h2>Sekolah apa?</h2><div class="muted">Boleh tukar bila-bila masa di skrin utama</div></div>
@@ -424,7 +450,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "10";
+const VER = "11";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -861,6 +887,7 @@ function finish(){
   $("#rMeta").textContent = `${SUB[quiz.sub].name} · ${gradeLabel(quiz.year)}${bab ? " · " + bab : ""} · ${pct}%`;
   show("s-result");
   if(pct >= 80) confetti();
+  maybeAskRating();
   track(`kuiz/${gradeSlug(quiz.year)}/${quiz.sub}`, `Kuiz selesai: ${SUB[quiz.sub].name} ${gradeLabel(quiz.year)}`);
 }
 $("#btnRetry").onclick = () => { setup.sub = quiz.sub; setup.babs = quiz.babs.slice(); setup.count = quiz.qs.length; setup.time = quiz.time; startQuiz(); };
@@ -925,6 +952,83 @@ instBtns().forEach(b => b.addEventListener("click", async () => {
   try{ e.prompt(); await e.userChoice; }catch(err){}
 }));
 window.addEventListener("appinstalled", () => { pasangTunda = null; instBtns().forEach(b => b.hidden = true); toast("Cerdik Ceria sudah dipasang 🎉"); track("install", "App dipasang"); });
+
+/* ---------- rating bintang & cadangan melalui emel ----------
+   Rating dihantar sebagai kiraan GoatCounter (rating/N-bintang), sekali bagi setiap peranti.
+   Cadangan dihantar melalui emel (mailto) dengan templat siap diisi. */
+const FEEDBACK_EMAIL = "farid.assamani@gmail.com";
+const APP_URL = "https://farawyadal.github.io/cerdikceria/";
+const RKEY = "cerdikceria.rating";
+const RLABEL = ["", "😞 Kurang memuaskan", "😐 Boleh diperbaiki", "🙂 Okay", "😊 Bagus!", "🤩 Hebat sangat!"];
+const getRated = () => { try{ return JSON.parse(localStorage.getItem(RKEY)) || null; }catch(e){ return null; } };
+const setRated = v => { try{ localStorage.setItem(RKEY, JSON.stringify(v)); }catch(e){} };
+function mailLink(subject, extra){
+  const p = me();
+  const lines = [
+    "Assalamualaikum / Salam sejahtera,", "",
+    extra || "Cadangan / masalah:", "", "", "",
+    "— Maklumat (boleh dipadam) —",
+    p ? "Peringkat: " + gradeLabel(curGrade(p)) : "",
+    "Versi app: " + VER
+  ].filter(x => x !== null);
+  return `mailto:${FEEDBACK_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+}
+let rPick = 0;
+function openRate(){
+  const prev = getRated();
+  const box = $("#stars5"); box.innerHTML = "";
+  rPick = prev ? prev.n : 0;
+  for(let i = 1; i <= 5; i++){
+    const b = document.createElement("button"); b.textContent = "⭐"; b.setAttribute("aria-label", i + " bintang");
+    b.onclick = () => { if(getRated()) return; rPick = i; drawStars(); };
+    box.appendChild(b);
+  }
+  $("#rAfter").hidden = true; $("#rMail").hidden = true; $("#rShare").hidden = true;
+  if(prev){
+    $("#rIntro").textContent = `Anda telah memberi ${prev.n} bintang. Terima kasih! 🤲`;
+    $("#rSend").hidden = true; showAfter(prev.n);
+  } else {
+    $("#rIntro").textContent = "Beri bintang untuk app ini. Pendapat anda membantu kami menambah baik Cerdik Ceria.";
+    $("#rSend").hidden = false;
+  }
+  drawStars(); open("#ovRate");
+}
+function drawStars(){
+  [...$("#stars5").children].forEach((b, i) => b.classList.toggle("on", i < rPick));
+  $("#rLabel").textContent = RLABEL[rPick] || "Tekan bintang";
+  $("#rSend").disabled = !rPick;
+}
+function showAfter(n){
+  $("#rAfter").hidden = false;
+  if(n <= 3){
+    $("#rThanks").textContent = "Terima kasih atas maklum balas anda. Apa yang boleh kami perbaiki?";
+    $("#rMail").href = mailLink(`Maklum balas Cerdik Ceria (${n} bintang)`, "Apa yang boleh diperbaiki:");
+    $("#rMail").hidden = false;
+  } else {
+    $("#rThanks").textContent = "Alhamdulillah, terima kasih! Bantu kami dengan berkongsi Cerdik Ceria. 😊";
+    $("#rShare").href = "https://wa.me/?text=" + encodeURIComponent("Cuba Cerdik Ceria, kuiz seronok ikut bab buku teks untuk Tahun 1–6 dan Tingkatan 1–5. Percuma! 📚\n" + APP_URL);
+    $("#rShare").hidden = false;
+  }
+}
+$("#rSend").onclick = () => {
+  if(!rPick || getRated()) return;
+  setRated({ n: rPick, at: Date.now() });
+  track(`rating/${rPick}-bintang`, `Rating: ${rPick} bintang`);
+  $("#rSend").hidden = true;
+  $("#rIntro").textContent = `Anda memberi ${rPick} bintang. Terima kasih! 🤲`;
+  showAfter(rPick);
+};
+$("#rShare").addEventListener("click", () => track("kongsi/whatsapp", "Kongsi ke WhatsApp"));
+document.querySelectorAll("[data-rate]").forEach(b => b.onclick = openRate);
+document.querySelectorAll("[data-mail]").forEach(b => b.onclick = () => { track("cadangan/emel", "Buka emel cadangan"); location.href = mailLink("Cadangan untuk Cerdik Ceria"); });
+// minta rating sekali sahaja selepas 3 kuiz selesai (jika belum beri / belum tolak)
+function maybeAskRating(){
+  try{
+    if(getRated() || localStorage.getItem("cerdikceria.rateAsked")) return;
+    const total = db.profiles.reduce((n, p) => n + (p.history ? p.history.length : 0), 0);
+    if(total >= 3){ localStorage.setItem("cerdikceria.rateAsked", "1"); setTimeout(openRate, 1400); }
+  }catch(e){}
+}
 
 /* ---------- sumbangan (sukarela) ---------- */
 document.querySelectorAll("[data-sumbangan]").forEach(b => b.onclick = () => { open("#ovSumbangan"); track("sumbangan/buka", "Paparan sumbangan dibuka"); });

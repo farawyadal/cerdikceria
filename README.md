@@ -40,7 +40,11 @@ Dipantau melalui GoatCounter (https://farawyadal.goatcounter.com), tanpa cookie 
 - `cerdikceria/install`: app dipasang (Android/Chrome)
 - `cerdikceria/buka-app`: dibuka dari ikon skrin utama (termasuk iPhone)
 - `cerdikceria/kuiz/tahunN/subjek`: kuiz selesai
+- `cerdikceria/rating/1-bintang` … `rating/5-bintang`: rating app (sekali bagi setiap peranti)
+- `cerdikceria/kongsi/whatsapp`, `cerdikceria/cadangan/emel`, `cerdikceria/sumbangan/buka`
 Nama profil, PIN dan markah tidak dihantar.
+
+Cadangan pengguna dihantar melalui emel ke farid.assamani@gmail.com (templat siap diisi).
 
 ## Tambah soalan
 Setiap tahun/tingkatan ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`, `soalan/tingkatan1.js`).

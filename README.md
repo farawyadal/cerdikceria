@@ -33,18 +33,18 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 | 2 | 5 topik | 6 topik | 13 bab | 13 bab | 10 bab | 10 bab | 7 bidang | 6 tema |
 | 3 | 5 topik | 5 topik | 9 bab | 10 bab | 8 bab | 7 topik* | 7 bidang | 6 tema |
 | 4 | 5 topik | 6 topik | 10 bab | 12 bab | 10 bab | elektif (akan datang) | 7 bidang | 6 tema |
-| 5 | akan datang | | | | | | | |
+| 5 | 5 topik | 5 topik | 8 bab | 9 bab | 10 bab | elektif (akan datang) | 7 bidang | 5 tema |
 
 Aliran sains Tingkatan 4–5:
 
 | Tingkatan | Matematik Tambahan | Fizik | Kimia | Biologi |
 |---|---|---|---|---|
 | 4 | 10 bab | 6 bab | 8 bab | 15 bab |
-| 5 | akan datang | | | |
+| 5 | 8 bab | 7 bab | 5 bab | 13 bab |
 
 \* Geografi Tingkatan 3 disusun ikut topik; susunan bab rasmi belum disahkan.
 
-Kira-kira 3 200 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
+Kira-kira 5 300 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
 Kandungan agama (Pendidikan Islam, Jawi, Bahasa Arab) elok disemak oleh guru sebelum dikongsi secara meluas.
 
 ## Statistik penggunaan

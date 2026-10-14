@@ -810,7 +810,7 @@ bm: [
     ["Maksud \"melentur buluh biarlah dari rebungnya\":", "mendidik anak sejak kecil", "menebang buluh", "membuat kerja tangan", "membina rumah"],
     ["Maksud \"genggam bara api biar sampai jadi arang\":", "membuat sesuatu biar sampai berjaya", "bermain api", "mudah berputus asa", "takut mencuba"],
     ["Maksud simpulan bahasa \"buah hati\":", "kekasih atau anak tersayang", "buah-buahan", "jantung", "doktor"],
-    ["Maksud simpulan bahasa \"tangan terbuka\":", "pemurah", "kedekut", "pencuri", "malas"],
+    ["Maksud simpulan bahasa \"murah hati\":", "pemurah", "kedekut", "pencuri", "malas"],
     ["Maksud \"air dicincang tidak akan putus\":", "pertalian saudara sukar diputuskan", "air sukar dipotong", "sungai yang panjang", "orang yang kuat"]
   ]},
   { t: "Ejaan, Tanda Baca dan Istilah", q: [
@@ -843,7 +843,7 @@ bi: [
     ["Choose the synonym of \"diligent\".", "hardworking", "lazy", "careless", "slow"],
     ["Choose the antonym of \"optimistic\".", "pessimistic", "hopeful", "positive", "cheerful"],
     ["\"A person who designs buildings\" is an…", "architect", "engineer", "accountant", "author"],
-    ["\"A place where planes take off and land\" is an…", "airport", "harbour", "station", "terminal bus"],
+    ["\"A place where planes take off and land\" is an…", "airport", "harbour", "station", "bus terminal"],
     ["The word \"environmentally friendly\" means…", "not harmful to nature", "very friendly", "full of plants", "expensive"],
     ["Choose the correct collocation: ___ a decision.", "make", "do", "take up", "give"]
   ]},

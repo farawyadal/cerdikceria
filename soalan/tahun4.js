@@ -267,7 +267,7 @@ sains: [
     ["Matahari kelihatan terbenam di sebelah…", "barat", "timur", "utara", "selatan"],
     ["🍎|Objek yang dilepaskan akan jatuh ke bawah kerana…", "tarikan graviti Bumi", "angin", "magnet", "cahaya"],
     ["Bahagian Bumi yang menghadap Matahari mengalami…", "siang", "malam", "gerhana", "musim sejuk"],
-    ["Satu putaran lengkap Bumi mengelilingi Matahari dipanggil…", "peredaran", "putaran", "gerhana", "fasa"]
+    ["Pergerakan Bumi mengelilingi Matahari dipanggil…", "peredaran", "putaran", "gerhana", "fasa"]
   ]},
   { t: "Mesin (Tuas)", q: [
     ["Tuas mempunyai tiga bahagian iaitu fulkrum, beban dan…", "daya", "roda", "gear", "skru"],
@@ -433,7 +433,7 @@ bm: [
     ["Yang manakah kata adjektif pancaindera?", "harum", "sedih", "jauh", "baru"],
     ["Kereta itu ___ laju.", "sangat", "dan", "kerana", "ke"],
     ["Dia ___ rajin di dalam kelas.", "paling", "atau", "kepada", "dengan"],
-    ["Rumah ini besar ___.", "sekali", "sangat", "paling", "amat"],
+    ["Rumah ini besar ___.", "sekali", "sangat", "paling", "terlalu"],
     ["Saya membawa payung ___ hujan turun.", "kerana", "tetapi", "atau", "supaya"],
     ["Kami berlatih setiap hari ___ menang.", "supaya", "kerana", "tetapi", "atau"],
     ["___ hujan lebat, mereka tetap ke sekolah.", "Walaupun", "Kerana", "Supaya", "Dan"],

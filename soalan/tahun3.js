@@ -252,7 +252,7 @@ math: [
       ["1/2 setara dengan…", "2/4", "1/4", "2/3", "1/3"],
       ["Pecahan termudah bagi 4/8 ialah…", "1/2", "2/4", "4/2", "1/4"],
       ["Yang manakah pecahan tak wajar?", "7/4", "3/4", "1/2", "2/5"],
-      ["50% bersamaan dengan pecahan…", "1/2", "1/5", "5/10", "1/50"],
+      ["50% bersamaan dengan pecahan…", "1/2", "1/5", "1/4", "1/50"],
       ["100% bermaksud…", "keseluruhan", "separuh", "suku", "tiada"],
       ["0.25 dibaca sebagai…", "sifar perpuluhan dua lima", "dua puluh lima", "dua perpuluhan lima", "sifar dua puluh lima"]
     ],
@@ -500,7 +500,7 @@ pi: [
     ["Solat yang dilakukan secara berjemaah pada hari Jumaat ialah…", "solat Jumaat", "solat Aidilfitri", "solat Tarawih", "solat Duha"],
     ["Puasa Ramadan wajib bagi orang Islam yang…", "baligh, berakal dan mampu", "kanak-kanak kecil sahaja", "sedang sakit teruk", "tidak berakal"],
     ["Ketika berpuasa, kita menahan diri daripada makan dan minum dari terbit fajar hingga…", "terbenam matahari", "tengah hari", "tengah malam", "waktu Asar"],
-    ["Makan selepas waktu berbuka dipanggil…", "berbuka puasa", "bersahur", "berzakat", "bertakbir"],
+    ["Makan apabila tiba waktu Maghrib pada bulan puasa dipanggil…", "berbuka puasa", "bersahur", "berzakat", "bertakbir"],
     ["Makan sebelum terbit fajar dipanggil…", "bersahur", "berbuka", "bertarawih", "beriktikaf"]
   ]},
   { t: "Sirah", q: [
@@ -523,7 +523,7 @@ pi: [
   ]},
   { t: "Jawi", q: [
     ["سکوله|Perkataan Jawi ini dibaca…", "sekolah", "sekali", "sukalah", "sikalah"],
-    ["کرتا|Perkataan Jawi ini dibaca…", "kereta", "kertas", "karut", "kirta"],
+    ["کريتا|Perkataan Jawi ini dibaca…", "kereta", "kertas", "karut", "kirta"],
     ["کوچيڠ|Perkataan Jawi ini dibaca…", "kucing", "kacang", "kuning", "kicap"],
     ["ناسي|Perkataan Jawi ini dibaca…", "nasi", "nasa", "nusa", "nisa"],
     ["Ejaan Jawi bagi \"sekolah\" ialah…", "سکوله", "سکله", "سکولا", "سيکوله"],

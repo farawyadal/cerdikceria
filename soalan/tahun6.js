@@ -254,7 +254,7 @@ sains: [
     ["Galaksi terdiri daripada berbilion…", "bintang, gas dan debu", "pokok", "bangunan", "kereta"],
     ["Matahari ialah sebuah…", "bintang", "planet", "bulan", "komet"],
     ["Bentuk galaksi Bima Sakti ialah…", "lingkaran (pilin)", "segi empat", "segi tiga", "bujur telur leper"],
-    ["Galaksi yang paling hampir dengan Bima Sakti dan terkenal ialah…", "Andromeda", "Pari", "Kala", "Belantik"],
+    ["Galaksi lingkaran besar yang paling hampir dengan Bima Sakti ialah…", "Andromeda", "Pari", "Kala", "Belantik"],
     ["Alat yang membantu ahli astronomi melihat galaksi ialah…", "teleskop", "mikroskop", "periskop", "kanta pembesar kecil"]
   ]},
   { t: "Kestabilan dan Kekuatan", q: [
@@ -469,7 +469,7 @@ bi: [
     ["Which word means \"a person who visits a place for fun\"?", "tourist", "tailor", "tenant", "teacher"],
     ["Which word means \"very old\"?", "ancient", "modern", "recent", "fresh"],
     ["Which word means \"very important\"?", "essential", "useless", "tiny", "boring"],
-    ["The opposite of \"generous\" is…", "selfish", "kind", "helpful", "friendly"],
+    ["The opposite of \"generous\" is…", "stingy", "kind", "helpful", "friendly"],
     ["The opposite of \"brave\" is…", "cowardly", "bold", "strong", "fearless"],
     ["The opposite of \"increase\" is…", "decrease", "grow", "raise", "add"],
     ["A synonym of \"begin\" is…", "start", "finish", "stop", "end"],

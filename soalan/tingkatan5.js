@@ -47,7 +47,7 @@ SOALAN["m5"] = {
 math: [
   { t: "Ubahan",
     q: [
-      ["Jika y berubah secara langsung dengan x, maka…", "y = kx", "y = k/x", "y = x + k", "y = kx²  sahaja"],
+      ["Jika y berubah secara langsung dengan x, maka…", "y = kx", "y = k/x", "y = x + k", "y = kx² sahaja"],
       ["Jika y berubah secara songsang dengan x, maka…", "y = k/x", "y = kx", "y = k + x", "y = kx³"],
       ["Ubahan bergabung melibatkan…", "ubahan langsung dan songsang serentak", "satu pemboleh ubah sahaja", "pemalar sahaja", "tiada pemboleh ubah"],
       ["Jika y ∝ x dan x digandakan dua, maka y…", "turut digandakan dua", "menjadi separuh", "tidak berubah", "menjadi empat kali"],
@@ -697,7 +697,7 @@ sejarah: [
     ["Pasukan pengaman Malaysia yang berkhidmat di bawah PBB dikenali sebagai…", "MALBATT", "Force 136", "MPAJA", "PLKN"],
     ["Mercu tanda Malaysia yang pernah menjadi bangunan tertinggi dunia ialah…", "Menara Berkembar PETRONAS", "Menara KL", "Bangunan Sultan Abdul Samad", "Stadium Merdeka"],
     ["Pendaki Malaysia pertama yang menawan puncak Everest pada 1997 ialah…", "M. Magendran dan N. Mohanadas", "Datuk Lee Chong Wei", "Nicol David", "Azizulhasni Awang"],
-    ["Pemain squasy Malaysia yang pernah menjadi nombor satu dunia bertahun-tahun ialah…", "Datuk Nicol David", "Datuk Lee Chong Wei", "Pandelela Rinong", "Mohd Azizulhasni"],
+    ["Pemain skuasy Malaysia yang pernah menjadi nombor satu dunia bertahun-tahun ialah…", "Datuk Nicol David", "Datuk Lee Chong Wei", "Pandelela Rinong", "Mohd Azizulhasni"],
     ["Kereta nasional pertama Malaysia ialah…", "Proton Saga", "Perodua Kancil", "Proton Wira", "Myvi"],
     ["Malaysia terkenal sebagai pengeluar utama dunia bagi…", "minyak sawit", "gandum", "kopi Arabika", "salji"]
   ]}
@@ -860,7 +860,7 @@ pi: [
     ["Sifat ujub bermaksud…", "kagum dengan diri sendiri", "rendah diri", "bersyukur", "pemurah"]
   ]},
   { t: "Jawi", q: [
-    ["كرجاسام|Perkataan Jawi ini dibaca…", "kerjasama", "kerajaan", "kerusi", "keranda"],
+    ["کرجاسام|Perkataan Jawi ini dibaca…", "kerjasama", "kerajaan", "kerusi", "keranda"],
     ["ڤرڤادوان|Perkataan Jawi ini dibaca…", "perpaduan", "perpustakaan", "peraduan", "perpindahan"],
     ["Ejaan Jawi bagi \"rakyat\" ialah…", "رعيت", "رقيت", "راکيت", "رعيات"],
     ["Ejaan Jawi bagi \"masjid\" ialah…", "مسجد", "مسجيد", "ماسجد", "مسچد"],
@@ -899,7 +899,7 @@ ba: [
   { t: "Fi'il Mudhari' Majzum", q: [
     ["Fi'il mudhari' menjadi majzum apabila didahului oleh…", "لَمْ atau لَا النَّاهِيَة", "أَنْ atau لَنْ", "مِنْ atau إِلَى", "فِي atau عَلَى"],
     ["Tanda i'rab majzum bagi fi'il mudhari' mufrad sahih ialah…", "sukun", "fathah", "dhammah", "kasrah"],
-    ["لَمْ أَذْهَبْ|Ayat ini bermaksud…", "Saya tidak pergi (belum/tidak telah pergi)", "Saya akan pergi", "Saya sedang pergi", "Pergilah"],
+    ["لَمْ أَذْهَبْ|Ayat ini bermaksud…", "Saya tidak pergi (pada masa lalu)", "Saya akan pergi", "Saya sedang pergi", "Pergilah"],
     ["لَا تَكْذِبْ|Ayat ini bermaksud…", "Jangan berbohong", "Saya tidak berbohong", "Dia berbohong", "Mereka akan berbohong"],
     ["Bentuk yang betul: لَمْ ___ (يَكْتُبُ)", "يَكْتُبْ", "يَكْتُبُ", "يَكْتُبَ", "كَتَبَ"],
     ["Maksud لَمْ ialah…", "tidak (bagi masa lampau)", "tidak akan", "jangan", "sedang"]
@@ -909,7 +909,7 @@ ba: [
     ["Wazan isim tafdhil ialah…", "أَفْعَلُ", "فَاعِلٌ", "مَفْعُولٌ", "فَعِيلٌ"],
     ["كَبِيرٌ ← أَكْبَرُ|Perkataan أَكْبَرُ bermaksud…", "lebih besar", "besar", "kecil", "paling kecil"],
     ["عَلِيٌّ أَطْوَلُ مِنْ أَحْمَدَ|Ayat ini bermaksud…", "Ali lebih tinggi daripada Ahmad", "Ali sama tinggi dengan Ahmad", "Ahmad lebih tinggi daripada Ali", "Ali pendek"],
-    ["Isim tafdhil bagi صَغِيرٌ ialah…", "أَصْغَرُ", "صُغْرَى", "صَغِيرَةٌ", "صِغَارٌ"],
+    ["Isim tafdhil bagi صَغِيرٌ ialah…", "أَصْغَرُ", "صَغُرَ", "صَغِيرَةٌ", "صِغَارٌ"],
     ["Huruf yang digunakan selepas isim tafdhil untuk maksud 'daripada' ialah…", "مِنْ", "فِي", "عَلَى", "إِلَى"]
   ]}
 

@@ -361,7 +361,7 @@ sejarah: [
     ["Zaman Logam menyaksikan penggunaan…", "gangsa dan besi", "plastik", "batu sahaja", "kayu sahaja"]
   ]},
   { n: 4, t: "Mengenali Tamadun", q: [
-    ["Perkataan \"tamadun\" berasal daripada perkataan Arab…", "madana", "syajaratun", "tarikh", "hadarah"],
+    ["Perkataan \"tamadun\" berasal daripada perkataan Arab…", "madana", "syajaratun", "tarikh", "salam"],
     ["Ibnu Khaldun menggunakan istilah ___ untuk tamadun.", "umran", "kultur", "polis", "civitas"],
     ["Perkataan Inggeris \"civilization\" berasal daripada perkataan Latin…", "civitas (bandar)", "polis", "madana", "kultur"],
     ["Ciri tamadun termasuk petempatan kekal, sistem pemerintahan dan…", "sistem tulisan", "telefon pintar", "kereta", "televisyen"],
@@ -457,7 +457,7 @@ geo: [
     ["Semenanjung Malaysia dan Malaysia Timur dipisahkan oleh…", "Laut China Selatan", "Selat Melaka", "Lautan Hindi", "Laut Sulu"],
     ["Negara yang bersempadan dengan Semenanjung Malaysia di utara ialah…", "Thailand", "Singapura", "Indonesia", "Brunei"],
     ["Negara di selatan Semenanjung Malaysia ialah…", "Singapura", "Thailand", "Filipina", "Vietnam"],
-    ["Negara yang terletak di dalam kawasan Sarawak ialah…", "Brunei", "Singapura", "Thailand", "Filipina"],
+    ["Negara yang dikelilingi oleh negeri Sarawak ialah…", "Brunei", "Singapura", "Thailand", "Filipina"],
     ["Selat yang memisahkan Semenanjung Malaysia dengan Sumatera ialah…", "Selat Melaka", "Selat Johor", "Selat Sunda", "Selat Makasar"],
     ["Negeri paling utara di Semenanjung Malaysia ialah…", "Perlis", "Kedah", "Kelantan", "Pulau Pinang"],
     ["Negeri paling selatan di Semenanjung Malaysia ialah…", "Johor", "Melaka", "Negeri Sembilan", "Pahang"],

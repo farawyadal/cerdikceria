@@ -534,7 +534,7 @@ bm: [
     ["Kata adjektif pancaindera dalam senarai di bawah ialah…", "lemak (rasa)", "jauh", "baharu", "berani"],
     ["Kata bantu aspek \"sedang\" menunjukkan perbuatan yang…", "masih berlaku", "telah berlaku", "akan berlaku", "tidak berlaku"],
     ["Kata bantu ragam \"mesti\" menunjukkan…", "kewajipan", "kemungkinan", "masa lampau", "keinginan sahaja"],
-    ["Kata penguat yang hadir di belakang kata adjektif ialah…", "sekali", "sangat", "amat", "paling"],
+    ["Kata penguat yang hadir di belakang kata adjektif ialah…", "sekali", "sangat", "terlalu", "paling"],
     ["Kata arah ialah kata yang hadir sebelum kata nama untuk menunjukkan…", "arah atau kedudukan", "masa", "bilangan", "perasaan"]
   ]},
   { t: "Imbuhan dan Penggandaan", q: [
@@ -683,7 +683,7 @@ pi: [
     ["Antara syarat sah solat ialah…", "menghadap kiblat", "memakai jam", "solat di masjid sahaja", "berjemaah sahaja"],
     ["Perkara yang membatalkan solat ialah…", "bercakap dengan sengaja", "membaca surah", "rukuk", "sujud"],
     ["Solat sunat yang dilakukan selepas terbit matahari ialah solat…", "Duha", "Tahajud", "Witir", "Tarawih"],
-    ["Solat sunat yang dilakukan pada waktu malam selepas tidur ialah solat…", "Tahajud", "Duha", "Dhuha", "Jumaat"],
+    ["Solat sunat yang dilakukan pada waktu malam selepas tidur ialah solat…", "Tahajud", "Duha", "Tarawih", "Jumaat"],
     ["Solat sunat dengan bilangan rakaat ganjil yang menutup solat malam ialah solat…", "Witir", "Duha", "Tahajud", "Istikharah"],
     ["Solat untuk memohon petunjuk dalam membuat keputusan ialah solat…", "Istikharah", "Hajat", "Duha", "Tarawih"],
     ["Solat jamak takdim bermaksud menghimpunkan dua solat dalam waktu solat…", "yang pertama", "yang kedua", "Subuh", "Maghrib sahaja"]

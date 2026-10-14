@@ -86,7 +86,7 @@ bm: [
     ["Kata ganda bagi \"buku\" ialah…", "buku-buku", "bubuku", "buku buku buku", "berbuku"],
     ["🌸🌸🌸|Banyak ___ di taman.", "bunga-bunga", "bunga", "berbunga", "bunganya"],
     ["Sinonim bagi \"cantik\" ialah…", "indah", "hodoh", "kotor", "besar"],
-    ["Sinonim bagi \"besar\" ialah…", "luas", "kecil", "sempit", "pendek"],
+    ["Sinonim bagi \"besar\" ialah…", "raya", "kecil", "sempit", "pendek"],
     ["Sinonim bagi \"suka\" ialah…", "gemar", "benci", "marah", "takut"],
     ["Sinonim bagi \"cepat\" ialah…", "laju", "lambat", "perlahan", "berat"],
     ["Sinonim bagi \"pandai\" ialah…", "bijak", "malas", "lambat", "kecil"],
@@ -493,7 +493,7 @@ pi: [
     ["Nabi Muhammad SAW lahir pada bulan…", "Rabiulawal", "Ramadan", "Syawal", "Muharam"],
     ["Datuk Nabi Muhammad SAW bernama…", "Abdul Muttalib", "Abu Talib", "Abdullah", "Abu Bakar"],
     ["Ibu susuan Nabi Muhammad SAW ialah…", "Halimatus Saadiah", "Aminah", "Khadijah", "Aisyah"],
-    ["Semasa kecil, Nabi Muhammad SAW pernah bekerja sebagai…", "pengembala kambing", "nelayan", "petani padi", "tukang kayu"],
+    ["Semasa kecil, Nabi Muhammad SAW pernah bekerja sebagai…", "penggembala kambing", "nelayan", "petani padi", "tukang kayu"],
     ["Bapa saudara yang menjaga Nabi ialah…", "Abu Talib", "Abu Lahab", "Abu Jahal", "Hamzah"],
     ["Nabi Muhammad SAW digelar…", "al-Amin", "as-Siddiq", "al-Faruq", "Zun Nurain"],
     ["Contoh akhlak Nabi Muhammad SAW yang boleh kita contohi ialah…", "jujur dan menepati janji", "suka marah", "suka berbohong", "malas"]

@@ -35,6 +35,10 @@
   --sejarah:#E3D3FF; --sejarah-d:#8A63D2;
   --pi:#BFEDE4; --pi-d:#2E9C86;
   --geo:#D6EFC2; --geo-d:#6A9A3A;
+  --addmath:#FFE0B8; --addmath-d:#D9822B;
+  --fizik:#CFE0FF; --fizik-d:#4A6FD1;
+  --kimia:#F6D3FF; --kimia-d:#A84BC8;
+  --bio:#CDEFD8; --bio-d:#2F8F5B;
   --ba:#FFD9EA; --ba-d:#D2638F;
   --arab:"Noto Naskh Arabic","Amiri","Traditional Arabic","Geeza Pro",serif;
   --ok:#5CC08A; --ok-bg:#E3F7EA; --no:#EF7B7B; --no-bg:#FDE6E6;
@@ -115,7 +119,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sub.wide{grid-column:1/-1;min-height:100px;flex-direction:row;align-items:center;gap:14px;justify-content:flex-start}
 .sub.wide h3{margin:0}
 .sub.lock{filter:grayscale(.7);opacity:.6}
-.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-geo{background:var(--geo)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)}
+.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-geo{background:var(--geo)} .s-addmath{background:var(--addmath)} .s-fizik{background:var(--fizik)} .s-kimia{background:var(--kimia)} .s-bio{background:var(--bio)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)}
 .sub.soon{opacity:.55}
 .section-t{display:flex;justify-content:space-between;align-items:baseline;margin:24px 0 10px}
 .section-t h2{font-size:21px}
@@ -450,14 +454,18 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "12";
+const VER = "13";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
   {id:"bm", name:"Bahasa Melayu", em:"📖", unit:"topik"},
   {id:"bi", name:"English", em:"🔤", unit:"topik"},
   {id:"math", name:"Matematik", em:"🔢", unit:"bab"},
+  {id:"addmath", name:"Matematik Tambahan", em:"📈", unit:"bab", only:"menengah", minT:4},
   {id:"sains", name:"Sains", em:"🔬", unit:"bab"},
+  {id:"fizik", name:"Fizik", em:"⚛️", unit:"bab", only:"menengah", minT:4},
+  {id:"kimia", name:"Kimia", em:"🧪", unit:"bab", only:"menengah", minT:4},
+  {id:"bio", name:"Biologi", em:"🧬", unit:"bab", only:"menengah", minT:4},
   {id:"pi", name:"Pendidikan Islam", em:"🕌", unit:"bidang"},
   {id:"ba", name:"Bahasa Arab", em:"📜", unit:"tema"},
   {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4},
@@ -476,7 +484,7 @@ const gradeSlug = g => (levelOf(g) === "menengah" ? "tingkatan" : "tahun") + num
 const gradeFile = g => `soalan/${gradeSlug(g)}.js`;
 function curGrade(p){ return (p.level || "rendah") === "menengah" ? "m" + (p.ting || 1) : (p.year || 1); }
 function setGrade(p, g){ if(levelOf(g) === "menengah"){ p.level = "menengah"; p.ting = numOf(g); } else { p.level = "rendah"; p.year = g; } }
-const subjectsFor = g => SUBJECTS.filter(s => !s.only || s.only === levelOf(g));
+const subjectsFor = g => SUBJECTS.filter(s => (!s.only || s.only === levelOf(g)) && (!s.minT || numOf(g) >= s.minT));
 
 /* ---------- statistik (GoatCounter) ----------
    Hanya kiraan tanpa nama: install, buka sebagai app, kuiz selesai (subjek + tahun).

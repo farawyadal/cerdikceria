@@ -10,6 +10,7 @@ App: https://farawyadal.github.io/cerdikceria/
 - Soalan yang belum pernah keluar diutamakan; soalan Matematik dijana rawak
 - Mod bermasa (20/30/60 saat setiap soalan) atau tanpa masa
 - Markah, bintang dan semakan jawapan selepas kuiz
+- Suis **🇬🇧 DLP** (Tahun 1 – Tingkatan 3): soalan Matematik & Sains kekal dalam BM, dengan terjemahan English (italic) di bawah soalan, pilihan jawapan, nama bab dan penerangan
 - Butang **⬇ App** untuk pasang di telefon (muncul bila pelayar benarkan)
 
 ## Status soalan
@@ -72,6 +73,7 @@ Setiap tahun/tingkatan ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.j
 ```
 - Jawapan betul sentiasa di tempat kedua; pilihan dikocok dalam app.
 - Gambar besar: tulis `"🐱|Soalan…"` — bahagian sebelum `|` dipaparkan besar.
+- Terjemahan DLP dalam `soalan/dlp/` (contoh `soalan/dlp/tahun1.js` → `SOALAN["dlp1"]`, `soalan/dlp/tingkatan1.js` → `SOALAN["dlpm1"]`). Bab, susunan soalan dan logik generator mesti sama dengan fail BM; generator BM & English dijalankan dengan benih rawak yang sama supaya nombor sepadan.
 - Soalan ditulis sendiri berdasarkan topik setiap bab, bukan disalin daripada buku teks KPM.
 
 ---

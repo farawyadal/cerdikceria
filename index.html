@@ -526,7 +526,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "24";
+const VER = "25";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -597,7 +597,7 @@ const loadYear = y => loadKey(y, gradeFile(y));
 /* ---------- DLP (Dual Language Programme): Matematik & Sains dalam English, Tahun 1 – Tingkatan 3 ---------- */
 const DLP_SUBS = ["math", "sains"];
 const DLP_NAME = { math: "Mathematics", sains: "Science" };
-const DLP_READY = ["1", "2", "3", "4"];   // gred yang sudah ada fail soalan/dlp/*.js
+const DLP_READY = ["1", "2", "3", "4", "5"];   // gred yang sudah ada fail soalan/dlp/*.js
 const isDlpGrade = g => DLP_READY.includes(String(g));
 const dlpOn = (p, g) => !!(p && p.dlp && isDlpGrade(g));
 const dlpKey = g => "dlp" + g;

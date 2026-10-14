@@ -1,6 +1,6 @@
 # Cerdik Ceria 📚
 
-Kuiz seronok untuk murid sekolah rendah (Tahun 1–6): Bahasa Melayu, English, Matematik, Sains, Pendidikan Islam, Bahasa Arab dan Sejarah (Tahun 4–6).
+Kuiz seronok untuk murid **Sekolah Rendah** (Tahun 1–6, KSSR) dan **Sekolah Menengah** (Tingkatan 1–5, KSSM): Bahasa Melayu, English, Matematik, Sains, Sejarah, Geografi (menengah), Pendidikan Islam dan Bahasa Arab.
 
 App: https://farawyadal.github.io/cerdikceria/
 
@@ -25,7 +25,14 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 | 5 | 7 topik | 7 topik | 8 bab | 10 bab | 7 bidang | 8 tema | Unit 2–12 |
 | 6 | 5 topik | 6 topik | 8 bab | 13 bab | 6 bidang | 6 tema | Unit 1–10 |
 
-Kira-kira 2 700 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
+**Sekolah Menengah (KSSM)**
+
+| Tingkatan | BM | BI | Matematik | Sains | Sejarah | Geografi | P. Islam | B. Arab |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 7 topik | 7 topik | 13 bab | 9 bab | 8 bab | 13 bab | 7 bidang | 6 tema |
+| 2–5 | akan datang | | | | | | | |
+
+Kira-kira 3 200 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
 Kandungan agama (Pendidikan Islam, Jawi, Bahasa Arab) elok disemak oleh guru sebelum dikongsi secara meluas.
 
 ## Statistik penggunaan
@@ -36,7 +43,7 @@ Dipantau melalui GoatCounter (https://farawyadal.goatcounter.com), tanpa cookie 
 Nama profil, PIN dan markah tidak dihantar.
 
 ## Tambah soalan
-Setiap tahun ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`).
+Setiap tahun/tingkatan ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`, `soalan/tingkatan1.js`).
 
 ```
 ["Soalan", "Jawapan BETUL", "Salah 1", "Salah 2", "Salah 3", "Penerangan (pilihan)"]

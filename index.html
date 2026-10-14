@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cerdik Ceria</title>
-<meta name="description" content="Kuiz seronok untuk murid sekolah rendah Tahun 1 hingga 6, ikut bab KSSR. Developed by FaridAssamani.">
+<meta name="description" content="Kuiz seronok untuk murid sekolah rendah dan menengah, ikut bab KSSR dan KSSM. Developed by FaridAssamani.">
 <meta name="author" content="FaridAssamani">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cerdik Ceria">
-<meta property="og:title" content="Cerdik Ceria — Kuiz seronok sekolah rendah 📚">
-<meta property="og:description" content="Tahun 1–6 ikut bab KSSR: BM, English, Matematik, Sains, Pendidikan Islam, Bahasa Arab dan Sejarah. Developed by FaridAssamani.">
+<meta property="og:title" content="Cerdik Ceria — Kuiz seronok sekolah rendah &amp; menengah 📚">
+<meta property="og:description" content="Sekolah Rendah (Tahun 1–6, KSSR) dan Sekolah Menengah (Tingkatan, KSSM): BM, English, Matematik, Sains, Sejarah, Geografi, Pendidikan Islam dan Bahasa Arab. Developed by FaridAssamani.">
 <meta property="og:url" content="https://farawyadal.github.io/cerdikceria/">
-<meta property="og:image" content="https://farawyadal.github.io/cerdikceria/og-image.png?v=2">
+<meta property="og:image" content="https://farawyadal.github.io/cerdikceria/og-image.png?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="ms_MY">
@@ -34,6 +34,7 @@
   --sains:#C5EFCF; --sains-d:#3E9E5B;
   --sejarah:#E3D3FF; --sejarah-d:#8A63D2;
   --pi:#BFEDE4; --pi-d:#2E9C86;
+  --geo:#D6EFC2; --geo-d:#6A9A3A;
   --ba:#FFD9EA; --ba-d:#D2638F;
   --arab:"Noto Naskh Arabic","Amiri","Traditional Arabic","Geeza Pro",serif;
   --ok:#5CC08A; --ok-bg:#E3F7EA; --no:#EF7B7B; --no-bg:#FDE6E6;
@@ -87,6 +88,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .who .av{font-size:38px}
 .who small{display:block;color:var(--soft);font-size:13px}
 .who b{font-size:19px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lvl{display:flex;gap:4px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:4px;margin-bottom:10px}
+.lvl button{flex:1;padding:10px 4px;border-radius:14px;font-weight:800;font-size:14px;color:var(--soft);white-space:nowrap}
+.lvl button.on{background:var(--ink);color:#fff}
+.lvpick{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.lvpick button{display:flex;align-items:center;gap:14px;text-align:left;padding:18px;border-radius:22px;font-weight:800}
+.lvpick button .em{font-size:44px}
+.lvpick button b{display:block;font-family:var(--baloo);font-size:22px}
+.lvpick button small{display:block;font-weight:700;opacity:.75}
 .years{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}
 .years::-webkit-scrollbar{display:none}
 .yr{flex:0 0 auto;padding:10px 16px;border-radius:16px;background:var(--card);border:2px solid var(--line);font-weight:800;font-family:var(--baloo);font-size:17px}
@@ -101,7 +110,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sub.wide{grid-column:1/-1;min-height:100px;flex-direction:row;align-items:center;gap:14px;justify-content:flex-start}
 .sub.wide h3{margin:0}
 .sub.lock{filter:grayscale(.7);opacity:.6}
-.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)}
+.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-geo{background:var(--geo)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)}
 .sub.soon{opacity:.55}
 .section-t{display:flex;justify-content:space-between;align-items:baseline;margin:24px 0 10px}
 .section-t h2{font-size:21px}
@@ -241,6 +250,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
         <button class="chip" id="btnLogout">🔄 Tukar</button>
       </div>
     </div>
+    <div class="lvl" id="lvl"><button data-l="rendah">🎒 Sekolah Rendah</button><button data-l="menengah">🏫 Sekolah Menengah</button></div>
     <div class="years" id="years"></div>
     <div class="subs" id="subs"></div>
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
@@ -319,6 +329,15 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <button class="btn ghost" data-close>Batal</button>
 </div></div>
 
+<!-- Pilih peringkat -->
+<div class="overlay center" id="ovLevel"><div class="sheet" style="max-width:400px">
+  <div style="text-align:center"><div style="font-size:46px" id="lvAv"></div><h2>Sekolah apa?</h2><div class="muted">Boleh tukar bila-bila masa di skrin utama</div></div>
+  <div class="lvpick">
+    <button data-l="rendah" style="background:var(--bi)"><span class="em">🎒</span><span><b>Sekolah Rendah</b><small>Tahun 1 hingga 6</small></span></button>
+    <button data-l="menengah" style="background:var(--sains)"><span class="em">🏫</span><span><b>Sekolah Menengah</b><small>Tingkatan 1 hingga 5</small></span></button>
+  </div>
+</div></div>
+
 <!-- PIN pad -->
 <div class="overlay center" id="ovPin"><div class="sheet" style="max-width:360px">
   <div style="text-align:center"><div style="font-size:50px" id="pinAv"></div><h2 id="pinTitle"></h2><div class="muted">Masukkan PIN</div></div>
@@ -381,7 +400,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "7";
+const VER = "9";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -391,9 +410,23 @@ const SUBJECTS = [
   {id:"sains", name:"Sains", em:"🔬", unit:"bab"},
   {id:"pi", name:"Pendidikan Islam", em:"🕌", unit:"bidang"},
   {id:"ba", name:"Bahasa Arab", em:"📜", unit:"tema"},
-  {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4}
+  {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4},
+  {id:"geo", name:"Geografi", em:"🌏", unit:"bab", only:"menengah"}
 ];
 const SUB = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
+
+/* ---------- peringkat: Sekolah Rendah (Tahun 1–6) / Sekolah Menengah (Tingkatan 1–5) ----------
+   Kunci gred: rendah = 1..6 (nombor, serasi dengan data lama), menengah = "m1".."m5". */
+const LEVELS = { rendah: { n: 6, label: "Tahun" }, menengah: { n: 5, label: "Tingkatan" } };
+const levelOf = g => typeof g === "string" && g[0] === "m" ? "menengah" : "rendah";
+const numOf = g => typeof g === "string" ? +g.slice(1) : g;
+const gradeLabel = g => (levelOf(g) === "menengah" ? "Tingkatan " : "Tahun ") + numOf(g);
+const gradeShort = g => (levelOf(g) === "menengah" ? "Ting " : "T") + numOf(g);
+const gradeSlug = g => (levelOf(g) === "menengah" ? "tingkatan" : "tahun") + numOf(g);
+const gradeFile = g => `soalan/${gradeSlug(g)}.js`;
+function curGrade(p){ return (p.level || "rendah") === "menengah" ? "m" + (p.ting || 1) : (p.year || 1); }
+function setGrade(p, g){ if(levelOf(g) === "menengah"){ p.level = "menengah"; p.ting = numOf(g); } else { p.level = "rendah"; p.year = g; } }
+const subjectsFor = g => SUBJECTS.filter(s => !s.only || s.only === levelOf(g));
 
 /* ---------- statistik (GoatCounter) ----------
    Hanya kiraan tanpa nama: install, buka sebagai app, kuiz selesai (subjek + tahun).
@@ -422,7 +455,7 @@ function loadYear(y){
   if(loading[y]) return loading[y];
   loading[y] = new Promise((ok, no) => {
     const s = document.createElement("script");
-    s.src = `soalan/tahun${y}.js?v=${VER}`;
+    s.src = `${gradeFile(y)}?v=${VER}`;
     s.onload = () => SOALAN[y] ? ok(SOALAN[y]) : no();
     s.onerror = () => { delete loading[y]; no(); };
     document.head.appendChild(s);
@@ -521,8 +554,9 @@ $("#btnCreate").onclick = () => {
   const name = $("#npName").value.trim(), pin = $("#npPin").value.trim();
   if(!name){ $("#npErr").textContent = "Tulis nama dulu ya 🙂"; return; }
   if(pin && !/^\d{4}$/.test(pin)){ $("#npErr").textContent = "PIN mesti 4 nombor"; return; }
-  const p = { id: Date.now().toString(36), name, avatar: npAvatar, pin: pin || "", year: 1, history: [], seen: [] };
+  const p = { id: Date.now().toString(36), name, avatar: npAvatar, pin: pin || "", level: "rendah", year: 1, ting: 1, history: [], seen: [] };
   db.profiles.push(p); save(); close($("#ovNew")); login(p);
+  $("#lvAv").textContent = p.avatar; setTimeout(() => open("#ovLevel"), 250);
 };
 let pinBuf = "", pinOk = null, pinProfile = null;
 function askPin(p, ok){
@@ -557,33 +591,37 @@ function renderHome(){
   const p = me(); if(!p){ renderLogin(); show("s-login"); return; }
   if(!p.seen) p.seen = [];
   $("#hAv").textContent = p.avatar; $("#hName").textContent = p.name;
+  const lv = p.level || "rendah", G = curGrade(p);
+  document.querySelectorAll("#lvl button").forEach(b => b.classList.toggle("on", b.dataset.l === lv));
   const yrs = $("#years"); yrs.innerHTML = "";
-  for(let y = 1; y <= 6; y++){
-    const b = document.createElement("button"); b.className = "yr" + (p.year === y ? " on" : ""); b.textContent = "Tahun " + y;
-    b.onclick = () => { p.year = y; save(); renderHome(); };
+  for(let y = 1; y <= LEVELS[lv].n; y++){
+    const g = lv === "menengah" ? "m" + y : y;
+    const b = document.createElement("button"); b.className = "yr" + (g === G ? " on" : ""); b.textContent = gradeLabel(g);
+    b.onclick = () => { setGrade(p, g); save(); renderHome(); };
     yrs.appendChild(b);
   }
+  requestAnimationFrame(() => { const on = yrs.querySelector(".on"); if(on) yrs.scrollLeft = on.offsetLeft - 20; });
   const subs = $("#subs");
-  if(!SOALAN[p.year]){
-    subs.innerHTML = `<div class="loading">⏳ Memuatkan soalan Tahun ${p.year}…</div>`;
-    const y = p.year;
-    loadYear(y).then(() => { if(me() && me().year === y) renderHome(); })
+  if(!SOALAN[G]){
+    subs.innerHTML = `<div class="loading">⏳ Memuatkan soalan ${gradeLabel(G)}…</div>`;
+    loadYear(G).then(() => { if(me() && curGrade(me()) === G) renderHome(); })
       .catch(() => { subs.innerHTML = `<div class="loading">😕 Tak dapat muat soalan. Semak internet dan cuba lagi.</div>`; });
   } else {
     subs.innerHTML = "";
-    SUBJECTS.forEach((s, i) => {
-      const locked = s.from && p.year < s.from;
-      const chs = chaptersOf(p.year, s.id);
+    const list = subjectsFor(G);
+    list.forEach((s, i) => {
+      const locked = !!(s.from && lv === "rendah" && p.year < s.from);
+      const chs = chaptersOf(G, s.id);
       const b = document.createElement("button");
-      b.className = `sub s-${s.id}` + (i === SUBJECTS.length - 1 ? " wide" : "") + (locked ? " lock" : "");
-      const best = bestScore(p, s.id, p.year);
+      b.className = `sub s-${s.id}` + (i === list.length - 1 && list.length % 2 ? " wide" : "") + (locked ? " lock" : "");
+      const best = bestScore(p, s.id, G);
       const soon = !locked && !chs.length;
       if(soon) b.classList.add("soon");
       const info = locked ? "Bermula Tahun " + s.from : soon ? "Akan datang" : `${chs.length} ${s.unit}` + (best != null ? ` · Terbaik ${best}%` : "");
       b.innerHTML = `<span class="em">${locked ? "🔒" : s.em}</span><div><h3>${s.name}</h3><small>${info}</small></div>`;
       b.onclick = () => {
         if(locked){ confirmBox("🏰", "Sejarah bermula Tahun 4", "Dalam KSSR, subjek Sejarah diajar mulai Tahun 4. Tukar ke Tahun 4?", () => { p.year = 4; save(); renderHome(); }); return; }
-        if(soon){ toast(`${s.name} Tahun ${p.year} akan datang 🙂`); return; }
+        if(soon){ toast(`${s.name} ${gradeLabel(G)} akan datang 🙂`); return; }
         openSetup(s.id);
       };
       subs.appendChild(b);
@@ -596,7 +634,7 @@ function renderHome(){
   list.forEach(r => {
     const d = document.createElement("div"); d.className = "hi";
     const pct = Math.round(r.score / r.total * 100);
-    d.innerHTML = `<span class="em">${SUB[r.sub].em}</span><div class="tx"><b>${SUB[r.sub].name} · T${r.year}</b><small></small></div><span class="sc" style="color:${pct >= 80 ? "var(--ok)" : pct >= 50 ? "var(--math-d)" : "var(--no)"}">${r.score}/${r.total}</span>`;
+    d.innerHTML = `<span class="em">${SUB[r.sub].em}</span><div class="tx"><b>${SUB[r.sub].name} · ${gradeShort(r.year)}</b><small></small></div><span class="sc" style="color:${pct >= 80 ? "var(--ok)" : pct >= 50 ? "var(--math-d)" : "var(--no)"}">${r.score}/${r.total}</span>`;
     d.querySelector("small").textContent = (r.bab ? r.bab + " · " : "") + fmtDate(r.at) + (r.timed ? " · ⏱️ " + r.timed + "s" : "");
     h.appendChild(d);
   });
@@ -627,9 +665,9 @@ function poolSize(year, sub, babs){
 }
 function openSetup(sub){
   const p = me(); setup.sub = sub; setup.babs = [];
-  const chs = chaptersOf(p.year, sub);
+  const chs = chaptersOf(curGrade(p), sub);
   $("#suTitle").textContent = `${SUB[sub].em} ${SUB[sub].name}`;
-  $("#suSub").textContent = `Tahun ${p.year}`;
+  $("#suSub").textContent = gradeLabel(curGrade(p));
   $("#babLbl").textContent = "Pilih " + SUB[sub].unit;
   renderBabs();
   renderCounts();
@@ -659,7 +697,7 @@ function openSetup(sub){
     });
   }
   function renderCounts(){
-    const avail = poolSize(p.year, sub, setup.babs);
+    const avail = poolSize(curGrade(p), sub, setup.babs);
     let counts = [5, 10, 15, 20].filter(n => n <= avail);
     if(!counts.length) counts = [avail];
     if(!counts.includes(setup.count)) setup.count = counts.includes(10) ? 10 : counts[counts.length - 1];
@@ -711,7 +749,7 @@ function babLabel(sub, year, babs){
 }
 function startQuiz(){
   const p = me();
-  quiz = { sub: setup.sub, year: p.year, time: setup.time, babs: setup.babs.slice(), i: 0 };
+  quiz = { sub: setup.sub, year: curGrade(p), time: setup.time, babs: setup.babs.slice(), i: 0 };
   quiz.qs = buildQuestions(p, quiz.sub, quiz.year, quiz.babs, setup.count);
   if(!quiz.qs.length){ toast("Tiada soalan untuk pilihan ini"); return; }
   const col = getComputedStyle(document.documentElement);
@@ -724,7 +762,7 @@ function renderQ(){
   const q = quiz.qs[quiz.i], n = quiz.qs.length;
   $("#qNum").textContent = `${quiz.i + 1}/${n}`;
   $("#progBar").style.width = (quiz.i / n * 100) + "%";
-  $("#qTag").textContent = `${SUB[quiz.sub].name} · Tahun ${quiz.year} · ${q.bab}`;
+  $("#qTag").textContent = `${SUB[quiz.sub].name} · ${gradeLabel(quiz.year)} · ${q.bab}`;
   const pic = $("#qPic");
   if(q.pic){ pic.style.display = ""; pic.className = "pic " + (AR.test(q.pic) ? "ar" + (graphemes(q.pic).length > 14 ? " long" : "") : picClass(q.pic)); pic.textContent = q.pic; }
   else pic.style.display = "none";
@@ -796,10 +834,10 @@ function finish(){
   $("#rScore").innerHTML = `${score}<small>/${total}</small>`;
   const msgs = pct === 100 ? ["🏆","Hebat! Semua betul!"] : pct >= 80 ? ["🎉","Syabas! Cemerlang!"] : pct >= 50 ? ["👍","Bagus! Teruskan usaha!"] : ["💪","Tak apa, cuba lagi ya!"];
   $("#rEmoji").textContent = msgs[0]; $("#rMsg").textContent = msgs[1];
-  $("#rMeta").textContent = `${SUB[quiz.sub].name} · Tahun ${quiz.year}${bab ? " · " + bab : ""} · ${pct}%`;
+  $("#rMeta").textContent = `${SUB[quiz.sub].name} · ${gradeLabel(quiz.year)}${bab ? " · " + bab : ""} · ${pct}%`;
   show("s-result");
   if(pct >= 80) confetti();
-  track(`kuiz/tahun${quiz.year}/${quiz.sub}`, `Kuiz selesai: ${SUB[quiz.sub].name} Tahun ${quiz.year}`);
+  track(`kuiz/${gradeSlug(quiz.year)}/${quiz.sub}`, `Kuiz selesai: ${SUB[quiz.sub].name} ${gradeLabel(quiz.year)}`);
 }
 $("#btnRetry").onclick = () => { setup.sub = quiz.sub; setup.babs = quiz.babs.slice(); setup.count = quiz.qs.length; setup.time = quiz.time; startQuiz(); };
 $("#btnHome").onclick = () => { renderHome(); show("s-home"); };
@@ -863,6 +901,15 @@ instBtns().forEach(b => b.addEventListener("click", async () => {
   try{ e.prompt(); await e.userChoice; }catch(err){}
 }));
 window.addEventListener("appinstalled", () => { pasangTunda = null; instBtns().forEach(b => b.hidden = true); toast("Cerdik Ceria sudah dipasang 🎉"); track("install", "App dipasang"); });
+
+/* ---------- tukar peringkat ---------- */
+function chooseLevel(l){
+  const p = me(); if(!p) return;
+  p.level = l; if(!p.year) p.year = 1; if(!p.ting) p.ting = 1;
+  save(); renderHome();
+}
+document.querySelectorAll("#lvl button").forEach(b => b.onclick = () => chooseLevel(b.dataset.l));
+document.querySelectorAll("#ovLevel .lvpick button").forEach(b => b.onclick = () => { close($("#ovLevel")); chooseLevel(b.dataset.l); });
 
 /* ---------- mula ---------- */
 load();

@@ -28,6 +28,13 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 Kira-kira 2 700 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
 Kandungan agama (Pendidikan Islam, Jawi, Bahasa Arab) elok disemak oleh guru sebelum dikongsi secara meluas.
 
+## Statistik penggunaan
+Dipantau melalui GoatCounter (https://farawyadal.goatcounter.com), tanpa cookie dan tanpa maklumat peribadi.
+- `cerdikceria/install`: app dipasang (Android/Chrome)
+- `cerdikceria/buka-app`: dibuka dari ikon skrin utama (termasuk iPhone)
+- `cerdikceria/kuiz/tahunN/subjek`: kuiz selesai
+Nama profil, PIN dan markah tidak dihantar.
+
 ## Tambah soalan
 Setiap tahun ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`).
 

@@ -1,7 +1,7 @@
 // Cerdik Ceria — service worker
 // Network-first: fail baharu terus dipakai bila ada internet; salinan simpanan dipakai bila luar talian.
 // Hanya cache milik app ini (awalan "cerdikceria-") yang disentuh, supaya tak ganggu app lain di github.io yang sama.
-const CACHE = "cerdikceria-v7";
+const CACHE = "cerdikceria-v8";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "soalan/tahun1.js"];
 
 self.addEventListener("install", e => {

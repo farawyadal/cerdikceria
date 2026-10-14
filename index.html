@@ -437,6 +437,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   </div>
   <h3>Tiada pilihan itu?</h3>
   <ul>
+    <li id="insPerm"><b>Telefon Honor, Huawei, Xiaomi, Oppo atau Vivo:</b> jika sudah tekan "Tambah ke skrin utama" tetapi ikon tidak muncul, benarkan Chrome membuat pintasan: <i>Tetapan → Aplikasi → Chrome → Kebenaran → Pintasan skrin utama / Cipta pintasan desktop</i> → <b>Benarkan</b>. Kemudian cuba sekali lagi.</li>
     <li id="insOld">Telefon lama kadang-kadang tiada pilihan "pasang". Cuba kemas kini <b>Google Chrome</b> di Play Store, kemudian buka semula link ini dalam Chrome.</li>
     <li>Atau simpan sebagai <b>penanda halaman (bookmark)</b> — app tetap berfungsi penuh dalam pelayar.</li>
   </ul>
@@ -516,7 +517,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "18";
+const VER = "19";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -1036,7 +1037,10 @@ function panduanPasang(){
     html = `<p>Anda menggunakan <b>Samsung Internet</b>.</p><ol><li>Tekan menu <b>≡</b> di bawah kanan.</li><li>Pilih <b>Tambah halaman ke</b> (Add page to).</li><li>Pilih <b>Skrin utama</b> (Home screen), kemudian <b>Tambah</b>.</li></ol>`;
   } else if(/MiuiBrowser|XiaoMi/i.test(ua)){
     html = `<p>Anda menggunakan pelayar <b>Mi Browser</b>.</p><ol><li>Tekan menu (☰ atau ⋮).</li><li>Pilih <b>Tambah ke</b> → <b>Skrin utama</b> (atau <i>Add to Home screen</i>).</li></ol><p>Jika tiada, buka link ini dalam <b>Chrome</b> dan cuba lagi.</p>`;
-  } else if(/OPR\/|Opera|UCBrowser|UCWEB|HuaweiBrowser|HeyTapBrowser|VivoBrowser/i.test(ua)){
+  } else if(/HonorBrowser|HiHonor|HuaweiBrowser|HiBrowser/i.test(ua)){
+    copy = true; br = "Chrome";
+    html = `<p>Anda menggunakan pelayar <b>Honor/Huawei</b>. Pelayar ini selalunya <b>tidak boleh</b> memasang app web.</p><ol><li>Tekan <b>Salin link</b> di bawah.</li><li>Buka <b>Google Chrome</b> (muat turun dari Play Store jika tiada) dan tampal link.</li><li>Dalam Chrome, tekan menu <b>⋮</b> → <b>Tambah ke skrin utama</b> / <b>Pasang aplikasi</b>.</li></ol>`;
+  } else if(/OPR\/|Opera|UCBrowser|UCWEB|HeyTapBrowser|VivoBrowser/i.test(ua)){
     html = `<ol><li>Tekan menu pelayar (⋮, ☰ atau ikon profil).</li><li>Cari pilihan <b>Tambah ke skrin utama</b> / <i>Add to Home screen</i> / <i>Pintasan</i>.</li></ol><p>Jika tiada, buka link ini dalam <b>Google Chrome</b>.</p>`;
   } else if(android){
     html = `<ol><li>Tekan menu <b>⋮</b> (tiga titik) di penjuru atas kanan Chrome.</li><li>Pilih <b>Pasang aplikasi</b> atau <b>Tambah ke skrin utama</b> (Add to Home screen).</li><li>Tekan <b>Tambah</b> / <b>Pasang</b>. Ikon Cerdik Ceria akan muncul di skrin utama.</li></ol>`;
@@ -1044,7 +1048,7 @@ function panduanPasang(){
     html = `<ol><li>Di komputer, klik ikon <b>pasang</b> (⊕ atau 🖥️) di hujung kanan bar alamat Chrome/Edge.</li><li>Atau buka menu ⋮ → <b>Simpan dan kongsi</b> → <b>Pasang Cerdik Ceria</b>.</li></ol>`;
   }
   $("#insSteps").innerHTML = html;
-  $("#insOld").hidden = ios;
+  $("#insOld").hidden = ios; $("#insPerm").hidden = ios;
   $("#insCopy").hidden = !copy; $("#insBrowser").textContent = br;
   open("#ovInstall");
   track("install/panduan", "Panduan pasang dibuka");

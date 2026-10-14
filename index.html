@@ -197,6 +197,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .ans:active{transform:translateY(2px)}
 .ans .k{flex:0 0 36px;height:36px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--baloo);font-weight:800;background:var(--bg)}
 .ans .v{flex:1;min-width:0;word-break:break-word}
+.en{display:block;font-style:italic;font-weight:600;opacity:.72;font-size:.86em;margin-top:2px}
+#qEn{margin-top:8px;font-size:18px;white-space:pre-line}#qEn[hidden]{display:none}.rv .pill .en{display:inline}
 .ans.emo{flex-direction:column;gap:4px;padding:10px 8px 14px;justify-content:center}
 .ans.emo .k{flex:0 0 auto;width:30px;height:30px;align-self:flex-start}
 .ans.emo .v{font-size:60px;line-height:1.1;text-align:center}
@@ -283,7 +285,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     </div>
     <div class="lvl" id="lvl"><button data-l="prasekolah">🧸 Prasekolah</button><button data-l="rendah">🎒 Rendah</button><button data-l="menengah">🏫 Menengah</button></div>
     <div class="years" id="years"></div>
-    <button class="dlprow" id="dlpRow" hidden><span class="tx"><b>🇬🇧 DLP</b><small>Matematik &amp; Sains dalam English</small></span><span class="sw" id="dlpSw"><i></i></span></button>
+    <button class="dlprow" id="dlpRow" hidden><span class="tx"><b>🇬🇧 DLP</b><small>Soalan Matematik &amp; Sains + terjemahan English</small></span><span class="sw" id="dlpSw"><i></i></span></button>
     <div class="subs" id="subs"></div>
     <div class="section-t"><h2>Markah terkini</h2><small class="muted" id="histCount"></small></div>
     <div class="hist" id="hist"></div>
@@ -300,7 +302,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
       <span class="qn" id="qNum"></span>
     </div>
     <div class="timer" id="timerBox"><span>⏱️</span><div class="tbar"><i id="tBar"></i></div><span id="tLeft"></span></div>
-    <div class="qcard" id="qCard"><div class="tag" id="qTag"></div><div class="pic" id="qPic"></div><h2 id="qText"></h2></div>
+    <div class="qcard" id="qCard"><div class="tag" id="qTag"></div><div class="pic" id="qPic"></div><h2 id="qText"></h2><p class="en" id="qEn" hidden></p></div>
     <div class="answers" id="answers"></div>
   </section>
 
@@ -411,7 +413,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <li>Markah, bintang dan <b>semakan jawapan</b> selepas setiap kuiz.</li>
     <li>Profil untuk setiap anak, boleh letak <b>PIN</b>.</li>
     <li>Gambar besar dan tulisan Arab/Jawi yang jelas.</li>
-    <li><b>🇬🇧 Suis DLP</b> (Tahun 1 – Tingkatan 3): hidupkan untuk menjawab soalan Matematik dan Sains dalam bahasa Inggeris.</li>
+    <li><b>🇬🇧 Suis DLP</b> (Tahun 1 – Tingkatan 3): hidupkan untuk memaparkan terjemahan bahasa Inggeris (italic) di bawah setiap soalan Matematik dan Sains.</li>
   </ul>
   <h3>📱 Cara guna</h3>
   <ol>
@@ -524,7 +526,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "21";
+const VER = "22";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -601,8 +603,16 @@ const dlpOn = (p, g) => !!(p && p.dlp && isDlpGrade(g));
 const dlpKey = g => "dlp" + g;
 const loadDlp = g => loadKey(dlpKey(g), `soalan/dlp/${gradeSlug(g)}.js`);
 const isDlpQuiz = (sub, g) => DLP_SUBS.includes(sub) && dlpOn(me(), g);
-const subName = (sub, g) => isDlpQuiz(sub, g) ? DLP_NAME[sub] : SUB[sub].name;
-const chaptersOf = (y, sub) => isDlpQuiz(sub, y) ? ((SOALAN[dlpKey(y)] || {})[sub] || []) : ((SOALAN[y] && SOALAN[y][sub]) || []);
+const subName = (sub, g) => isDlpQuiz(sub, g) ? `${SUB[sub].name} · ${DLP_NAME[sub]}` : SUB[sub].name;
+// soalan sentiasa dalam BM; bila DLP ON, terjemahan English dipaparkan di bawah (bab & susunan sama)
+const chaptersOf = (y, sub) => (SOALAN[y] && SOALAN[y][sub]) || [];
+const enChaptersOf = (y, sub) => isDlpQuiz(sub, y) ? ((SOALAN[dlpKey(y)] || {})[sub] || []) : [];
+// RNG berbenih: generator BM & English dijalankan dengan benih sama supaya nombor/pilihan sepadan
+function seeded(seed, fn){
+  const old = Math.random; let a = seed >>> 0;
+  Math.random = () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  try { return fn(); } finally { Math.random = old; }
+}
 
 /* ---------- emoji helpers ---------- */
 const seg = window.Intl && Intl.Segmenter ? new Intl.Segmenter() : null;
@@ -747,8 +757,8 @@ function renderHome(){
   $("#dlpSw").classList.toggle("on", dlpOn(p, G));
   const subs = $("#subs");
   if(dlpOn(p, G) && !SOALAN[dlpKey(G)]){
-    subs.innerHTML = `<div class="loading">⏳ Loading DLP questions…</div>`;
-    loadDlp(G).then(() => { if(me() && curGrade(me()) === G) renderHome(); })
+    subs.innerHTML = `<div class="loading">⏳ Memuatkan soalan DLP…</div>`;
+    Promise.all([loadYear(G), loadDlp(G)]).then(() => { if(me() && curGrade(me()) === G) renderHome(); })
       .catch(() => { subs.innerHTML = `<div class="loading">😕 Tak dapat muat soalan DLP. Semak internet dan cuba lagi.</div>`; });
   } else if(!SOALAN[G]){
     subs.innerHTML = `<div class="loading">⏳ Memuatkan soalan ${gradeLabel(G)}…</div>`;
@@ -782,7 +792,7 @@ function renderHome(){
   list.forEach(r => {
     const d = document.createElement("div"); d.className = "hi";
     const pct = Math.round(r.score / r.total * 100);
-    d.innerHTML = `<span class="em">${SUB[r.sub].em}</span><div class="tx"><b>${r.dlp ? DLP_NAME[r.sub] + " (DLP)" : SUB[r.sub].name} · ${gradeShort(r.year)}</b><small></small></div><span class="sc" style="color:${pct >= 80 ? "var(--ok)" : pct >= 50 ? "var(--math-d)" : "var(--no)"}">${r.score}/${r.total}</span>`;
+    d.innerHTML = `<span class="em">${SUB[r.sub].em}</span><div class="tx"><b>${SUB[r.sub].name}${r.dlp ? " (DLP)" : ""} · ${gradeShort(r.year)}</b><small></small></div><span class="sc" style="color:${pct >= 80 ? "var(--ok)" : pct >= 50 ? "var(--math-d)" : "var(--no)"}">${r.score}/${r.total}</span>`;
     d.querySelector("small").textContent = (r.bab ? r.bab + " · " : "") + fmtDate(r.at) + (r.timed ? " · ⏱️ " + r.timed + "s" : "");
     h.appendChild(d);
   });
@@ -813,9 +823,9 @@ function poolSize(year, sub, babs){
 }
 function openSetup(sub){
   const p = me(); setup.sub = sub; setup.babs = [];
-  const chs = chaptersOf(curGrade(p), sub);
+  const chs = chaptersOf(curGrade(p), sub), enChs = enChaptersOf(curGrade(p), sub);
   $("#suTitle").textContent = `${SUB[sub].em} ${subName(sub, curGrade(p))}`;
-  $("#suSub").textContent = gradeLabel(curGrade(p)) + (isDlpQuiz(sub, curGrade(p)) ? " · DLP (English)" : "");
+  $("#suSub").textContent = gradeLabel(curGrade(p)) + (isDlpQuiz(sub, curGrade(p)) ? " · DLP (BM + English)" : "");
   $("#babLbl").textContent = "Pilih " + SUB[sub].unit;
   renderBabs();
   renderCounts();
@@ -836,6 +846,7 @@ function openSetup(sub){
       const n = c.g && c.g.length ? "Soalan dijana rawak" : `${(c.q || []).length} soalan`;
       b.innerHTML = `<span class="no">${c.n || i + 1}</span><span class="tt"><span class="t"></span><small>${n}</small></span><span class="ck">✓</span>`;
       b.querySelector(".t").textContent = c.t;
+      if(enChs[i] && enChs[i].t){ const e = document.createElement("i"); e.className = "en"; e.textContent = enChs[i].t; b.querySelector(".t").appendChild(e); }
       b.onclick = () => {
         const k = setup.babs.indexOf(i);
         if(k >= 0) setup.babs.splice(k, 1); else setup.babs.push(i);
@@ -860,11 +871,13 @@ let quiz = null, tick = null;
 const shuffle = MK.shuffle;
 const keyOf = (sub, year, text) => `${year}|${sub}|${text}`;
 function buildQuestions(p, sub, year, babs, n){
-  const chs = chaptersOf(year, sub);
+  const chs = chaptersOf(year, sub), en = enChaptersOf(year, sub);
   const idx = babs.length ? babs : chs.map((_, i) => i);
   const seen = new Set(p.seen || []);
   const fixed = [], gens = [];
-  idx.forEach(i => { const c = chs[i]; if(!c) return; (c.q || []).forEach(q => fixed.push({ q, bab: c.t })); (c.g || []).forEach(g => gens.push({ g, bab: c.t })); });
+  idx.forEach(i => { const c = chs[i], e = en[i] || {}; if(!c) return;
+    (c.q || []).forEach((q, j) => fixed.push({ q, bab: c.t, en: (e.q || [])[j] }));
+    (c.g || []).forEach((g, j) => gens.push({ g, bab: c.t, eg: (e.g || [])[j] })); });
   // soalan yang belum pernah keluar diutamakan, kemudian yang lama
   const fresh = shuffle(fixed.filter(x => !seen.has(keyOf(sub, year, x.q[0]))));
   const old = shuffle(fixed.filter(x => seen.has(keyOf(sub, year, x.q[0]))));
@@ -876,17 +889,25 @@ function buildQuestions(p, sub, year, babs, n){
   while(out.length < n && gens.length && guard < 800){
     guard++;
     const gx = MK.pick(gens);
-    let item; try{ item = gx.g(); }catch(e){ continue; }
+    const seed = (Math.random() * 4294967296) >>> 0;
+    let item, enItem; try{ item = seeded(seed, gx.g); }catch(e){ continue; }
     if(!item || used.has(item[0])) continue;
-    used.add(item[0]); out.push({ q: item, bab: gx.bab, gen: true });
+    if(gx.eg){ try{ enItem = seeded(seed, gx.eg); }catch(e){} }
+    used.add(item[0]); out.push({ q: item, bab: gx.bab, gen: true, en: enItem });
   }
   // jika generator kehabisan variasi, tambah soalan tetap
   for(const x of fixedOrder){ if(out.length >= n) break; if(used.has(x.q[0])) continue; used.add(x.q[0]); out.push(x); }
-  return shuffle(out).map(({ q, bab, gen }) => {
+  return shuffle(out).map(({ q, bab, gen, en }) => {
     const [text, right, ...rest] = q;
     const wrongs = rest.slice(0, 3).filter(w => w !== "" && w != null), exp = rest[3] || "";
     const s = splitQ(text);
-    return { raw: text, pic: s.pic, q: s.q, right: String(right), exp, bab, gen: !!gen, options: shuffle([String(right), ...wrongs.map(String)]), picked: null };
+    const o = { raw: text, pic: s.pic, q: s.q, right: String(right), exp, bab, gen: !!gen, options: shuffle([String(right), ...wrongs.map(String)]), picked: null };
+    if(en && en.length === q.length){
+      o.enQ = splitQ(en[0]).q; o.enExp = en[5] || "";
+      o.enOpt = {};   // pilihan BM → English (ikut kedudukan asal), hanya jika berbeza
+      for(let k = 1; k <= 4; k++){ const m = q[k], e = en[k]; if(m !== "" && m != null && e != null && String(e) !== String(m)) o.enOpt[String(m)] = String(e); }
+    }
+    return o;
   });
 }
 function babLabel(sub, year, babs){
@@ -910,11 +931,12 @@ function renderQ(){
   const q = quiz.qs[quiz.i], n = quiz.qs.length;
   $("#qNum").textContent = `${quiz.i + 1}/${n}`;
   $("#progBar").style.width = (quiz.i / n * 100) + "%";
-  $("#qTag").textContent = `${quiz.dlp ? DLP_NAME[quiz.sub] : SUB[quiz.sub].name} · ${gradeLabel(quiz.year)} · ${q.bab}`;
+  $("#qTag").textContent = `${quiz.dlp ? SUB[quiz.sub].name + " · DLP" : SUB[quiz.sub].name} · ${gradeLabel(quiz.year)} · ${q.bab}`;
   const pic = $("#qPic");
   if(q.pic){ pic.style.display = ""; pic.className = "pic " + (AR.test(q.pic) ? "ar" + (graphemes(q.pic).length > 14 ? " long" : "") : picClass(q.pic)); pic.textContent = q.pic; }
   else pic.style.display = "none";
   $("#qText").textContent = q.q;
+  const qe = $("#qEn"); qe.hidden = !q.enQ; qe.textContent = q.enQ || "";
   const box = $("#answers"); box.innerHTML = "";
   const allEmo = q.options.every(emojiOnly);
   box.classList.toggle("grid", allEmo);
@@ -922,6 +944,7 @@ function renderQ(){
     const b = document.createElement("button"); b.className = "ans" + (allEmo ? " emo" : "");
     b.innerHTML = `<span class="k">${"ABCD"[k]}</span><span class="v"></span>`;
     const v = b.querySelector(".v"); v.textContent = o; if(isAr(o)) v.classList.add("ar");
+    if(q.enOpt && q.enOpt[o]){ const e = document.createElement("i"); e.className = "en"; e.textContent = q.enOpt[o]; v.appendChild(e); }
     b.onclick = () => pick(o, b);
     box.appendChild(b);
   });
@@ -982,7 +1005,7 @@ function finish(){
   $("#rScore").innerHTML = `${score}<small>/${total}</small>`;
   const msgs = pct === 100 ? ["🏆","Hebat! Semua betul!"] : pct >= 80 ? ["🎉","Syabas! Cemerlang!"] : pct >= 50 ? ["👍","Bagus! Teruskan usaha!"] : ["💪","Tak apa, cuba lagi ya!"];
   $("#rEmoji").textContent = msgs[0]; $("#rMsg").textContent = msgs[1];
-  $("#rMeta").textContent = `${quiz.dlp ? DLP_NAME[quiz.sub] + " (DLP)" : SUB[quiz.sub].name} · ${gradeLabel(quiz.year)}${bab ? " · " + bab : ""} · ${pct}%`;
+  $("#rMeta").textContent = `${SUB[quiz.sub].name}${quiz.dlp ? " (DLP)" : ""} · ${gradeLabel(quiz.year)}${bab ? " · " + bab : ""} · ${pct}%`;
   show("s-result");
   if(pct >= 80) confetti();
   maybeAskRating();
@@ -1006,17 +1029,20 @@ function renderReview(f){
     d.innerHTML = `<div class="h"><span>Soalan ${i + 1} · ${q.bab}</span><span>${ok ? "✅ Betul" : "❌ Salah"}</span></div>`;
     if(q.pic){ const pc = document.createElement("div"); pc.className = "rpic" + (AR.test(q.pic) ? " ar" : ["p3","p4"].includes(picClass(q.pic)) ? " sm" : ""); pc.textContent = q.pic; d.appendChild(pc); }
     const h = document.createElement("h3"); h.textContent = q.q; d.appendChild(h);
+    if(q.enQ){ const e = document.createElement("i"); e.className = "en"; e.textContent = q.enQ; h.appendChild(e); }
     const add = (cls, label, val) => {
       const s = document.createElement("span"); s.className = "pill " + cls; s.textContent = label;
       const v = document.createElement("span"); v.textContent = val; if(emojiOnly(val)) v.className = "e"; else if(isAr(val)) v.className = "ar";
-      s.appendChild(v); d.appendChild(s);
+      s.appendChild(v);
+      if(q.enOpt && q.enOpt[val]){ const e = document.createElement("i"); e.className = "en"; e.textContent = " / " + q.enOpt[val]; s.appendChild(e); }
+      d.appendChild(s);
     };
     if(ok) add("y", "Jawapan kamu: ", q.right);
     else {
       add("n", "Jawapan kamu: ", q.picked == null ? (q.timeout ? "— (masa tamat)" : "—") : q.picked);
       add("y", "Jawapan betul: ", q.right);
     }
-    if(q.exp){ const e = document.createElement("div"); e.className = "ex"; e.textContent = "💡 " + q.exp; d.appendChild(e); }
+    if(q.exp){ const e = document.createElement("div"); e.className = "ex"; e.textContent = "💡 " + q.exp; if(q.enExp){ const i = document.createElement("i"); i.className = "en"; i.textContent = q.enExp; e.appendChild(i); } d.appendChild(e); }
     box.appendChild(d);
   });
 }
@@ -1177,7 +1203,7 @@ function maybeAskRating(){
 $("#dlpRow").onclick = () => {
   const p = me(); if(!p) return;
   p.dlp = !p.dlp; save(); renderHome();
-  toast(p.dlp ? "DLP ON: Matematik & Sains dalam English 🇬🇧" : "DLP OFF: Matematik & Sains dalam Bahasa Melayu");
+  toast(p.dlp ? "DLP ON: soalan BM + terjemahan English 🇬🇧" : "DLP OFF: soalan dalam Bahasa Melayu sahaja");
   track(p.dlp ? "dlp/on" : "dlp/off", p.dlp ? "DLP dihidupkan" : "DLP dimatikan");
 };
 

@@ -3,7 +3,7 @@
    Matematik, Matematik Tambahan, Sains, Fizik, Kimia, Biologi & Sejarah:
    bab ikut buku teks KSSM Tingkatan 5.
    BM & BI: ikut topik kemahiran. Pendidikan Islam: ikut bidang.
-   Bahasa Arab: ikut tema dan tatabahasa. Geografi (elektif): akan datang.
+   Bahasa Arab: ikut tema dan tatabahasa. Geografi (elektif) tidak dimasukkan.
 
    Format: ["Soalan", "BETUL", "Salah 1", "Salah 2", "Salah 3", "Penerangan (pilihan)"]
    Soalan asli — bukan disalin daripada buku teks.
@@ -912,7 +912,7 @@ ba: [
     ["Isim tafdhil bagi صَغِيرٌ ialah…", "أَصْغَرُ", "صُغْرَى", "صَغِيرَةٌ", "صِغَارٌ"],
     ["Huruf yang digunakan selepas isim tafdhil untuk maksud 'daripada' ialah…", "مِنْ", "فِي", "عَلَى", "إِلَى"]
   ]}
-],
-geo: []
+
+]
 };
 })();

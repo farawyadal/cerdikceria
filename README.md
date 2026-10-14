@@ -32,8 +32,8 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 | 1 | 7 topik | 7 topik | 13 bab | 9 bab | 8 bab | 13 bab | 7 bidang | 6 tema |
 | 2 | 5 topik | 6 topik | 13 bab | 13 bab | 10 bab | 10 bab | 7 bidang | 6 tema |
 | 3 | 5 topik | 5 topik | 9 bab | 10 bab | 8 bab | 7 topik* | 7 bidang | 6 tema |
-| 4 | 5 topik | 6 topik | 10 bab | 12 bab | 10 bab | elektif (akan datang) | 7 bidang | 6 tema |
-| 5 | 5 topik | 5 topik | 8 bab | 9 bab | 10 bab | elektif (akan datang) | 7 bidang | 5 tema |
+| 4 | 5 topik | 6 topik | 10 bab | 12 bab | 10 bab | – | 7 bidang | 6 tema |
+| 5 | 5 topik | 5 topik | 8 bab | 9 bab | 10 bab | – | 7 bidang | 5 tema |
 
 Aliran sains Tingkatan 4–5:
 
@@ -41,6 +41,8 @@ Aliran sains Tingkatan 4–5:
 |---|---|---|---|---|
 | 4 | 10 bab | 6 bab | 8 bab | 15 bab |
 | 5 | 8 bab | 7 bab | 5 bab | 13 bab |
+
+Geografi hanya untuk Tingkatan 1–3 (Tingkatan 4–5 ialah subjek elektif).
 
 \* Geografi Tingkatan 3 disusun ikut topik; susunan bab rasmi belum disahkan.
 

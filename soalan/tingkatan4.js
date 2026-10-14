@@ -3,7 +3,7 @@
    Matematik, Matematik Tambahan, Sains, Fizik, Kimia, Biologi & Sejarah:
    bab ikut buku teks KSSM Tingkatan 4.
    BM & BI: ikut topik kemahiran. Pendidikan Islam: ikut bidang.
-   Bahasa Arab: ikut tema dan tatabahasa. Geografi (elektif): akan datang.
+   Bahasa Arab: ikut tema dan tatabahasa. Geografi (elektif) tidak dimasukkan.
 
    Format: ["Soalan", "BETUL", "Salah 1", "Salah 2", "Salah 3", "Penerangan (pilihan)"]
    Soalan asli — bukan disalin daripada buku teks.
@@ -1017,7 +1017,7 @@ ba: [
     ["Bahasa Arab bagi \"lima\" ialah…", "خَمْسَةٌ", "سِتَّةٌ", "أَرْبَعَةٌ", "ثَمَانِيَةٌ"],
     ["Bahasa Arab bagi \"pertama\" ialah…", "الْأَوَّلُ", "الثَّانِي", "الثَّالِثُ", "الْأَخِيرُ"]
   ]}
-],
-geo: []
+
+]
 };
 })();

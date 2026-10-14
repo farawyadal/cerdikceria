@@ -454,7 +454,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "14";
+const VER = "15";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -469,7 +469,7 @@ const SUBJECTS = [
   {id:"pi", name:"Pendidikan Islam", em:"🕌", unit:"bidang"},
   {id:"ba", name:"Bahasa Arab", em:"📜", unit:"tema"},
   {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4},
-  {id:"geo", name:"Geografi", em:"🌏", unit:"bab", only:"menengah"}
+  {id:"geo", name:"Geografi", em:"🌏", unit:"bab", only:"menengah", maxT:3}
 ];
 const SUB = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
 
@@ -484,7 +484,7 @@ const gradeSlug = g => (levelOf(g) === "menengah" ? "tingkatan" : "tahun") + num
 const gradeFile = g => `soalan/${gradeSlug(g)}.js`;
 function curGrade(p){ return (p.level || "rendah") === "menengah" ? "m" + (p.ting || 1) : (p.year || 1); }
 function setGrade(p, g){ if(levelOf(g) === "menengah"){ p.level = "menengah"; p.ting = numOf(g); } else { p.level = "rendah"; p.year = g; } }
-const subjectsFor = g => SUBJECTS.filter(s => (!s.only || s.only === levelOf(g)) && (!s.minT || numOf(g) >= s.minT));
+const subjectsFor = g => SUBJECTS.filter(s => (!s.only || s.only === levelOf(g)) && (!s.minT || numOf(g) >= s.minT) && (!s.maxT || numOf(g) <= s.maxT));
 
 /* ---------- statistik (GoatCounter) ----------
    Hanya kiraan tanpa nama: install, buka sebagai app, kuiz selesai (subjek + tahun).

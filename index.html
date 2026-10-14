@@ -450,7 +450,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "11";
+const VER = "12";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -1026,7 +1026,13 @@ function maybeAskRating(){
   try{
     if(getRated() || localStorage.getItem("cerdikceria.rateAsked")) return;
     const total = db.profiles.reduce((n, p) => n + (p.history ? p.history.length : 0), 0);
-    if(total >= 3){ localStorage.setItem("cerdikceria.rateAsked", "1"); setTimeout(openRate, 1400); }
+    if(total >= 3) setTimeout(() => {
+      // hanya jika masih di skrin markah atau skrin utama — jangan ganggu kuiz
+      const onSafe = $("#s-result").classList.contains("on") || $("#s-home").classList.contains("on");
+      if(!onSafe || document.querySelector(".overlay.on")) return;   // cuba lagi selepas kuiz seterusnya
+      try{ localStorage.setItem("cerdikceria.rateAsked", "1"); }catch(e){}
+      openRate();
+    }, 1400);
   }catch(e){}
 }
 

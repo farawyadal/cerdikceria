@@ -30,7 +30,8 @@ BM & BI ikut topik kemahiran, Pendidikan Islam ikut bidang KSSR, Bahasa Arab iku
 | Tingkatan | BM | BI | Matematik | Sains | Sejarah | Geografi | P. Islam | B. Arab |
 |---|---|---|---|---|---|---|---|---|
 | 1 | 7 topik | 7 topik | 13 bab | 9 bab | 8 bab | 13 bab | 7 bidang | 6 tema |
-| 2–5 | akan datang | | | | | | | |
+| 2 | 5 topik | 6 topik | 13 bab | 13 bab | 10 bab | 10 bab | 7 bidang | 6 tema |
+| 3–5 | akan datang | | | | | | | |
 
 Kira-kira 3 200 soalan tetap, ditambah soalan Matematik dan huruf hijaiyah yang dijana rawak.
 Kandungan agama (Pendidikan Islam, Jawi, Bahasa Arab) elok disemak oleh guru sebelum dikongsi secara meluas.

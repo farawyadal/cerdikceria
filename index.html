@@ -415,7 +415,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   </ol>
   <h3>⬇️ Pasang di telefon</h3>
   <ul>
-    <li><b>Android (Chrome):</b> tekan butang <b>⬇ App</b> di atas, atau menu ⋮ → <i>Tambah ke skrin utama</i>.</li>
+    <li><b>Android:</b> tekan butang <b>⬇ App</b> di atas. Jika telefon tidak memaparkan tetingkap pasang, app akan tunjuk langkah ikut pelayar anda.</li>
     <li><b>iPhone (Safari):</b> tekan butang Kongsi → <i>Add to Home Screen</i>.</li>
   </ul>
   <h3>🔒 Privasi</h3>
@@ -424,6 +424,23 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <p>Soalan ditulis sendiri berpandukan sukatan pelajaran KPM — bukan disalin daripada buku teks. Ibu bapa dan guru digalakkan menyemak, dan cadangan pembetulan amat dialu-alukan melalui emel.</p>
   <div class="fbrow"><button data-mail>✉️ Hantar cadangan</button><button data-sumbangan>☕ Sokong</button></div>
   <p class="credit" style="margin-top:14px"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026<br>farid.assamani@gmail.com</p>
+  <button class="btn ghost" data-close>Tutup</button>
+</div></div>
+
+<!-- Panduan pasang -->
+<div class="overlay" id="ovInstall"><div class="sheet about">
+  <div style="text-align:center"><div style="font-size:42px">📲</div><h2 style="margin:6px 0 2px">Pasang Cerdik Ceria</h2><div class="muted">Letak ikon Cerdik Ceria di skrin utama telefon</div></div>
+  <div id="insSteps"></div>
+  <div id="insCopy" hidden>
+    <button class="btn pink" id="btnCopyLink">📋 Salin link</button>
+    <p class="dnote" style="text-align:center;margin-top:6px">Kemudian buka <b id="insBrowser">Chrome</b> dan tampal link di ruang alamat.</p>
+  </div>
+  <h3>Tiada pilihan itu?</h3>
+  <ul>
+    <li id="insOld">Telefon lama kadang-kadang tiada pilihan "pasang". Cuba kemas kini <b>Google Chrome</b> di Play Store, kemudian buka semula link ini dalam Chrome.</li>
+    <li>Atau simpan sebagai <b>penanda halaman (bookmark)</b> — app tetap berfungsi penuh dalam pelayar.</li>
+  </ul>
+  <div style="height:8px"></div>
   <button class="btn ghost" data-close>Tutup</button>
 </div></div>
 
@@ -499,7 +516,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "17";
+const VER = "18";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -1001,10 +1018,46 @@ window.addEventListener("beforeinstallprompt", e => {
   e.preventDefault(); pasangTunda = e;
   instBtns().forEach(b => b.hidden = false);
 });
+// Telefon/pelayar lama tidak menyokong pasang automatik: tetap tunjuk butang, dan beri panduan manual.
+if(!isInstalled()) instBtns().forEach(b => b.hidden = false);
+function panduanPasang(){
+  const ua = navigator.userAgent || "";
+  const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  const android = /Android/i.test(ua);
+  const inApp = /FBAN|FBAV|FB_IAB|Instagram|WhatsApp|Line\/|Messenger|TikTok|; wv\)/i.test(ua);
+  let html = "", copy = false, br = "Chrome";
+  if(inApp){
+    copy = true; br = ios ? "Safari" : "Chrome";
+    html = `<p>Anda sedang membuka link ini di dalam app lain (contohnya WhatsApp atau Facebook). Pemasangan hanya boleh dibuat dari <b>${br}</b>.</p><ol><li>Tekan menu (⋮ atau ⋯) di penjuru atas, pilih <b>Buka dalam ${br}</b> / <i>Open in browser</i>.</li><li>Atau tekan <b>Salin link</b> di bawah dan tampal dalam ${br}.</li><li>Kemudian tekan butang <b>⬇ App</b> sekali lagi.</li></ol>`;
+  } else if(ios){
+    if(/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua)){ copy = true; br = "Safari"; html = `<p>Di iPhone/iPad, pemasangan perlu dibuat menggunakan <b>Safari</b>.</p><ol><li>Tekan <b>Salin link</b> di bawah.</li><li>Buka <b>Safari</b> dan tampal link.</li><li>Ikut langkah Safari: butang Kongsi → <b>Add to Home Screen</b>.</li></ol>`; }
+    else html = `<ol><li>Tekan butang <b>Kongsi</b> (kotak dengan anak panah ke atas ⬆️) di bawah skrin Safari.</li><li>Leret ke bawah dan pilih <b>Add to Home Screen</b> / <i>Tambah ke Skrin Utama</i>.</li><li>Tekan <b>Add</b>. Ikon Cerdik Ceria akan muncul di skrin utama.</li></ol>`;
+  } else if(/SamsungBrowser/i.test(ua)){
+    html = `<p>Anda menggunakan <b>Samsung Internet</b>.</p><ol><li>Tekan menu <b>≡</b> di bawah kanan.</li><li>Pilih <b>Tambah halaman ke</b> (Add page to).</li><li>Pilih <b>Skrin utama</b> (Home screen), kemudian <b>Tambah</b>.</li></ol>`;
+  } else if(/MiuiBrowser|XiaoMi/i.test(ua)){
+    html = `<p>Anda menggunakan pelayar <b>Mi Browser</b>.</p><ol><li>Tekan menu (☰ atau ⋮).</li><li>Pilih <b>Tambah ke</b> → <b>Skrin utama</b> (atau <i>Add to Home screen</i>).</li></ol><p>Jika tiada, buka link ini dalam <b>Chrome</b> dan cuba lagi.</p>`;
+  } else if(/OPR\/|Opera|UCBrowser|UCWEB|HuaweiBrowser|HeyTapBrowser|VivoBrowser/i.test(ua)){
+    html = `<ol><li>Tekan menu pelayar (⋮, ☰ atau ikon profil).</li><li>Cari pilihan <b>Tambah ke skrin utama</b> / <i>Add to Home screen</i> / <i>Pintasan</i>.</li></ol><p>Jika tiada, buka link ini dalam <b>Google Chrome</b>.</p>`;
+  } else if(android){
+    html = `<ol><li>Tekan menu <b>⋮</b> (tiga titik) di penjuru atas kanan Chrome.</li><li>Pilih <b>Pasang aplikasi</b> atau <b>Tambah ke skrin utama</b> (Add to Home screen).</li><li>Tekan <b>Tambah</b> / <b>Pasang</b>. Ikon Cerdik Ceria akan muncul di skrin utama.</li></ol>`;
+  } else {
+    html = `<ol><li>Di komputer, klik ikon <b>pasang</b> (⊕ atau 🖥️) di hujung kanan bar alamat Chrome/Edge.</li><li>Atau buka menu ⋮ → <b>Simpan dan kongsi</b> → <b>Pasang Cerdik Ceria</b>.</li></ol>`;
+  }
+  $("#insSteps").innerHTML = html;
+  $("#insOld").hidden = ios;
+  $("#insCopy").hidden = !copy; $("#insBrowser").textContent = br;
+  open("#ovInstall");
+  track("install/panduan", "Panduan pasang dibuka");
+}
+$("#btnCopyLink").onclick = async () => {
+  try{ await navigator.clipboard.writeText(APP_URL); toast("Link disalin ✅"); }
+  catch(err){ window.prompt("Salin link ini:", APP_URL); }
+};
 instBtns().forEach(b => b.addEventListener("click", async () => {
-  const e = pasangTunda; if(!e) return;
-  pasangTunda = null; instBtns().forEach(x => x.hidden = true);
-  try{ e.prompt(); await e.userChoice; }catch(err){}
+  const e = pasangTunda;
+  if(!e){ panduanPasang(); return; }
+  pasangTunda = null;
+  try{ e.prompt(); const c = await e.userChoice; if(c && c.outcome === "accepted") instBtns().forEach(x => x.hidden = true); }catch(err){ panduanPasang(); }
 }));
 window.addEventListener("appinstalled", () => { pasangTunda = null; instBtns().forEach(b => b.hidden = true); toast("Cerdik Ceria sudah dipasang 🎉"); track("install", "App dipasang"); });
 

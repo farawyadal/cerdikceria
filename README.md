@@ -1,6 +1,6 @@
 # Cerdik Ceria 📚
 
-Kuiz seronok untuk kanak-kanak **Prasekolah** (umur 4–6, KSPK), murid **Sekolah Rendah** (Tahun 1–6, KSSR) dan **Sekolah Menengah** (Tingkatan 1–5, KSSM): Bahasa Melayu, English, Matematik, Sains, Sejarah, Geografi (menengah), Pendidikan Islam dan Bahasa Arab, serta Matematik Tambahan, Fizik, Kimia dan Biologi untuk Tingkatan 4–5.
+Kuiz seronok untuk kanak-kanak **Prasekolah** (umur 4–6, KSPK), murid **Sekolah Rendah** (Tahun 1–6, KSSR) dan **Sekolah Menengah** (Tingkatan 1–5, KSSM): Bahasa Melayu, English, Matematik, Sains, Sejarah, Geografi (menengah), Pendidikan Islam dan Bahasa Arab, serta Matematik Tambahan, Fizik, Kimia dan Biologi untuk Tingkatan 4–5. Ada juga peringkat **UPKK (KAFA)**: Al-Quran, Akidah, Ibadah, Sirah, Adab, Jawi & Khat dan Bahasa Arab (`soalan/upkk.js`, kunci `SOALAN["k1"]`) — soalan asli gaya UPKK, bukan salinan kertas soalan sebenar.
 
 App: https://farawyadal.github.io/cerdikceria/
 

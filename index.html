@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cerdik Ceria</title>
-<meta name="description" content="Kuiz seronok untuk kanak-kanak prasekolah, murid sekolah rendah dan menengah, ikut KSPK, KSSR dan KSSM. Developed by FaridAssamani.">
+<meta name="description" content="Kuiz seronok untuk kanak-kanak prasekolah, murid sekolah rendah dan menengah (KSPK, KSSR, KSSM) serta persediaan UPKK. Developed by FaridAssamani.">
 <meta name="author" content="FaridAssamani">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cerdik Ceria">
@@ -40,6 +40,8 @@
   --kimia:#F6D3FF; --kimia-d:#A84BC8;
   --bio:#CDEFD8; --bio-d:#2F8F5B;
   --ba:#FFD9EA; --ba-d:#D2638F;
+  --quran:#CDEFD8; --quran-d:#2F9A5B; --akidah:#D9E4FF; --akidah-d:#4A67C7; --ibadah:#C9EDEA; --ibadah-d:#2A8F87;
+  --sirah:#FBE3C4; --sirah-d:#B87A2A; --adab:#FFDDE6; --adab-d:#C9587A; --jawi:#E8DDFB; --jawi-d:#7A55C2;
   --arab:"Noto Naskh Arabic","Amiri","Traditional Arabic","Geeza Pro",serif;
   --ok:#5CC08A; --ok-bg:#E3F7EA; --no:#EF7B7B; --no-bg:#FDE6E6;
   --accent:#FF9DBB;
@@ -103,7 +105,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sw i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
 .sw.on{background:var(--ok)}.sw.on i{left:23px}
 .lvl{display:flex;gap:4px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:4px;margin-bottom:10px}
-.lvl button{flex:1;padding:10px 4px;border-radius:14px;font-weight:800;font-size:14px;color:var(--soft);white-space:nowrap}
+.lvl button{flex:1;padding:10px 2px;border-radius:14px;font-weight:800;font-size:13px;color:var(--soft);white-space:nowrap}
 .lvl button.on{background:var(--ink);color:#fff}
 .lvpick{display:flex;flex-direction:column;gap:12px;margin-top:16px}
 .lvpick button{display:flex;align-items:center;gap:14px;text-align:left;padding:18px;border-radius:22px;font-weight:800}
@@ -124,7 +126,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sub.wide{grid-column:1/-1;min-height:100px;flex-direction:row;align-items:center;gap:14px;justify-content:flex-start}
 .sub.wide h3{margin:0}
 .sub.lock{filter:grayscale(.7);opacity:.6}
-.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-geo{background:var(--geo)} .s-addmath{background:var(--addmath)} .s-fizik{background:var(--fizik)} .s-kimia{background:var(--kimia)} .s-bio{background:var(--bio)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)} .s-diri{background:var(--diri)}
+.s-bm{background:var(--bm)} .s-bi{background:var(--bi)} .s-math{background:var(--math)} .s-sains{background:var(--sains)} .s-sejarah{background:var(--sejarah)} .s-geo{background:var(--geo)} .s-addmath{background:var(--addmath)} .s-fizik{background:var(--fizik)} .s-kimia{background:var(--kimia)} .s-bio{background:var(--bio)} .s-pi{background:var(--pi)} .s-ba{background:var(--ba)} .s-diri{background:var(--diri)} .s-quran{background:var(--quran)} .s-akidah{background:var(--akidah)} .s-ibadah{background:var(--ibadah)} .s-sirah{background:var(--sirah)} .s-adab{background:var(--adab)} .s-jawi{background:var(--jawi)}
 .sub.soon{opacity:.55}
 .section-t{display:flex;justify-content:space-between;align-items:baseline;margin:24px 0 10px}
 .section-t h2{font-size:21px}
@@ -283,7 +285,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
         <button class="chip" id="btnLogout">🔄 Tukar</button>
       </div>
     </div>
-    <div class="lvl" id="lvl"><button data-l="prasekolah">🧸 Prasekolah</button><button data-l="rendah">🎒 Rendah</button><button data-l="menengah">🏫 Menengah</button></div>
+    <div class="lvl" id="lvl"><button data-l="prasekolah">🧸 Prasekolah</button><button data-l="rendah">🎒 Rendah</button><button data-l="menengah">🏫 Menengah</button><button data-l="upkk">🌙 UPKK</button></div>
     <div class="years" id="years"></div>
     <button class="dlprow" id="dlpRow" hidden><span class="tx"><b>🇬🇧 DLP</b><small>Soalan Matematik &amp; Sains + terjemahan English</small></span><span class="sw" id="dlpSw"><i></i></span></button>
     <div class="subs" id="subs"></div>
@@ -403,6 +405,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <ul>
     <li><b>🧸 Prasekolah</b> (umur 4–6): BM, English, Matematik, Sains, Pendidikan Islam, Diri &amp; Masyarakat.</li>
     <li><b>🎒 Sekolah Rendah</b> (Tahun 1–6, KSSR): BM, English, Matematik, Sains, Sejarah (Tahun 4–6), Pendidikan Islam, Bahasa Arab.</li>
+    <li><b>🌙 UPKK (KAFA)</b>: Al-Quran (tajwid & surah), Akidah, Ibadah, Sirah, Adab, Jawi & Khat dan Bahasa Arab — soalan asli gaya UPKK untuk murid Tahun 5.</li>
     <li><b>🏫 Sekolah Menengah</b> (Tingkatan 1–5, KSSM): BM, English, Matematik, Sains, Sejarah, Geografi (T1–3), Pendidikan Islam, Bahasa Arab, serta Matematik Tambahan, Fizik, Kimia dan Biologi (T4–5).</li>
   </ul>
   <h3>✨ Apa yang ada?</h3>
@@ -461,6 +464,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <button data-l="prasekolah" style="background:var(--diri)"><span class="em">🧸</span><span><b>Prasekolah</b><small>Umur 4 hingga 6 tahun</small></span></button>
     <button data-l="rendah" style="background:var(--bi)"><span class="em">🎒</span><span><b>Sekolah Rendah</b><small>Tahun 1 hingga 6</small></span></button>
     <button data-l="menengah" style="background:var(--sains)"><span class="em">🏫</span><span><b>Sekolah Menengah</b><small>Tingkatan 1 hingga 5</small></span></button>
+    <button data-l="upkk" style="background:var(--jawi)"><span class="em">🌙</span><span><b>UPKK (KAFA)</b><small>Ujian KAFA, murid Tahun 5</small></span></button>
   </div>
 </div></div>
 
@@ -526,7 +530,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "29";
+const VER = "30";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -542,22 +546,30 @@ const SUBJECTS = [
   {id:"ba", name:"Bahasa Arab", em:"📜", unit:"tema"},
   {id:"sejarah", name:"Sejarah", em:"🏰", unit:"unit", from:4},
   {id:"geo", name:"Geografi", em:"🌏", unit:"bab", only:"menengah", maxT:3},
-  {id:"diri", name:"Diri & Masyarakat", em:"🤝", unit:"topik", only:"prasekolah", pra:true}
+  {id:"diri", name:"Diri & Masyarakat", em:"🤝", unit:"topik", only:"prasekolah", pra:true},
+  {id:"quran", name:"Al-Quran", em:"📗", unit:"topik", only:"upkk"},
+  {id:"akidah", name:"Akidah", em:"☝️", unit:"topik", only:"upkk"},
+  {id:"ibadah", name:"Ibadah", em:"🕌", unit:"topik", only:"upkk"},
+  {id:"sirah", name:"Sirah", em:"🐪", unit:"topik", only:"upkk"},
+  {id:"adab", name:"Adab", em:"🌸", unit:"topik", only:"upkk"},
+  {id:"jawi", name:"Jawi & Khat", em:"✍️", unit:"topik", only:"upkk"}
 ];
+const UPKK_SUBS = ["quran", "akidah", "ibadah", "sirah", "adab", "jawi", "ba"];
 const SUB = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
 
 /* ---------- peringkat: Sekolah Rendah (Tahun 1–6) / Sekolah Menengah (Tingkatan 1–5) ----------
    Kunci gred: rendah = 1..6 (nombor, serasi dengan data lama), menengah = "m1".."m5". */
-const LEVELS = { prasekolah: { n: 1, label: "Prasekolah" }, rendah: { n: 6, label: "Tahun" }, menengah: { n: 5, label: "Tingkatan" } };
-const levelOf = g => typeof g === "string" ? (g[0] === "m" ? "menengah" : g[0] === "p" ? "prasekolah" : "rendah") : "rendah";
+const LEVELS = { prasekolah: { n: 1, label: "Prasekolah" }, upkk: { n: 1, label: "UPKK" }, rendah: { n: 6, label: "Tahun" }, menengah: { n: 5, label: "Tingkatan" } };
+const levelOf = g => typeof g === "string" ? (g[0] === "m" ? "menengah" : g[0] === "p" ? "prasekolah" : g[0] === "k" ? "upkk" : "rendah") : "rendah";
+const ONE = { prasekolah: ["Prasekolah", "Pra", "prasekolah", "p1"], upkk: ["UPKK", "UPKK", "upkk", "k1"] };   // peringkat satu gred sahaja
 const numOf = g => typeof g === "string" ? +g.slice(1) : g;
-const gradeLabel = g => levelOf(g) === "prasekolah" ? "Prasekolah" : (levelOf(g) === "menengah" ? "Tingkatan " : "Tahun ") + numOf(g);
-const gradeShort = g => levelOf(g) === "prasekolah" ? "Pra" : (levelOf(g) === "menengah" ? "Ting " : "T") + numOf(g);
-const gradeSlug = g => levelOf(g) === "prasekolah" ? "prasekolah" : (levelOf(g) === "menengah" ? "tingkatan" : "tahun") + numOf(g);
+const gradeLabel = g => ONE[levelOf(g)] ? ONE[levelOf(g)][0] : (levelOf(g) === "menengah" ? "Tingkatan " : "Tahun ") + numOf(g);
+const gradeShort = g => ONE[levelOf(g)] ? ONE[levelOf(g)][1] : (levelOf(g) === "menengah" ? "Ting " : "T") + numOf(g);
+const gradeSlug = g => ONE[levelOf(g)] ? ONE[levelOf(g)][2] : (levelOf(g) === "menengah" ? "tingkatan" : "tahun") + numOf(g);
 const gradeFile = g => `soalan/${gradeSlug(g)}.js`;
-function curGrade(p){ const l = p.level || "rendah"; return l === "prasekolah" ? "p1" : l === "menengah" ? "m" + (p.ting || 1) : (p.year || 1); }
-function setGrade(p, g){ if(levelOf(g) === "prasekolah"){ p.level = "prasekolah"; } else if(levelOf(g) === "menengah"){ p.level = "menengah"; p.ting = numOf(g); } else { p.level = "rendah"; p.year = g; } }
-const subjectsFor = g => levelOf(g) === "prasekolah" ? SUBJECTS.filter(s => s.pra) : SUBJECTS.filter(s => (!s.only || s.only === levelOf(g)) && (!s.minT || numOf(g) >= s.minT) && (!s.maxT || numOf(g) <= s.maxT));
+function curGrade(p){ const l = p.level || "rendah"; return ONE[l] ? ONE[l][3] : l === "menengah" ? "m" + (p.ting || 1) : (p.year || 1); }
+function setGrade(p, g){ if(ONE[levelOf(g)]){ p.level = levelOf(g); } else if(levelOf(g) === "menengah"){ p.level = "menengah"; p.ting = numOf(g); } else { p.level = "rendah"; p.year = g; } }
+const subjectsFor = g => levelOf(g) === "prasekolah" ? SUBJECTS.filter(s => s.pra) : levelOf(g) === "upkk" ? UPKK_SUBS.map(id => SUB[id]) : SUBJECTS.filter(s => (!s.only || s.only === levelOf(g)) && (!s.minT || numOf(g) >= s.minT) && (!s.maxT || numOf(g) <= s.maxT));
 
 /* ---------- statistik (GoatCounter) ----------
    Hanya kiraan tanpa nama: install, buka sebagai app, kuiz selesai (subjek + tahun).
@@ -745,7 +757,7 @@ function renderHome(){
   document.querySelectorAll("#lvl button").forEach(b => b.classList.toggle("on", b.dataset.l === lv));
   const yrs = $("#years"); yrs.innerHTML = "";
   for(let y = 1; y <= LEVELS[lv].n; y++){
-    const g = lv === "menengah" ? "m" + y : lv === "prasekolah" ? "p1" : y;
+    const g = lv === "menengah" ? "m" + y : ONE[lv] ? ONE[lv][3] : y;
     const b = document.createElement("button"); b.className = "yr" + (g === G ? " on" : ""); b.textContent = gradeLabel(g);
     b.onclick = () => { setGrade(p, g); save(); renderHome(); };
     yrs.appendChild(b);
@@ -775,7 +787,7 @@ function renderHome(){
       const best = bestScore(p, s.id, G);
       const soon = !locked && !chs.length;
       if(soon) b.classList.add("soon");
-      const info = locked ? "Bermula Tahun " + s.from : soon ? "Akan datang" : `${chs.length} ${lv === "prasekolah" ? "topik" : s.unit}` + (best != null ? ` · Terbaik ${best}%` : "");
+      const info = locked ? "Bermula Tahun " + s.from : soon ? "Akan datang" : `${chs.length} ${lv === "prasekolah" || lv === "upkk" ? "topik" : s.unit}` + (best != null ? ` · Terbaik ${best}%` : "");
       b.innerHTML = `<span class="em">${locked ? "🔒" : s.em}</span><div><h3>${subName(s.id, G)}</h3><small>${info}</small></div>`;
       b.onclick = () => {
         if(locked){ confirmBox("🏰", "Sejarah bermula Tahun 4", "Dalam KSSR, subjek Sejarah diajar mulai Tahun 4. Tukar ke Tahun 4?", () => { p.year = 4; save(); renderHome(); }); return; }

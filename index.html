@@ -104,8 +104,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sw{flex:0 0 46px;height:26px;border-radius:999px;background:var(--line);position:relative;transition:background .2s}
 .sw i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
 .sw.on{background:var(--ok)}.sw.on i{left:23px}
-.lvl{display:flex;gap:4px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:4px;margin-bottom:10px}
-.lvl button{flex:1;padding:10px 2px;border-radius:14px;font-weight:800;font-size:13px;color:var(--soft);white-space:nowrap}
+.lvl{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:4px;margin-bottom:10px}
+.lvl button{padding:10px 6px;border-radius:14px;font-weight:800;font-size:15px;color:var(--soft);white-space:nowrap}
 .lvl button.on{background:var(--ink);color:#fff}
 .lvpick{display:flex;flex-direction:column;gap:12px;margin-top:16px}
 .lvpick button{display:flex;align-items:center;gap:14px;text-align:left;padding:18px;border-radius:22px;font-weight:800}
@@ -530,7 +530,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "30";
+const VER = "31";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [

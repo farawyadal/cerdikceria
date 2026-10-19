@@ -702,12 +702,12 @@ SOALAN[5].pi = [
     ["Ilmu tentang cara membaca al-Quran dengan betul dipanggil…", "tajwid", "tafsir", "fiqh", "sirah"]
   ]},
   { t: "Hadis", q: [
-    ["Hadis ialah sumber hukum Islam yang ___ selepas al-Quran.", "kedua", "pertama", "ketiga", "keempat"],
-    ["Hadis ialah perkataan, perbuatan dan ___ Nabi Muhammad SAW.", "pengakuan (taqrir)", "lukisan", "lagu", "pakaian sahaja"],
-    ["\"Muttafaq 'alaih\" bermaksud hadis yang diriwayatkan oleh…", "Imam Bukhari dan Imam Muslim", "Imam Syafie sahaja", "Imam Malik dan Imam Ahmad", "Imam Abu Daud sahaja"],
+    ["Contoh pemimpin di sekolah ialah…", "guru besar", "pelawat", "penjual di pasar", "pemandu teksi"],
+    ["Ketua negara Malaysia ialah…", "Yang di-Pertuan Agong", "Ketua Kampung", "Guru Besar", "Ketua Kelas"],
+    ["Sikap yang betul terhadap pemimpin ialah…", "menghormati dan mendoakan kebaikan untuknya", "mengejek pemimpin", "menghina pemimpin di media sosial", "tidak mempedulikan arahannya"],
     ["Menurut hadis, kita wajib mendengar dan taat kepada pemimpin dalam perkara…", "yang baik", "maksiat", "apa sahaja tanpa had", "yang merosakkan"],
     ["Jika pemimpin menyuruh melakukan maksiat, kita…", "tidak wajib taat", "mesti taat", "perlu menyokongnya", "boleh ikut separuh"],
-    ["Orang yang meriwayatkan hadis dipanggil…", "perawi", "imam solat", "bilal", "khatib"],
+    ["Ketua kelas meminta semua murid membersihkan kelas. Tindakan kita ialah…", "membantu membersihkan kelas", "pura-pura tidak dengar", "keluar bermain", "menyuruh orang lain sahaja"],
     ["Antara pengajaran hadis tentang taat kepada pemimpin ialah…", "masyarakat menjadi aman dan teratur", "masyarakat bergaduh", "pemimpin tidak perlu dihormati", "undang-undang tidak penting"],
     ["Contoh taat kepada pemimpin sekolah ialah…", "mematuhi peraturan sekolah", "ponteng kelas", "membuang sampah merata", "melawan guru"]
   ]},

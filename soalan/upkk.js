@@ -159,7 +159,7 @@ quran: [
     ["جَاءَ|Hukum mad pada kalimah ini ialah…", "Mad Wajib Muttasil", "Mad Jaiz Munfasil", "Mad 'Iwad", "Mad Asli"],
     ["إِنَّا أَعْطَيْنَاكَ|Hukum mad pada \"إِنَّا\" dalam potongan ayat ini ialah…", "Mad Jaiz Munfasil", "Mad Wajib Muttasil", "Mad 'Iwad", "Mad Lazim"],
     ["Mad Wajib Muttasil dibaca sepanjang…", "4 atau 5 harakat", "2 harakat sahaja", "6 harakat sahaja", "1 harakat"],
-    ["Mad 'Arid Lissukun berlaku apabila…", "berhenti (wakaf) pada hujung ayat selepas huruf mad", "bertemu hamzah", "bertemu tanwin", "bertemu huruf qalqalah"],
+    ["Mad 'Arid Lissukun berlaku apabila…", "berhenti (wakaf) pada huruf selepas huruf mad", "bertemu hamzah", "bertemu tanwin", "bertemu huruf qalqalah"],
     ["Mad 'Arid Lissukun boleh dibaca sepanjang…", "2, 4 atau 6 harakat", "1 harakat", "3 harakat sahaja", "8 harakat"],
     ["أَفْوَاجًا|Apabila berhenti pada kalimah ini, hukumnya ialah…", "Mad 'Iwad", "Mad Asli", "Mad Lazim", "Mad Wajib Muttasil"],
     ["Mad 'Iwad dibaca sepanjang…", "2 harakat", "4 harakat", "6 harakat", "5 harakat"],
@@ -388,7 +388,7 @@ ibadah: [
     ["Hari Tasyrik ialah pada…", "11, 12 dan 13 Zulhijjah", "1, 2 dan 3 Syawal", "9 dan 10 Muharram", "27 Ramadan"]
   ]},
   { t: "Zakat dan Haji", q: [
-    ["Zakat yang wajib dikeluarkan oleh setiap individu Muslim pada bulan Ramadan ialah zakat…", "fitrah", "harta", "emas", "perniagaan"],
+    ["Zakat yang wajib dikeluarkan oleh setiap individu Muslim sempena Hari Raya Aidilfitri ialah zakat…", "fitrah", "harta", "emas", "perniagaan"],
     ["Zakat fitrah sebaik-baiknya dibayar sebelum…", "solat sunat Aidilfitri", "puasa bermula", "solat Jumaat", "bulan Rejab"],
     ["Golongan yang layak menerima zakat dinamakan…", "asnaf", "amil", "muzakki", "musafir"],
     ["Bilangan asnaf zakat ialah…", "8", "5", "6", "10"],
@@ -410,7 +410,7 @@ sirah: [
   { t: "Kelahiran dan Zaman Kanak-kanak Nabi Muhammad s.a.w.", q: [
     ["Nabi Muhammad s.a.w. dilahirkan di…", "Makkah", "Madinah", "Taif", "Syam"],
     ["Nabi Muhammad s.a.w. dilahirkan pada Tahun…", "Gajah", "Dukacita", "Hijrah", "Kesedihan"],
-    ["Nabi Muhammad s.a.w. dilahirkan pada 12…", "Rabiulawal", "Ramadan", "Syawal", "Muharram"],
+    ["Menurut pendapat yang masyhur, Nabi Muhammad s.a.w. dilahirkan pada 12…", "Rabiulawal", "Ramadan", "Syawal", "Muharram"],
     ["Bapa Nabi Muhammad s.a.w. bernama…", "Abdullah", "Abdul Muttalib", "Abu Talib", "Abbas"],
     ["Ibu Nabi Muhammad s.a.w. bernama…", "Aminah binti Wahab", "Khadijah", "Halimatus Sa'diah", "Fatimah"],
     ["Ibu susuan Nabi Muhammad s.a.w. ialah…", "Halimatus Sa'diah", "Aminah", "Khadijah", "Ummu Aiman"],

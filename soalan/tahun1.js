@@ -583,7 +583,7 @@ SOALAN[1].pi = [
   ]},
   { t: "Ibadah", q: [
     ["Sebelum solat, kita perlu mengambil…", "wuduk", "makan", "mandi sungai", "tidur"],
-    ["Wuduk dimulakan dengan…", "niat", "membasuh kaki", "menyapu kepala", "berkumur"],
+    ["Rukun wuduk yang pertama ialah…", "niat", "membasuh kaki", "menyapu kepala", "membasuh tangan hingga siku", "Niat dilakukan ketika mula membasuh muka."],
     ["Antara anggota wuduk yang wajib dibasuh ialah…", "muka", "perut", "belakang", "rambut keseluruhan"],
     ["Solat fardu sehari semalam ada ___ waktu.", "5", "3", "4", "7"],
     ["Solat fardu yang dilakukan pada waktu pagi ialah…", "Subuh", "Zohor", "Asar", "Isyak"],

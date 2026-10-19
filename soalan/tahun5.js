@@ -755,7 +755,7 @@ SOALAN[5].pi = [
     ["Fardu kifayah bermaksud…", "jika sebahagian melakukannya, gugur kewajipan yang lain", "wajib setiap orang", "tidak perlu dilakukan", "hanya untuk orang dewasa"],
     ["Rukun Islam yang ketiga ialah…", "mengeluarkan zakat", "berpuasa", "menunaikan haji", "mendirikan solat"],
     ["Rukun Islam yang keempat ialah…", "berpuasa pada bulan Ramadan", "mengeluarkan zakat", "menunaikan haji", "mengucap dua kalimah syahadah"],
-    ["Zakat fitrah wajib dibayar sebelum…", "solat sunat Aidilfitri", "bulan Ramadan bermula", "solat Jumaat", "bulan Zulhijah"],
+    ["Waktu yang paling afdal membayar zakat fitrah ialah sebelum…", "solat sunat Aidilfitri", "bulan Ramadan bermula", "solat Jumaat", "bulan Zulhijah", "Zakat fitrah boleh dibayar sepanjang Ramadan. Waktu afdal ialah pagi Hari Raya sebelum solat sunat Aidilfitri."],
     ["Makan sahur ketika berpuasa hukumnya…", "sunat", "wajib", "haram", "makruh"],
     ["Arah kiblat menghadap ke…", "Kaabah di Makkah", "Masjid Nabawi", "Baitulmaqdis", "Masjid Negara"],
     ["Orang yang melaungkan azan dipanggil…", "bilal (muazzin)", "imam", "khatib", "makmum"]

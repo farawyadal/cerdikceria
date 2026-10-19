@@ -528,7 +528,7 @@ pi: [
     ["Kepercayaan bahawa ada nabi selepas Nabi Muhammad SAW adalah…", "bertentangan dengan akidah Islam", "dibenarkan", "sunat", "harus"]
   ]},
   { t: "Ibadah", q: [
-    ["Zakat fitrah wajib dikeluarkan pada bulan…", "Ramadan (sebelum solat Aidilfitri)", "Syawal selepas solat raya", "Zulhijah", "Muharam"],
+    ["Waktu wajib zakat fitrah bermula apabila…", "terbenam matahari pada hari terakhir Ramadan", "masuk 1 Ramadan", "selesai solat sunat Aidilfitri", "masuk bulan Zulhijah", "Waktu harus: sepanjang Ramadan. Waktu wajib: terbenam matahari hari terakhir Ramadan. Waktu afdal: sebelum solat sunat Aidilfitri. Makruh selepas solat raya, dan haram dilewatkan selepas terbenam matahari 1 Syawal."],
     ["Asnaf zakat ada…", "8 golongan", "5 golongan", "10 golongan", "3 golongan"],
     ["Contoh asnaf zakat ialah…", "fakir dan miskin", "orang kaya", "peniaga besar", "pelancong"],
     ["Zakat harta wajib apabila cukup nisab dan…", "haul (genap setahun)", "sebulan", "seminggu", "sehari"],

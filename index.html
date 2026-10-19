@@ -240,6 +240,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .pill.n{background:var(--no-bg);color:#B54848}
 .pill .e{font-size:26px;vertical-align:middle}
 .rv .ex{margin-top:8px;font-size:14px;color:var(--soft)}
+.rv .lapor{display:block;margin:8px 0 0 auto;font-size:13px;font-weight:700;color:var(--soft);background:none;padding:4px 2px}
 .rv .ex2{margin-top:10px;background:var(--bg);border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.5}
 .rv .bad .ex2,.rv.bad .ex2{background:#FFF1EE}
 .filter{display:flex;gap:8px;margin:4px 0 14px}
@@ -546,7 +547,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "35";
+const VER = "36";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -1111,6 +1112,20 @@ function renderReview(f){
       add("y", "Jawapan betul: ", q.right);
     }
     d.appendChild(penerangan(q, ok));
+    const lp = document.createElement("button"); lp.className = "lapor"; lp.textContent = "🚩 Lapor soalan ini";
+    lp.onclick = () => {
+      const info = [
+        "Soalan yang dilaporkan:",
+        `${SUB[quiz.sub].name} · ${gradeLabel(quiz.year)} · ${q.bab}`,
+        (q.pic ? q.pic + " | " : "") + q.q,
+        "Pilihan: " + q.options.join(" / "),
+        "Jawapan dalam app: " + q.right,
+        "", "Apa yang salah / cadangan pembetulan:"
+      ].join("\n");
+      track("lapor-soalan/" + quiz.sub, "Lapor soalan");
+      location.href = mailLink(`Lapor soalan: ${SUB[quiz.sub].name} ${gradeLabel(quiz.year)}`, info);
+    };
+    d.appendChild(lp);
     box.appendChild(d);
   });
 }

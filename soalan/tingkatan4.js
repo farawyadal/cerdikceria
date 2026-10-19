@@ -930,7 +930,7 @@ pi: [
     ["Rukun haji yang dilakukan pada 9 Zulhijjah ialah…", "wukuf di Arafah", "tawaf", "sa'ie", "bercukur"],
     ["Sa'ie dilakukan antara Bukit Safa dan Bukit…", "Marwah", "Uhud", "Tursina", "Arafah"],
     ["Umrah berbeza dengan haji kerana umrah tidak mempunyai…", "wukuf di Arafah", "ihram", "tawaf", "sa'ie"],
-    ["Zakat fitrah wajib dikeluarkan pada bulan…", "Ramadan", "Syawal sahaja", "Muharam", "Zulhijjah"],
+    ["Membayar zakat fitrah selepas solat sunat Aidilfitri (sebelum terbenam matahari 1 Syawal) hukumnya…", "makruh", "wajib", "afdal", "sunat", "Waktu afdal ialah sebelum solat sunat Aidilfitri; selepas solat hukumnya makruh, dan haram jika dilewatkan selepas terbenam matahari 1 Syawal."],
     ["Nisab zakat emas ialah…", "85 gram", "20 gram", "100 gram", "500 gram"],
     ["Korban disembelih pada hari raya…", "Aidiladha dan hari tasyrik", "Aidilfitri", "Maulidur Rasul", "Awal Muharam"],
     ["Hukum melaksanakan haji bagi yang berkemampuan ialah…", "wajib sekali seumur hidup", "sunat", "harus", "setiap tahun"]
@@ -954,8 +954,8 @@ pi: [
     ["Ihsan bermaksud beribadah seolah-olah…", "kita melihat Allah", "orang melihat kita", "untuk dipuji", "tidak perlu niat"]
   ]},
   { t: "Jawi", q: [
-    ["ماليسيا|Perkataan Jawi ini dibaca…", "Malaysia", "Melaka", "Melayu", "Malam"],
-    ["نڬارا|Perkataan Jawi ini dibaca…", "negara", "negeri", "nangka", "naga"],
+    ["مليسيا|Perkataan Jawi ini dibaca…", "Malaysia", "Melaka", "Melayu", "Malam"],
+    ["نݢارا|Perkataan Jawi ini dibaca…", "negara", "negeri", "nangka", "naga"],
     ["Ejaan Jawi bagi \"sekolah\" ialah…", "سکوله", "سکولا", "سيکوله", "سکوڠ"],
     ["Ejaan Jawi bagi \"buku\" ialah…", "بوکو", "بکو", "بوکوه", "بوکق"],
     ["Ejaan Jawi bagi \"ibu\" ialah…", "ايبو", "ابو", "عيبو", "ايبوه"],

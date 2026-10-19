@@ -583,9 +583,9 @@ pi: [
     ["Menghormati orang yang berlainan agama ialah tuntutan…", "Islam", "yang salah", "tidak penting", "hanya di sekolah"]
   ]},
   { t: "Jawi", q: [
-    ["ماليسيا|Perkataan Jawi ini dibaca…", "Malaysia", "Melaka", "Malayu", "Melati"],
+    ["مليسيا|Perkataan Jawi ini dibaca…", "Malaysia", "Melaka", "Melayu", "Melati"],
     ["کمرديکاٴن|Perkataan Jawi ini dibaca…", "kemerdekaan", "kemerahan", "kemudahan", "kebersihan"],
-    ["Ejaan Jawi bagi \"Malaysia\" ialah…", "ماليسيا", "مليسيا", "ماليسي", "ملايسيا"],
+    ["Ejaan Jawi bagi \"Malaysia\" ialah…", "مليسيا", "ماليسيا", "مليسي", "ملايسيا"],
     ["Ejaan Jawi bagi \"sekolah\" ialah…", "سکوله", "سکله", "سکولا", "سيکوله"],
     ["Tanda hamzah tiga suku (ٴ) digunakan dalam ejaan perkataan seperti…", "kemerdekaan", "buku", "rumah", "makan"],
     ["Jenis khat yang dipelajari di sekolah rendah termasuk Nasakh dan…", "Rikaah", "Rumi", "Latin", "Braille"]

@@ -566,6 +566,14 @@ pi: [
     ["Surah al-Qari'ah menceritakan tentang…", "hari kiamat", "kisah Nabi Musa", "puasa", "zakat"],
     ["Surah al-'Adiyat mengandungi ___ ayat.", "11", "8", "5", "6"]
   ]},
+  { t: "Hadis", q: [
+    ["Rasulullah SAW menyuruh orang yang beriman supaya ___ tetamu.", "memuliakan", "membiarkan", "menghalau", "mengejek", "Maksud hadis: Sesiapa yang beriman kepada Allah dan hari akhirat, hendaklah dia memuliakan tetamunya. (Riwayat al-Bukhari dan Muslim)"],
+    ["Menurut hadis, memuliakan tetamu ialah tanda seseorang itu beriman kepada Allah dan…", "hari akhirat", "malaikat sahaja", "kitab sahaja", "jiran"],
+    ["Cara menyambut tetamu yang baik ialah…", "menjawab salam dan menjemput masuk dengan muka manis", "berpura-pura tiada di rumah", "membiarkan tetamu di luar", "terus menonton televisyen"],
+    ["Contoh memuliakan tetamu ialah…", "menghidangkan minuman atau makanan", "bermain telefon tanpa melayan", "bercakap kasar", "meninggalkan tetamu seorang diri"],
+    ["Apabila tetamu hendak pulang, kita sebaiknya…", "menghantarnya ke pintu dan mengucapkan terima kasih", "terus masuk ke bilik", "menutup pintu dengan kuat", "tidak menghiraukannya"],
+    ["Antara kebaikan memuliakan tetamu ialah…", "mengeratkan silaturahim", "menimbulkan pergaduhan", "membazir masa", "menjauhkan saudara"]
+  ]},
   { t: "Akidah", q: [
     ["Beriman kepada hari akhirat ialah Rukun Iman yang ke-…", "5", "4", "6", "3"],
     ["Hari akhirat juga dikenali sebagai hari…", "kiamat", "raya", "jadi", "minggu"],

@@ -66,10 +66,13 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .chip{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;font-size:15px}
 .chip.inst{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chip.sok{background:#FFF1D6;border-color:#F5D9A6}
+.chip.awas{background:#FFF4D6;border-color:#F2D27A}
+.top .acts .chip{white-space:nowrap}
+@media (max-width:420px){ #btnLogout .tk{display:none} #btnLogout{padding:6px 9px;font-size:16px} }
 .top .acts{flex:0 0 auto}
 .top .acts{gap:6px}
 .top .acts .chip{padding:6px 10px;font-size:14px}
-.top .acts .chip.sok{padding:6px 9px;font-size:16px}
+.top .acts .chip.sok,.top .acts .chip.awas{padding:6px 9px;font-size:16px}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px 18px;border-radius:18px;font-weight:800;font-size:18px;font-family:var(--baloo);background:var(--ink);color:#fff;box-shadow:0 5px 0 #24213b;transition:transform .08s}
 .btn:active{transform:translateY(3px);box-shadow:0 2px 0 #24213b}
 .btn.ghost{background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:0 4px 0 var(--line)}
@@ -291,8 +294,9 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
       <div class="who"><span class="av" id="hAv"></span><div style="min-width:0"><small>Hai,</small><b id="hName"></b></div></div>
       <div class="acts">
         <button class="chip inst" hidden title="Pasang app">⬇ App</button>
+        <button class="chip awas" data-notis title="Notis untuk ibu bapa" aria-label="Notis untuk ibu bapa">⚠️</button>
         <button class="chip sok" data-sumbangan title="Sokong Cerdik Ceria" aria-label="Sokong Cerdik Ceria">☕</button>
-        <button class="chip" id="btnLogout">🔄 Tukar</button>
+        <button class="chip" id="btnLogout" aria-label="Tukar profil">🔄<span class="tk"> Tukar</span></button>
       </div>
     </div>
     <div class="lvl" id="lvl"><button data-l="prasekolah">🧸 Prasekolah</button><button data-l="rendah">🎒 Rendah</button><button data-l="menengah">🏫 Menengah</button><button data-l="upkk">🌙 UPKK</button></div>
@@ -379,6 +383,19 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 </div></div>
 
 <!-- Sumbangan -->
+<div class="overlay center" id="ovNotis"><div class="sheet" style="max-width:420px">
+  <div style="font-size:42px;text-align:center">⚠️</div>
+  <h2 style="text-align:center">Notis untuk ibu bapa</h2>
+  <div class="warnbox" style="margin-top:4px">
+    <p style="margin-top:0">Cerdik Ceria <b>bukan pengganti guru atau buku teks</b>. Soalan disediakan oleh individu, bukan pakar setiap subjek, dan <b>belum disemak secara rasmi</b>. Mungkin ada soalan yang kurang tepat.</p>
+    <p>Untuk <b>Pendidikan Islam dan UPKK</b>, sila <b>semak bersama anak</b> dan rujuk ustaz/ustazah atau buku teks jika ragu.</p>
+  </div>
+  <p class="dnote" style="text-align:center">Jumpa soalan yang salah? Beritahu kami supaya dapat dibetulkan. 🙏</p>
+  <button class="btn pink" id="btnNotisLapor">✉️ Lapor kesilapan</button>
+  <div style="height:10px"></div>
+  <button class="btn ghost" data-close>Faham</button>
+</div></div>
+
 <div class="overlay" id="ovSumbangan"><div class="sheet" style="text-align:center">
   <div style="font-size:42px">☕</div>
   <h2>Sokong Cerdik Ceria</h2>
@@ -547,7 +564,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "36";
+const VER = "37";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -769,6 +786,7 @@ $("#btnLogout").onclick = () => { db.current = null; save(); renderLogin(); show
 /* ---------- HOME ---------- */
 function renderHome(){
   const p = me(); if(!p){ renderLogin(); show("s-login"); return; }
+  setTimeout(maybeNotis, 900);
   if(!p.seen) p.seen = [];
   $("#hAv").textContent = p.avatar; $("#hName").textContent = p.name;
   const lv = p.level || "rendah", G = curGrade(p);
@@ -1266,6 +1284,17 @@ $("#rSend").onclick = () => {
 };
 $("#rShare").addEventListener("click", () => track("kongsi/whatsapp", "Kongsi ke WhatsApp"));
 document.querySelectorAll("[data-rate]").forEach(b => b.onclick = openRate);
+/* ---------- notis ibu bapa (disclaimer) — keluar sendiri sekali bagi setiap peranti ---------- */
+const NKEY = "cerdikceria.notis";
+function bukaNotis(src){ try{ localStorage.setItem(NKEY, "1"); }catch(e){} open("#ovNotis"); track("notis/buka-" + src, "Notis ibu bapa dibuka"); }
+document.querySelectorAll("[data-notis]").forEach(b => b.onclick = () => bukaNotis("butang"));
+$("#btnNotisLapor").onclick = () => { track("notis/lapor", "Lapor kesilapan dari notis"); location.href = mailLink("Lapor kesilapan soalan", "Subjek / tahun / bab:\nSoalan:\nApa yang salah / cadangan pembetulan:"); };
+function maybeNotis(){
+  let seen = false; try{ seen = !!localStorage.getItem(NKEY); }catch(e){}
+  if(seen || !me()) return;
+  if(document.querySelector(".overlay.on")){ setTimeout(maybeNotis, 1500); return; }   // tunggu popup lain ditutup
+  bukaNotis("auto");
+}
 document.querySelectorAll("[data-mail]").forEach(b => b.onclick = () => { track("cadangan/emel", "Buka emel cadangan"); location.href = mailLink("Cadangan untuk Cerdik Ceria"); });
 // minta rating sekali sahaja selepas 3 kuiz selesai (jika belum beri / belum tolak)
 function maybeAskRating(){

@@ -104,6 +104,9 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sw{flex:0 0 46px;height:26px;border-radius:999px;background:var(--line);position:relative;transition:background .2s}
 .sw i{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
 .sw.on{background:var(--ok)}.sw.on i{left:23px}
+.warnbox{background:#FFF4D6;border:2px solid #F2D27A;border-radius:16px;padding:12px 14px;margin:8px 0 6px;font-size:15px;line-height:1.5}
+.warnbox p{margin:6px 0 0}
+.agnote{background:#FFF4D6;border:1.5px solid #F2D27A;border-radius:12px;padding:8px 10px;font-size:13px;font-weight:700;color:#7A5A12;margin:8px 0 0;line-height:1.4}
 .lvl{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:4px;margin-bottom:10px}
 .lvl button{padding:10px 6px;border-radius:14px;font-weight:800;font-size:15px;color:var(--soft);white-space:nowrap}
 .lvl button.on{background:var(--ink);color:#fff}
@@ -345,7 +348,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 
 <!-- Sheet: tetapan kuiz -->
 <div class="overlay" id="ovSetup"><div class="sheet">
-  <h2 id="suTitle"></h2><div class="muted" id="suSub"></div>
+  <h2 id="suTitle"></h2><div class="muted" id="suSub"></div><div class="agnote" id="suAgama" hidden>⚠️ Soalan agama disediakan oleh individu, bukan pakar. Ibu bapa dinasihatkan menyemak bersama anak dan merujuk ustaz/ustazah jika ragu.</div>
   <div class="lbl" id="babLbl">Pilih bab</div>
   <div class="babs" id="babList"></div>
   <div class="lbl">Berapa soalan?</div>
@@ -439,9 +442,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   <h3>🔒 Privasi</h3>
   <p>Tiada akaun atau pendaftaran. Nama profil, PIN dan markah disimpan <b>dalam telefon ini sahaja</b>. App hanya merekod statistik penggunaan tanpa nama (contohnya bilangan kuiz dimainkan) untuk penambahbaikan.</p>
   <h3>📝 Nota</h3>
-  <p>Soalan ditulis sendiri berpandukan sukatan pelajaran KPM — bukan disalin daripada buku teks. Ibu bapa dan guru digalakkan menyemak, dan cadangan pembetulan amat dialu-alukan melalui emel.</p>
+  <p>Soalan ditulis sendiri berpandukan sukatan pelajaran KPM — bukan disalin daripada buku teks.</p>
+  <div class="warnbox"><b>⚠️ Penting untuk ibu bapa</b>
+    <p>App ini <b>bukan pengganti guru atau buku teks</b>. Soalan disediakan oleh individu, bukan oleh pakar setiap subjek, dan belum disemak secara rasmi. Mungkin ada soalan yang kurang tepat atau tidak ikut tahun.</p>
+    <p>Bagi subjek <b>Pendidikan Islam dan UPKK</b> (Al-Quran, tajwid, akidah, ibadah, sirah, Jawi), ibu bapa <b>dinasihatkan menyemak sendiri</b> soalan bersama anak, dan sentiasa <b>merujuk kepada ustaz/ustazah dan buku teks</b> jika ada keraguan.</p>
+    <p>Jumpa kesilapan? Tekan <b>✉️ Hantar cadangan</b> di bawah — setiap pembetulan amat dihargai.</p>
+  </div>
   <div class="fbrow"><button data-mail>✉️ Hantar cadangan</button><button data-sumbangan>☕ Sokong</button></div>
-  <p class="credit" style="margin-top:14px"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026<br>farid.assamani@gmail.com</p>
+  <p class="credit" style="margin-top:14px"><b>Cerdik Ceria</b> · Developed by FaridAssamani · ©2026</p>
   <button class="btn ghost" data-close>Tutup</button>
 </div></div>
 
@@ -536,7 +544,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "33";
+const VER = "34";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -561,6 +569,7 @@ const SUBJECTS = [
   {id:"jawi", name:"Jawi & Khat", em:"✍️", unit:"topik", only:"upkk"}
 ];
 const UPKK_SUBS = ["quran", "akidah", "ibadah", "sirah", "adab", "jawi", "ba"];
+const AGAMA_SUBS = ["pi", "quran", "akidah", "ibadah", "sirah", "adab", "jawi"];
 const SUB = Object.fromEntries(SUBJECTS.map(s => [s.id, s]));
 
 /* ---------- peringkat: Sekolah Rendah (Tahun 1–6) / Sekolah Menengah (Tingkatan 1–5) ----------
@@ -845,6 +854,7 @@ function openSetup(sub){
   $("#suTitle").textContent = `${SUB[sub].em} ${subName(sub, curGrade(p))}`;
   $("#suSub").textContent = gradeLabel(curGrade(p)) + (isDlpQuiz(sub, curGrade(p)) ? " · DLP (BM + English)" : "");
   $("#babLbl").textContent = "Pilih " + SUB[sub].unit;
+  $("#suAgama").hidden = !AGAMA_SUBS.includes(sub);
   renderBabs();
   renderCounts();
   chips($("#optTime"), [0, 20, 30, 60], setup.time, v => v ? `⏱️ ${v} saat / soalan` : "😌 Tanpa masa", v => setup.time = v);

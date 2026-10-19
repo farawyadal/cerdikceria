@@ -63,7 +63,7 @@ Dipantau melalui GoatCounter (https://farawyadal.goatcounter.com), tanpa cookie 
 - `cerdikceria/kongsi/whatsapp`, `cerdikceria/cadangan/emel`, `cerdikceria/sumbangan/buka`
 Nama profil, PIN dan markah tidak dihantar.
 
-Cadangan pengguna dihantar melalui emel ke farid.assamani@gmail.com (templat siap diisi).
+Cadangan pengguna dihantar melalui emel (butang ✉️ Hantar cadangan, templat siap diisi).
 
 ## Tambah soalan
 Setiap tahun/tingkatan ada fail sendiri dalam `soalan/` (contoh `soalan/tahun1.js`, `soalan/tingkatan1.js`).

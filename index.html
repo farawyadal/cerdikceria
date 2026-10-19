@@ -212,6 +212,10 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .rv .rpic.ar{font-size:36px;line-height:1.6}
 .ans.pick{border-color:var(--ink);background:#F4F1FF}
 .ans.pick .k{background:var(--ink);color:#fff}
+.qnav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.qnb{padding:11px 16px;border-radius:14px;border:2px solid var(--line);background:var(--card);font-weight:800;font-size:15px;color:var(--ink);box-shadow:0 3px 0 var(--line)}
+.qnb.go{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 3px 0 #24213b}
+.qnb.hide{visibility:hidden}
 
 /* ---- Result ---- */
 .res{text-align:center;padding-top:10px}
@@ -306,6 +310,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <div class="timer" id="timerBox"><span>⏱️</span><div class="tbar"><i id="tBar"></i></div><span id="tLeft"></span></div>
     <div class="qcard" id="qCard"><div class="tag" id="qTag"></div><div class="pic" id="qPic"></div><h2 id="qText"></h2><p class="en" id="qEn" hidden></p></div>
     <div class="answers" id="answers"></div>
+    <div class="qnav"><button class="qnb" id="btnPrev">← Sebelum</button><button class="qnb go" id="btnNext">Seterusnya →</button></div>
   </section>
 
   <!-- RESULT -->
@@ -413,6 +418,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
     <li>Soalan objektif ikut bab/topik — pilih satu bab atau campur semua.</li>
     <li>Soalan dirawak setiap kali main, termasuk soalan Matematik yang nombornya berubah.</li>
     <li>Mod <b>ikut masa</b> atau santai tanpa masa.</li>
+    <li>Butang <b>← Sebelum</b> untuk kembali ke soalan tadi dan tukar jawapan sebelum markah dikira.</li>
     <li>Markah, bintang dan <b>semakan jawapan</b> selepas setiap kuiz.</li>
     <li>Profil untuk setiap anak, boleh letak <b>PIN</b>.</li>
     <li>Gambar besar dan tulisan Arab/Jawi yang jelas.</li>
@@ -530,7 +536,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "31";
+const VER = "32";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -957,17 +963,27 @@ function renderQ(){
     b.innerHTML = `<span class="k">${"ABCD"[k]}</span><span class="v"></span>`;
     const v = b.querySelector(".v"); v.textContent = o; if(isAr(o)) v.classList.add("ar");
     if(q.enOpt && q.enOpt[o]){ const e = document.createElement("i"); e.className = "en"; e.textContent = q.enOpt[o]; v.appendChild(e); }
+    if(q.done && q.picked === o) b.classList.add("pick");   // jawapan yang dipilih sebelum ini
     b.onclick = () => pick(o, b);
     box.appendChild(b);
   });
-  if(quiz.time) startTimer();
+  $("#btnPrev").classList.toggle("hide", quiz.i === 0);
+  const nx = $("#btnNext"); nx.classList.toggle("hide", !q.done);
+  nx.textContent = quiz.i === n - 1 ? "Lihat markah ✓" : "Seterusnya →";
+  stopTimer();
+  // soalan yang sudah dijawab boleh ditukar jawapan tanpa masa; soalan baru ikut masa
+  $("#timerBox").style.display = quiz.time && !q.done ? "flex" : "none";
+  if(quiz.time && !q.done) startTimer();
 }
+$("#btnPrev").onclick = () => { if(locked || !quiz || quiz.i === 0) return; stopTimer(); quiz.i--; renderQ(); };
+$("#btnNext").onclick = () => { if(locked || !quiz || !quiz.qs[quiz.i].done) return; next(); };
 let locked = false;
 function pick(o, btn){
   if(locked) return; locked = true;
   stopTimer();
-  quiz.qs[quiz.i].picked = o;
-  if(btn) btn.classList.add("pick");
+  const cur = quiz.qs[quiz.i];
+  cur.picked = o; cur.done = true; if(btn) cur.timeout = false;
+  document.querySelectorAll("#answers .ans").forEach(x => x.classList.toggle("pick", x === btn));
   setTimeout(() => { locked = false; next(); }, btn ? 380 : 600);
 }
 function next(){

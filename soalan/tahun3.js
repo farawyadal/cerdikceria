@@ -167,9 +167,9 @@ bi: [
     ["Is this your book? — Yes, it is ___.", "mine", "my", "me", "I"]
   ]},
   { t: "Prepositions", q: [
-    ["The fish is ___ the bowl.", "in", "on", "under", "between"],
-    ["The lamp is ___ the table.", "on", "in", "under", "between"],
-    ["The dog is sleeping ___ the bed.", "under", "on top of", "in", "between"],
+    ["The fish is ___ the bowl. (inside)", "in", "on", "under", "between"],
+    ["The lamp is ___ the table. (on top)", "on", "in", "under", "between"],
+    ["The dog is sleeping ___ the bed. (below)", "under", "on top of", "in", "between"],
     ["The school is ___ the bank and the post office.", "between", "on", "in", "under"],
     ["The car is parked ___ front of the house.", "in", "on", "at", "under"],
     ["I go to school ___ Monday.", "on", "in", "at", "by"],

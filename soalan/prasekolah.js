@@ -261,7 +261,7 @@ sains: [
   ] },
   { t: "Siang dan Malam", q: [
     ["☀️|Matahari kelihatan pada waktu…", "siang", "malam", "tengah malam", "tidak pernah"],
-    ["🌙|Bulan kelihatan pada waktu…", "malam", "tengah hari", "pagi sahaja", "tidak pernah"],
+    ["🌙|Bulan paling mudah dilihat pada waktu…", "malam", "tengah hari", "pagi sahaja", "tidak pernah"],
     ["⭐|Bintang kelihatan pada waktu…", "malam", "tengah hari", "pagi", "petang sahaja"],
     ["Kita tidak boleh memandang terus ke arah matahari kerana…", "boleh merosakkan mata", "matahari sejuk", "matahari kecil", "tiada sebab"]
   ] }

@@ -41,7 +41,7 @@ math: [
       () => { const a = r(-12, 12) || 3, b = r(-9, 9) || -2; return qi(`${N(a)} × ${P(b)} = ?`, a * b, [1, 2 * Math.abs(a * b) || 6, Math.abs(a)], "Tanda sama → positif; tanda berbeza → negatif."); },
       () => { const b = pick([-9, -6, -5, -4, -3, -2, 2, 3, 4, 5]), c = r(-12, 12) || 4; return qi(`${N(b * c)} ÷ ${P(b)} = ?`, c, [1, 2 * Math.abs(c) || 6, 2]); },
       () => { const xs = shuffle([r(-15, -1), r(-15, -1), r(1, 15), r(0, 15)]); if (new Set(xs).size < 4) return null; const asc = xs.slice().sort((a, b) => a - b); const by = a => a.map(N).join(", "); const negLast = asc.filter(x => x >= 0).concat(asc.filter(x => x < 0).sort((a, b) => b - a)); return from(`Susun dalam tertib menaik:\n${by(xs)}`, by(asc), [by(asc.slice().reverse()), by(xs), by(negLast), by([asc[1], asc[0], asc[2], asc[3]]), by([asc[0], asc[2], asc[1], asc[3]]), by([asc[0], asc[1], asc[3], asc[2]])], "Nombor negatif yang lebih besar nilainya adalah lebih kecil."); },
-      () => { const t = r(-8, 5), d = r(3, 15); return qi(`🌡️|Suhu pada waktu malam ialah ${N(t)}°C. Pada waktu siang suhu naik ${d}°C. Berapakah suhu siang?`, t + d, [1, 2, 2 * Math.abs(t) || 4]); }
+      () => { const t = r(-8, 5), d = r(3, 15); return qi(`🌡️|Suhu pada waktu malam ialah ${N(t)}°C. Pada waktu siang suhu naik ${d}°C. Berapakah suhu siang (°C)?`, t + d, [1, 2, 2 * Math.abs(t) || 4]); }
     ] },
   { t: "Faktor dan Gandaan",
     q: [
@@ -78,7 +78,7 @@ math: [
       () => { const a = r(1, 5), b = r(1, 5), k = r(10, 60) * 2; return q(`💰|RM${(a + b) * k} dibahagi antara Ali dan Bala mengikut nisbah ${a} : ${b}. Berapakah bahagian Bala?`, b * k, [k, a * k, 10], false, "", x => "RM" + x); },
       () => { const v = r(40, 110), t = r(2, 5); return q(`🚗|Kereta bergerak ${v * t} km dalam ${t} jam. Berapakah lajunya?`, v, [5, 10, t], false, "Laju = jarak ÷ masa", x => x + " km/j"); },
       () => { const n = r(3, 8), h = r(2, 9), m = r(n + 2, 20); return q(`📒|${n} buah buku nota berharga RM${n * h}. Berapakah harga ${m} buah buku nota?`, m * h, [h, n, 2], false, "Kaedah unitari.", x => "RM" + x); },
-      () => { const a = r(2, 6), b = r(2, 6), c = r(2, 6), k = r(2, 9); return q(`Nisbah p : q : r = ${a} : ${b} : ${c}. Jika q = ${b * k}, cari r.`, c * k, [k, b * k, c]); }
+      () => { let a = r(2, 6), b = r(2, 6), c = r(2, 6); const k = r(2, 9); if (a === b && b === c) c = c === 6 ? 5 : c + 1; { const gd = (x, y) => y ? gd(y, x % y) : x, g = gd(gd(a, b), c); a /= g; b /= g; c /= g; } return q(`Nisbah p : q : r = ${a} : ${b} : ${c}. Jika q = ${b * k}, cari r.`, c * k, [k, b * k, c]); }
     ] },
   { t: "Ungkapan Algebra",
     q: [
@@ -88,8 +88,8 @@ math: [
     ],
     g: [
       () => { const a = r(2, 9), b = r(-9, 9) || 4, x = r(-5, 6); return qi(`Nilai ${a}x ${b < 0 ? "−" : "+"} ${Math.abs(b)} apabila x = ${N(x)} ialah…`, a * x + b, [1, a, 2 * Math.abs(b) || 3]); },
-      () => { const a = r(2, 9), b = r(2, 9), c = r(1, a + b - 1); const k = a + b - c; const right = (k === 1 ? "" : k) + "x"; return from(`Permudahkan: ${a}x + ${b}x − ${c}x`, right, [`${a + b + c}x`, `${a + b}x`, `${k}x²`, `${Math.abs(a - b + c)}x`].filter(z => z !== right)); },
-      () => { const a = r(2, 7), b = r(2, 7), c = r(2, 7), d = r(2, 7); const right = `${a + c}x + ${b + d}y`; return from(`Permudahkan: ${a}x + ${b}y + ${c}x + ${d}y`, right, [`${a + b}x + ${c + d}y`, `${a + b + c + d}xy`, `${a + c}x + ${b - d}y`, `${a * c}x + ${b * d}y`, `${a + c + 1}x + ${b + d}y`, `${a + c}x + ${b + d + 1}y`]); },
+      () => { const a = r(2, 9), b = r(2, 9), c = r(2, a + b - 2); const k = a + b - c; const right = (k === 1 ? "" : k) + "x"; return from(`Permudahkan: ${a}x + ${b}x − ${c}x`, right, [`${a + b + c}x`, `${a + b}x`, `${k}x²`, `${Math.abs(a - b + c)}x`].filter(z => z !== right)); },
+      () => { const a = r(2, 7), b = r(2, 7), c = r(2, 7), d = r(2, 7); const right = `${a + c}x + ${b + d}y`; return from(`Permudahkan: ${a}x + ${b}y + ${c}x + ${d}y`, right, [`${a + b}x + ${c + d}y`, `${a + b + c + d}xy`, `${a + c}x − ${b + d}y`, `${a * c}x + ${b * d}y`, `${a + c + 1}x + ${b + d}y`, `${a + c}x + ${b + d + 1}y`]); },
       () => { const a = r(2, 6), x = r(2, 6), y = r(2, 6); return q(`Nilai ${a}xy apabila x = ${x} dan y = ${y} ialah…`, a * x * y, [a, x * y, a + x + y]); }
     ] },
   { t: "Persamaan Linear",
@@ -98,7 +98,7 @@ math: [
       ["Yang manakah persamaan linear?", "2x + 5 = 11", "x² = 9", "x³ + 1 = 0", "xy = 4"]
     ],
     g: [
-      () => { const x = r(-9, 12), a = r(2, 9), b = r(-15, 15); const c = a * x + b; return qi(`Selesaikan: ${a}x ${b < 0 ? "−" : "+"} ${Math.abs(b)} = ${N(c)}\nx = ?`, x, [1, 2, a]); },
+      () => { const x = r(-9, 12), a = r(2, 9), b = r(-15, 15); const c = a * x + b; return qi(`Selesaikan: ${a}x${b ? ` ${b < 0 ? "−" : "+"} ${Math.abs(b)}` : ""} = ${N(c)}\nx = ?`, x, [1, 2, a]); },
       () => { const x = r(1, 15), b = r(1, 20); return qi(`Selesaikan: x + ${b} = ${x + b}\nx = ?`, x, [1, b, 2]); },
       () => { const x = r(2, 12), d = r(2, 6); return qi(`Selesaikan: x ÷ ${d} = ${x}\nx = ?`, x * d, [d, x, 1]); },
       () => { const x = r(5, 30); return q(`🧮|Hasil tambah dua nombor berturutan ialah ${2 * x + 1}. Berapakah nombor yang lebih kecil?`, x, [1, 2, 3], false, "x + (x + 1) = jumlah"); },

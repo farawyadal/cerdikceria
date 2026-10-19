@@ -25,7 +25,7 @@ function fromF(text, right, pool, more, exp) {
   return from(text, right, [...set], exp);
 }
 const TRIPLE = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29]];
-const rm = x => "RM" + (Number.isInteger(x) ? fmt(x) : x.toFixed(2));
+const rm = x => "RM" + fmt(x);
 
 SOALAN["m3"] = {
 
@@ -135,10 +135,10 @@ math: [
       ["Persamaan bagi paksi-x ialah…", "y = 0", "x = 0", "y = x", "y = 1"]
     ],
     g: [
-      () => { const m = r(-6, 6) || 2, c = r(-9, 9); return fromF(`Kecerunan garis y = ${m === 1 ? "" : m === -1 ? "−" : N(m)}x ${c < 0 ? "−" : "+"} ${Math.abs(c)} ialah…`, N(m), [N(c), N(-m), N(m + 1)], () => N(r(-9, 9))); },
-      () => { const m = r(-6, 6) || 3, c = r(-9, 9) || 4; return fromF(`Pintasan-y bagi garis y = ${m === 1 ? "" : m === -1 ? "−" : N(m)}x ${c < 0 ? "−" : "+"} ${Math.abs(c)} ialah…`, N(c), [N(m), N(-c), N(c + 1)], () => N(r(-12, 12))); },
+      () => { const m = r(-6, 6) || 2, c = r(-9, 9); return fromF(`Kecerunan garis y = ${m === 1 ? "" : m === -1 ? "−" : N(m)}x${c ? ` ${c < 0 ? "−" : "+"} ${Math.abs(c)}` : ""} ialah…`, N(m), [N(c), N(-m), N(m + 1)], () => N(r(-9, 9))); },
+      () => { const m = r(-6, 6) || 3, c = r(-9, 9) || 4; return fromF(`Pintasan-y bagi garis y = ${m === 1 ? "" : m === -1 ? "−" : N(m)}x${c ? ` ${c < 0 ? "−" : "+"} ${Math.abs(c)}` : ""} ialah…`, N(c), [N(m), N(-c), N(c + 1)], () => N(r(-12, 12))); },
       () => { const m = r(1, 5), c = r(-6, 6), x = r(-4, 5); const y = m * x + c; const right = `y = ${m === 1 ? "" : m}x ${c < 0 ? "−" : "+"} ${Math.abs(c)}`; return fromF(`Persamaan garis lurus berkecerunan ${m} yang melalui (${N(x)}, ${N(y)}) ialah…`, right, [`y = ${m === 1 ? "" : m}x ${-c < 0 ? "−" : "+"} ${Math.abs(c)}`, `y = ${m + 1}x ${c < 0 ? "−" : "+"} ${Math.abs(c)}`, `y = ${m === 1 ? "" : m}x ${y < 0 ? "−" : "+"} ${Math.abs(y)}`], () => `y = ${m}x + ${r(10, 20)}`, "Gantikan titik untuk mencari c."); },
-      () => { const m = pick([1, 2, 3, 4, 5]), x0 = r(-6, 6) || 2; const c = -m * x0; return fromF(`Pintasan-x bagi garis y = ${m === 1 ? "" : m}x ${c < 0 ? "−" : "+"} ${Math.abs(c)} ialah…`, N(x0), [N(c), N(-x0), N(x0 + 1)], () => N(r(-10, 10)), "Letak y = 0."); }
+      () => { const m = pick([1, 2, 3, 4, 5]), x0 = r(-6, 6) || 2; const c = -m * x0; return fromF(`Pintasan-x bagi garis y = ${m === 1 ? "" : m}x${c ? ` ${c < 0 ? "−" : "+"} ${Math.abs(c)}` : ""} ialah…`, N(x0), [N(c), N(-x0), N(x0 + 1)], () => N(r(-10, 10)), "Letak y = 0."); }
     ] }
 ],
 

@@ -44,7 +44,7 @@ math: [
       () => { const a = r(1001, 9999) / 1000, b = r(2, 9); return q(`${dec(a)} × ${b} = ?`, +(a * b).toFixed(3), [0.1, 1, 0.01], true, "", x => dec(x)); },
       () => { const b = r(2, 9), c = r(1001, 9999) / 1000; return q(`${dec(b * c)} ÷ ${b} = ?`, c, [0.1, 1, 0.01], true, "", x => dec(x)); },
       () => { const p = pick([5, 12, 15, 20, 30, 35, 40, 60, 75, 80]), n = r(1, 30) * 20; return q(`${p}% of ${fmt(n)} = ?`, n * p / 100, [5, 10, 20, n / 10]); },
-      () => { const n = r(2, 20) * 10, part = r(1, n / 10) * 5; return q(`${part} out of ${n} as a percentage is…`, +(part / n * 100).toFixed(1), [5, 10, 2.5], true, "", x => dec(x, 1) + "%"); },
+      () => { const n = [20, 25, 40, 50, 100, 200, 250, 500][r(0, 7)], part = r(1, Math.floor(n / 10)) * 5; return q(`${part} out of ${n} as a percentage is…`, +(part / n * 100).toFixed(1), [5, 10, 2.5], true, "", x => dec(x, 1) + "%"); },
       () => { const h = r(2, 30) * 10, p = pick([10, 20, 25, 50]); return q(`📈|The original price is RM${h}. The price goes up by ${p}%. What is the new price?`, h + h * p / 100, [h * p / 100, 10, 5], false, "", rm); }
     ] },
   { t: "Money",

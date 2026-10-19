@@ -21,6 +21,7 @@ const sup = n => String(n).split("").map(c => SUP[c]).join("");
 const SUB = { "0": "₀", "1": "₁", "2": "₂", "3": "₃", "4": "₄", "5": "₅", "6": "₆", "7": "₇", "8": "₈", "9": "₉" };
 const sub = n => String(n).split("").map(c => SUB[c]).join("");
 const nz = (a, b) => { let v = 0; while (!v) v = r(a, b); return v; };
+const tm = (k, v) => k === 0 ? "" : ` ${k < 0 ? "−" : "+"} ${Math.abs(k) === 1 && v ? "" : Math.abs(k)}${v}`;   // sebutan bertanda: tm(-1,"x") → " − x"
 function qi(text, ans, offs, exp) {
   const s = new Set(); let t = 0;
   while (s.size < 3 && t < 80) { t++; const v = ans + pick(offs) * (Math.random() < .5 ? -1 : 1); if (v !== ans) s.add(v); }
@@ -47,8 +48,8 @@ math: [
       ["Paksi simetri bagi graf f(x) = x² − 4 ialah…", "x = 0", "y = 0", "x = 4", "y = −4"]
     ],
     g: [
-      () => { const p = nz(-7, 7), q2 = nz(-7, 7); if (p === q2) return null; const b = -(p + q2), c = p * q2; const right = `x = ${N(Math.min(p, q2))} atau x = ${N(Math.max(p, q2))}`; return fromF(`Selesaikan: x² ${b < 0 ? "−" : "+"} ${Math.abs(b)}x ${c < 0 ? "−" : "+"} ${Math.abs(c)} = 0`, right, [`x = ${N(-Math.max(p, q2))} atau x = ${N(-Math.min(p, q2))}`, `x = ${N(b)} atau x = ${N(c)}`, `x = ${N(p + 1)} atau x = ${N(q2 + 1)}`], () => `x = ${N(r(-9, 0))} atau x = ${N(r(1, 9))}`, "Faktorkan: (x − p)(x − q) = 0"); },
-      () => { const a = nz(-3, 3), b = r(-6, 6), c = r(-9, 9), x = r(-4, 4); return qi(`Diberi f(x) = ${a === 1 ? "" : a === -1 ? "−" : N(a)}x² ${b < 0 ? "−" : "+"} ${Math.abs(b)}x ${c < 0 ? "−" : "+"} ${Math.abs(c)}. Cari f(${N(x)}).`, a * x * x + b * x + c, [1, 2, Math.abs(b) || 3]); }
+      () => { const p = nz(-7, 7), q2 = nz(-7, 7); if (p === q2) return null; const b = -(p + q2), c = p * q2; const right = `x = ${N(Math.min(p, q2))} atau x = ${N(Math.max(p, q2))}`; return fromF(`Selesaikan: x²${tm(b, "x")}${tm(c, "")} = 0`, right, [`x = ${N(-Math.max(p, q2))} atau x = ${N(-Math.min(p, q2))}`, `x = ${N(b)} atau x = ${N(c)}`, `x = ${N(p + 1)} atau x = ${N(q2 + 1)}`], () => `x = ${N(r(-9, 0))} atau x = ${N(r(1, 9))}`, "Faktorkan: (x − p)(x − q) = 0"); },
+      () => { const a = nz(-3, 3), b = r(-6, 6), c = r(-9, 9), x = r(-4, 4); return qi(`Diberi f(x) = ${a === 1 ? "" : a === -1 ? "−" : N(a)}x²${tm(b, "x")}${tm(c, "")}. Cari f(${N(x)}).`, a * x * x + b * x + c, [1, 2, Math.abs(b) || 3]); }
     ] },
   { t: "Asas Nombor",
     q: [
@@ -150,7 +151,7 @@ math: [
       ["Aliran tunai positif bermaksud…", "pendapatan melebihi perbelanjaan", "perbelanjaan melebihi pendapatan", "tiada pendapatan", "berhutang"]
     ],
     g: [
-      () => { const inc = r(25, 60) * 100, fx = r(8, 20) * 100, vx = r(5, 15) * 100; const cf = inc - fx - vx; return qi(`💼|Pendapatan bulanan RM${fmt(inc)}. Perbelanjaan tetap RM${fmt(fx)} dan tidak tetap RM${fmt(vx)}. Aliran tunai bulanan (RM) ialah…`, cf, [100, 200, 500]); },
+      () => { const inc = r(25, 60) * 100, fx = r(8, 20) * 100, vx = r(5, 15) * 100; const cf = inc - fx - vx; return qi(`💼|Pendapatan bulanan RM${fmt(inc)}. Perbelanjaan tetap RM${fmt(fx)} dan tidak tetap RM${fmt(vx)}. Aliran tunai bulanan ialah…`, cf, [100, 200, 500]).map((v, i) => i >= 1 && i <= 4 ? (v.startsWith("−") ? "−RM" + fmt(+v.slice(1)) : "RM" + fmt(+v)) : v); },
       () => { const goal = r(3, 12) * 1000, m = pick([6, 10, 12, 20, 24]); if (goal % m) return null; return q(`🎯|Ali mahu menyimpan RM${fmt(goal)} dalam ${m} bulan. Berapakah simpanan setiap bulan?`, goal / m, [10, 50, 100], false, "", rm); }
     ] }
 ],
@@ -166,7 +167,7 @@ addmath: [
     g: [
       () => { const a = nz(-4, 4), b = r(-6, 6), c = nz(-3, 3), d = r(-5, 5), x = r(-3, 3); const gx = c * x + d; return qi(`f(x) = ${lin(a, b)}, g(x) = ${lin(c, d)}. Cari fg(${N(x)}).`, a * gx + b, [1, a, 2]); },
       () => { const a = pick([2, 3, 4, 5]), b = r(-9, 9), y = r(-10, 15); if ((y - b) % a) return null; return qi(`f(x) = ${lin(a, b)}. Cari f⁻¹(${N(y)}).`, (y - b) / a, [1, 2, a], "f⁻¹(y) = (y − b) ÷ a"); },
-      () => { const a = nz(-3, 3), b = r(-5, 5), x = r(-4, 4); return qi(`f(x) = x² ${b < 0 ? "−" : "+"} ${Math.abs(b)}, g(x) = ${lin(a, 0)}. Cari gf(${N(x)}).`, a * (x * x + b), [1, a, 2]); }
+      () => { const a = nz(-3, 3), b = r(-5, 5), x = r(-4, 4); return qi(`f(x) = x²${b ? ` ${b < 0 ? "−" : "+"} ${Math.abs(b)}` : ""}, g(x) = ${lin(a, 0)}. Cari gf(${N(x)}).`, a * (x * x + b), [1, a, 2]); }
     ] },
   { t: "Fungsi Kuadratik",
     q: [
@@ -176,9 +177,9 @@ addmath: [
       ["Bentuk verteks fungsi kuadratik ialah…", "f(x) = a(x − h)² + k", "f(x) = ax + b", "f(x) = ax² + bx + c", "f(x) = (x − p)(x − q)"]
     ],
     g: [
-      () => { const a = nz(-3, 3), b = r(-8, 8), c = r(-8, 8); const D = b * b - 4 * a * c; const right = D > 0 ? "dua punca nyata yang berbeza" : D === 0 ? "dua punca nyata yang sama" : "tiada punca nyata"; return from(`Jenis punca bagi ${a === 1 ? "" : a === -1 ? "−" : N(a)}x² ${b < 0 ? "−" : "+"} ${Math.abs(b)}x ${c < 0 ? "−" : "+"} ${Math.abs(c)} = 0 ialah…`, right, ["dua punca nyata yang berbeza", "dua punca nyata yang sama", "tiada punca nyata", "tiga punca nyata"], `b² − 4ac = ${N(D)}`); },
-      () => { const h = r(-6, 6), k = r(-9, 9), a = pick([1, 2, -1, -2]); const right = `(${N(h)}, ${N(k)})`; return fromF(`Titik ${a > 0 ? "minimum" : "maksimum"} bagi f(x) = ${a === 1 ? "" : a === -1 ? "−" : N(a)}(x ${h < 0 ? "+" : "−"} ${Math.abs(h)})² ${k < 0 ? "−" : "+"} ${Math.abs(k)} ialah…`, right, [`(${N(-h)}, ${N(k)})`, `(${N(h)}, ${N(-k)})`, `(${N(k)}, ${N(h)})`], () => `(${N(r(-9, 9))}, ${N(r(-9, 9))})`); },
-      () => { const p = nz(-6, 6), q2 = nz(-6, 6); return qi(`Hasil tambah punca bagi x² ${-(p + q2) < 0 ? "−" : "+"} ${Math.abs(p + q2)}x ${p * q2 < 0 ? "−" : "+"} ${Math.abs(p * q2)} = 0 ialah…`, p + q2, [1, 2, 2 * Math.abs(p + q2) || 4], "Hasil tambah punca = −b/a"); }
+      () => { const a = nz(-3, 3), b = r(-8, 8), c = r(-8, 8); const D = b * b - 4 * a * c; const right = D > 0 ? "dua punca nyata yang berbeza" : D === 0 ? "dua punca nyata yang sama" : "tiada punca nyata"; return from(`Jenis punca bagi ${a === 1 ? "" : a === -1 ? "−" : N(a)}x²${tm(b, "x")}${tm(c, "")} = 0 ialah…`, right, ["dua punca nyata yang berbeza", "dua punca nyata yang sama", "tiada punca nyata", "tiga punca nyata"], `b² − 4ac = ${N(D)}`); },
+      () => { const h = r(-6, 6), k = r(-9, 9), a = pick([1, 2, -1, -2]); const right = `(${N(h)}, ${N(k)})`; return fromF(`Titik ${a > 0 ? "minimum" : "maksimum"} bagi f(x) = ${a === 1 ? "" : a === -1 ? "−" : N(a)}${h ? `(x ${h < 0 ? "+" : "−"} ${Math.abs(h)})²` : "x²"}${k ? ` ${k < 0 ? "−" : "+"} ${Math.abs(k)}` : ""} ialah…`, right, [`(${N(-h)}, ${N(k)})`, `(${N(h)}, ${N(-k)})`, `(${N(k)}, ${N(h)})`], () => `(${N(r(-9, 9))}, ${N(r(-9, 9))})`); },
+      () => { const p = nz(-6, 6), q2 = nz(-6, 6); return qi(`Hasil tambah punca bagi x²${tm(-(p + q2), "x")}${tm(p * q2, "")} = 0 ialah…`, p + q2, [1, 2, 2 * Math.abs(p + q2) || 4], "Hasil tambah punca = −b/a"); }
     ] },
   { t: "Sistem Persamaan",
     q: [
@@ -211,7 +212,7 @@ addmath: [
       () => { const a = r(-10, 20), d = nz(-6, 6), n = r(5, 20); return qi(`Janjang aritmetik: a = ${N(a)}, d = ${N(d)}. Cari sebutan ke-${n}.`, a + (n - 1) * d, [d, 1, a || 3], "Tₙ = a + (n − 1)d"); },
       () => { const a = r(1, 10), d = r(1, 6), n = r(5, 15); return q(`Hasil tambah ${n} sebutan pertama janjang aritmetik ${a}, ${a + d}, ${a + 2 * d}, … ialah…`, n * (2 * a + (n - 1) * d) / 2, [d, a, n], false, "Sₙ = n/2 [2a + (n − 1)d]"); },
       () => { const a = pick([1, 2, 3, 4, 5]), rr = pick([2, 3]), n = r(3, 6); return q(`Janjang geometri: a = ${a}, r = ${rr}. Cari sebutan ke-${n}.`, a * rr ** (n - 1), [a * rr ** (n - 2), a * rr ** n, rr], false, "Tₙ = arⁿ⁻¹"); },
-      () => { const rr = pick([[1, 2], [1, 3], [1, 4], [2, 3], [3, 4]]), k = r(1, 6); const a = k * rr[1]; const S = a / (1 - rr[0] / rr[1]); return q(`Hasil tambah hingga ketakterhinggaan bagi janjang geometri dengan a = ${a} dan r = ${rr[0]}/${rr[1]} ialah…`, S, [a, k, 2], false, "S∞ = a ÷ (1 − r)"); }
+      () => { const rr = pick([[1, 2], [1, 3], [1, 4], [2, 3], [3, 4]]), k = r(1, 6); const a = k * (rr[1] - rr[0]), S = k * rr[1]; return q(`Hasil tambah hingga ketakterhinggaan bagi janjang geometri dengan a = ${a} dan r = ${rr[0]}/${rr[1]} ialah…`, S, [a, k, 2], false, "S∞ = a ÷ (1 − r)"); }
     ] },
   { t: "Hukum Linear", q: [
     ["Hukum linear digunakan untuk menukar hubungan tak linear kepada bentuk…", "Y = mX + c", "y = ax²", "y = aˣ", "x² + y² = r²"],
@@ -239,7 +240,7 @@ addmath: [
     ],
     g: [
       () => { const [a, b, c] = pick(TRIPLE), sa = pick([1, -1]), sb = pick([1, -1]); return q(`Magnitud vektor ${N(sa * a)}i ${sb < 0 ? "−" : "+"} ${b}j ialah…`, c, [1, 2, a], false, "|v| = √(x² + y²)", x => x + " unit"); },
-      () => { const a = r(-6, 6), b = r(-6, 6), c = r(-6, 6), d = r(-6, 6); const right = `${N(a + c)}i ${b + d < 0 ? "−" : "+"} ${Math.abs(b + d)}j`; return fromF(`(${N(a)}i ${b < 0 ? "−" : "+"} ${Math.abs(b)}j) + (${N(c)}i ${d < 0 ? "−" : "+"} ${Math.abs(d)}j) = ?`, right, [`${N(a - c)}i ${b - d < 0 ? "−" : "+"} ${Math.abs(b - d)}j`, `${N(a + c)}i ${b - d < 0 ? "−" : "+"} ${Math.abs(b - d)}j`, `${N(a * c)}i ${b * d < 0 ? "−" : "+"} ${Math.abs(b * d)}j`], () => `${N(r(-9, 9))}i + ${r(0, 9)}j`); }
+      () => { const a = r(-6, 6), b = r(-6, 6), c = r(-6, 6), d = r(-6, 6); const vt = (x, y) => { const u = (k, e) => (Math.abs(k) === 1 ? "" : Math.abs(k)) + e; let t = x ? (x < 0 ? "−" : "") + u(x, "i") : ""; if (y) t += t ? ` ${y < 0 ? "−" : "+"} ${u(y, "j")}` : (y < 0 ? "−" : "") + u(y, "j"); return t || "0"; }; const right = vt(a + c, b + d); return fromF(`(${vt(a, b)}) + (${vt(c, d)}) = ?`, right, [vt(a - c, b - d), vt(a + c, b - d), vt(a * c, b * d)], () => vt(r(-9, 9), r(0, 9))); }
     ] },
   { t: "Penyelesaian Segi Tiga",
     q: [
@@ -250,7 +251,7 @@ addmath: [
     ],
     g: [
       () => { const a = r(2, 12) * 2, b = r(2, 15); return q(`Luas segi tiga dengan a = ${a} cm, b = ${b} cm dan sudut C = 30° ialah…`, a * b / 4, [a * b / 2, a * b, a + b], false, "½ab sin 30° = ¼ab", x => x + " cm²"); },
-      () => { const a = r(2, 12), b = r(2, 12); return q(`Segi tiga dengan a = ${a} cm, b = ${b} cm dan C = 90°. Panjang c² ialah…`, a * a + b * b, [2 * a * b, a + b, 1], false, "kos 90° = 0, jadi c² = a² + b²", x => x + " cm²"); }
+      () => { const a = r(2, 12), b = r(2, 12); return q(`Segi tiga dengan a = ${a} cm, b = ${b} cm dan C = 90°. Nilai c² ialah…`, a * a + b * b, [2 * a * b, a + b, 1], false, "kos 90° = 0, jadi c² = a² + b²", x => x + " cm²"); }
     ] },
   { t: "Nombor Indeks",
     q: [

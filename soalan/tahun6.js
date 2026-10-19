@@ -51,7 +51,7 @@ math: [
       () => { const a = r(1001, 9999) / 1000, b = r(2, 9); return q(`${dec(a)} × ${b} = ?`, +(a * b).toFixed(3), [0.1, 1, 0.01], true, "", x => dec(x)); },
       () => { const b = r(2, 9), c = r(1001, 9999) / 1000; return q(`${dec(b * c)} ÷ ${b} = ?`, c, [0.1, 1, 0.01], true, "", x => dec(x)); },
       () => { const p = pick([5, 12, 15, 20, 30, 35, 40, 60, 75, 80]), n = r(1, 30) * 20; return q(`${p}% daripada ${fmt(n)} = ?`, n * p / 100, [5, 10, 20, n / 10]); },
-      () => { const n = r(2, 20) * 10, part = r(1, n / 10) * 5; return q(`${part} daripada ${n} dalam bentuk peratus ialah…`, +(part / n * 100).toFixed(1), [5, 10, 2.5], true, "", x => dec(x, 1) + "%"); },
+      () => { const n = [20, 25, 40, 50, 100, 200, 250, 500][r(0, 7)], part = r(1, Math.floor(n / 10)) * 5; return q(`${part} daripada ${n} dalam bentuk peratus ialah…`, +(part / n * 100).toFixed(1), [5, 10, 2.5], true, "", x => dec(x, 1) + "%"); },
       () => { const h = r(2, 30) * 10, p = pick([10, 20, 25, 50]); return q(`📈|Harga asal RM${h}. Harga naik ${p}%. Berapakah harga baharu?`, h + h * p / 100, [h * p / 100, 10, 5], false, "", rm); }
     ] },
   { t: "Wang",
@@ -108,7 +108,7 @@ math: [
       () => { const d = r(2, 30) * 2; return q(`Diameter sebuah bulatan ialah ${d} cm. Berapakah jejarinya?`, d / 2, [d / 2, 1, 2], false, "Jejari = diameter ÷ 2", x => x + " cm"); },
       () => { const a = r(20, 160); return q(`Dua sudut pada garis lurus. Satu sudut ialah ${a}°. Berapakah sudut yang satu lagi?`, 180 - a, [10, 20, 90], false, "Jumlah sudut pada garis lurus = 180°", x => x + "°"); },
       () => { const p = r(4, 20), l = r(2, 15), s = r(2, Math.min(p, l)); return q(`🟫|Sebidang tanah segi empat tepat ${p} m × ${l} m. Sebuah petak segi empat sama ${s} m × ${s} m dipotong keluar. Berapakah luas yang tinggal?`, p * l - s * s, [s, p, 10], false, "", x => x + " m²"); },
-      () => { const a = r(3, 12), b = r(3, 10), c = r(2, 10), s = r(2, 5); return q(`📦|Kotak ${a} cm × ${b} cm × ${c} cm dan kiub ${s} cm × ${s} cm × ${s} cm. Berapakah jumlah isi padu kedua-duanya?`, a * b * c + s ** 3, [s ** 3, 10, a * b], false, "", x => x + " cm³"); }
+      () => { const a = r(3, 12), b = r(3, 10), c = r(2, 10), s = r(2, 5); return q(`📦|Kotak ${a} cm × ${b} cm × ${c} cm dan kubus ${s} cm × ${s} cm × ${s} cm. Berapakah jumlah isi padu kedua-duanya?`, a * b * c + s ** 3, [s ** 3, 10, a * b], false, "", x => x + " cm³"); }
     ] },
   { t: "Koordinat, Nisbah dan Kadaran",
     q: [

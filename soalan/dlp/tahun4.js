@@ -107,7 +107,7 @@ math: [
       () => { const g = r(1001, 9999); return q(`${fmt(g)} g = ___ kg`, g / 1000, [0.1, 1, 0.01], true, "", x => dec(x)); },
       () => { const l = r(11, 99) / 10; return q(`${dec(l, 1)} l = ___ ml`, Math.round(l * 1000), [100, 1000, 10], false, "", fmt); },
       () => { const a = r(1, 5) * 1000 + r(1, 999), b = r(100, 900); return q(`🛣️|Ali walks ${fmt(a)} m in the morning and ${b} m in the evening. What is the total distance in metres?`, a + b, [10, 100, 1000], false, "", x => fmt(x) + " m"); },
-      () => { const l = r(2, 9), c = r(3, 8); return q(`🥤|${l} litres of water are poured equally into ${c * 2} bottles. What is the volume of water in each bottle (ml)?`, Math.round(l * 1000 / (c * 2)), [10, 50, 100], false, "", x => fmt(x) + " ml"); }
+      () => { const l = r(2, 9), c = [2, 4, 5, 10, 4, 5][r(0, 5)]; return q(`🥤|${l} litres of water are poured equally into ${c * 2} bottles. What is the volume of water in each bottle (ml)?`, Math.round(l * 1000 / (c * 2)), [10, 50, 100], false, "", x => fmt(x) + " ml"); }
     ] },
   { t: "Space",
     q: [

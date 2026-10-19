@@ -211,7 +211,7 @@ bi: [
     ["🐄|This is a…", "cow", "goat", "sheep", "horse"],
     ["🐢|This is a…", "turtle", "frog", "fish", "crab"],
     ["🐰|This is a…", "rabbit", "mouse", "cat", "bear"],
-    ["🦆|This is a…", "duck", "chicken", "bird", "goose"],
+    ["🦆|This is a…", "duck", "chicken", "owl", "goose"],
     ["Which animal lives in water?", "fish", "rabbit", "goat", "chicken"],
     ["Which animal says \"moo\"?", "cow", "cat", "dog", "duck"],
     ["Which animal says \"quack\"?", "duck", "cow", "goat", "cat"],

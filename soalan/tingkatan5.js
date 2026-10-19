@@ -56,7 +56,7 @@ math: [
     g: [
       () => { const k = r(2, 9), x1 = r(2, 6), x2 = r(2, 12); if (x1 === x2) return null; return qi(`y berubah secara langsung dengan x. Apabila x = ${x1}, y = ${k * x1}. Cari y apabila x = ${x2}.`, k * x2, [k, 1, 2], `k = ${k}, y = ${k}x`); },
       () => { const x1 = r(2, 6), x2 = pick([1, 2, 3, 4, 6, 12]), k = 12 * r(1, 3); if (x1 === x2 || k % x1) return null; return qi(`y berubah secara songsang dengan x. Apabila x = ${x1}, y = ${k / x1}. Cari y apabila x = ${x2}.`, k / x2, [1, 2, k / x1], `k = xy = ${k}`); },
-      () => { const k = r(1, 4), x = r(2, 6); return qi(`y berubah secara langsung dengan x². Apabila x = 1, y = ${k}. Cari y apabila x = ${x}.`, k * x * x, [k, x, 2 * k], `y = ${k}x²`); }
+      () => { const k = r(2, 4), x = r(2, 6); return qi(`y berubah secara langsung dengan x². Apabila x = 1, y = ${k}. Cari y apabila x = ${x}.`, k * x * x, [k, x, 2 * k], `y = ${k}x²`); }
     ] },
   { t: "Matriks",
     q: [
@@ -69,7 +69,7 @@ math: [
     g: [
       () => { const a = r(-5, 9), b = r(-5, 9), c = r(-5, 9), d = r(-5, 9); return qi(`Cari penentu bagi matriks ${mat([[a, b], [c, d]])}.`, a * d - b * c, [1, 2, Math.abs(a * d + b * c - (a * d - b * c)) || 3], "Penentu = ad − bc"); },
       () => { const A = [[r(-4, 6), r(-4, 6)], [r(-4, 6), r(-4, 6)]], B = [[r(-4, 6), r(-4, 6)], [r(-4, 6), r(-4, 6)]]; const S = [[A[0][0] + B[0][0], A[0][1] + B[0][1]], [A[1][0] + B[1][0], A[1][1] + B[1][1]]]; return fromF(`${mat(A)} + ${mat(B)} = ?`, mat(S), [mat([[S[0][0], S[1][0]], [S[0][1], S[1][1]]]), mat([[A[0][0] - B[0][0], A[0][1] - B[0][1]], [A[1][0] - B[1][0], A[1][1] - B[1][1]]])], () => mat([[S[0][0] + nz(-2, 2), S[0][1]], [S[1][0], S[1][1] + nz(-2, 2)]])); },
-      () => { const k = nz(-3, 4), A = [[r(-4, 6), r(-4, 6)], [r(-4, 6), r(-4, 6)]]; const R = A.map(row => row.map(v => k * v)); return fromF(`${N(k)} × ${mat(A)} = ?`, mat(R), [mat(A.map(row => row.map(v => v + k)))], () => mat([[R[0][0] + nz(-3, 3), R[0][1]], [R[1][0], R[1][1]]])); },
+      () => { let k = nz(-3, 4); if (k === 1) k = 2; const A = [[r(-4, 6), r(-4, 6)], [r(-4, 6), r(-4, 6)]]; const R = A.map(row => row.map(v => k * v)); return fromF(`${N(k)} × ${mat(A)} = ?`, mat(R), [mat(A.map(row => row.map(v => v + k)))], () => mat([[R[0][0] + nz(-3, 3), R[0][1]], [R[1][0], R[1][1]]])); },
       () => { const a = r(1, 4), b = r(-3, 3), c = r(-3, 3), d = r(1, 4), x = r(-3, 4), y = r(-3, 4); const p = a * x + b * y, q2 = c * x + d * y; return fromF(`${mat([[a, b], [c, d]])} × [${N(x)} ; ${N(y)}] = ?`, `[${N(p)} ; ${N(q2)}]`, [`[${N(a * x + c * y)} ; ${N(b * x + d * y)}]`, `[${N(a * x)} ; ${N(d * y)}]`], () => `[${N(p + nz(-3, 3))} ; ${N(q2)}]`); }
     ] },
   { t: "Matematik Pengguna: Insurans",
@@ -426,7 +426,7 @@ fizik: [
       ["Zarah alfa ialah nukleus…", "helium", "hidrogen", "karbon", "uranium"],
       ["Sinaran yang paling tinggi kuasa penembusannya ialah…", "gama", "alfa", "beta", "inframerah"],
       ["Separuh hayat ialah masa untuk…", "separuh daripada nukleus radioaktif mereput", "semua nukleus mereput", "nukleus berganda", "suhu jatuh separuh"],
-      ["Pembelahan nukleus berat seperti uranium dipanggil…", "pembelahan nukleus", "pelakuran nukleus", "pereputan alfa", "pengionan"],
+      ["Proses nukleus berat seperti uranium terpecah kepada dua nukleus yang lebih ringan sambil membebaskan tenaga dipanggil…", "pembelahan nukleus", "pelakuran nukleus", "pereputan alfa", "pengionan"],
       ["Tenaga Matahari terhasil daripada…", "pelakuran nukleus", "pembelahan nukleus", "pembakaran", "tindak balas kimia"],
       ["Persamaan tenaga Einstein ialah…", "E = mc²", "E = mgh", "E = ½mv²", "E = IV"],
       ["Alat untuk mengesan sinaran radioaktif ialah…", "tiub Geiger-Muller", "ammeter", "termometer", "barometer"]

@@ -345,7 +345,7 @@ math: [
       () => { const l = r(1, 9), m = r(1, 999); return q(`${l} liter ${m} ml = ___ ml`, l * 1000 + m, [1000, 100, 10, 900], false, "", fmt); },
       () => { const ml = r(1001, 9999); return q(`${fmt(ml)} ml = ___ liter`, ml / 1000, [0.1, 1, 0.01], true, "", x => dec(x)); },
       () => { const a = r(120, 900), b = r(50, 400); return q(`🧃|Jus oren ${fmt(a)} ml dan jus epal ${fmt(b)} ml dicampur. Berapakah jumlah isi padu?`, a + b, [10, 100, 50], false, "", x => fmt(x) + " ml"); },
-      () => { const t = r(21, 60) / 10, n = r(3, 8); return q(`🎀|Sehelai reben ${dec(t, 1)} m dipotong kepada ${n} bahagian sama panjang. Berapakah panjang setiap bahagian (cm)?`, Math.round(t * 100 / n * 100) / 100, [1, 10, 5], true, "", x => dec(x, 2) + " cm"); }
+      () => { const t = r(21, 60) / 10, n = [2, 4, 5, 8, 4, 5][r(0, 5)]; return q(`🎀|Sehelai reben ${dec(t, 1)} m dipotong kepada ${n} bahagian sama panjang. Berapakah panjang setiap bahagian (cm)?`, Math.round(t * 100 / n * 100) / 100, [1, 10, 5], true, "", x => dec(x, 2) + " cm"); }
     ] },
   { t: "Ruang",
     q: [
@@ -376,7 +376,7 @@ math: [
       () => { const a = r(2, 12), b = r(2, 12); const g = gcd(a, b); const right = `${a / g} : ${b / g}`; const ws = [`${b / g} : ${a / g}`, `${a} : ${a + b}`, `${a / g} : ${(a + b) / g}`, `${a / g + 1} : ${b / g}`].filter(z => z !== right); return from(`🍎 ${a} biji epal, 🍊 ${b} biji oren.\nApakah nisbah epal kepada oren (bentuk termudah)?`, right, [...new Set(ws)]); },
       () => { const n = r(2, 6), h = r(2, 9), m = r(n + 1, 12); return q(`📒|${n} buah buku berharga RM${n * h}. Berapakah harga ${m} buah buku?`, m * h, [h, n, 2], false, "Cari harga sebuah dahulu, kemudian darab.", rm); },
       () => { const k = r(40, 90), j = r(2, 5); return q(`🚗|Sebuah kereta bergerak ${k} km dalam 1 jam. Berapa jauh dalam ${j} jam pada kelajuan yang sama?`, k * j, [k, 10, 5], false, "", x => x + " km"); },
-      () => { const a = r(1, 5), b = r(1, 5), k = r(2, 8); return q(`Nisbah lelaki kepada perempuan ialah ${a} : ${b}. Jika ada ${a * k} orang lelaki, berapakah bilangan perempuan?`, b * k, [k, a, b, 1]); }
+      () => { const [a, b] = [[1, 2], [2, 1], [1, 3], [3, 1], [2, 3], [3, 2], [1, 4], [4, 1], [3, 4], [4, 3], [2, 5], [5, 2], [3, 5], [5, 3], [4, 5], [5, 4]][r(0, 15)], k = r(2, 8); return q(`Nisbah lelaki kepada perempuan ialah ${a} : ${b}. Jika ada ${a * k} orang lelaki, berapakah bilangan perempuan?`, b * k, [k, a, b, 1]); }
     ] },
   { t: "Pengurusan Data",
     q: [

@@ -240,6 +240,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .pill.n{background:var(--no-bg);color:#B54848}
 .pill .e{font-size:26px;vertical-align:middle}
 .rv .ex{margin-top:8px;font-size:14px;color:var(--soft)}
+.rv .ex2{margin-top:10px;background:var(--bg);border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.5}
+.rv .bad .ex2,.rv.bad .ex2{background:#FFF1EE}
 .filter{display:flex;gap:8px;margin:4px 0 14px}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
 .empty{text-align:center;color:var(--soft);padding:20px;background:var(--card);border-radius:16px}
@@ -544,7 +546,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "34";
+const VER = "35";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -1057,6 +1059,34 @@ document.querySelectorAll(".filter .opt").forEach(b => b.onclick = () => {
   document.querySelectorAll(".filter .opt").forEach(x => x.classList.toggle("on", x === b));
   renderReview(b.dataset.f);
 });
+/* ---------- penerangan ringkas dalam semakan jawapan ---------- */
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+// tukar soalan kepada ayat fakta dengan jawapan betul (ditebalkan); null jika tidak sesuai
+function ayatFakta(text, right){
+  const t = String(text || "").trim(), R = `<b>${esc(right)}</b>`;
+  if(!t || /\n/.test(t)) return null;
+  if(/_{2,}/.test(t)) { const [a, b] = t.split(/_{2,}/); return esc(a) + R + esc(b || ""); }
+  if(/=\s*\?$/.test(t)) return esc(t.replace(/\?$/, "")) + R;
+  if(/…$/.test(t)) { const b = t.replace(/\s*…$/, ""); return esc(b) + (/-$/.test(b) ? "" : " ") + R + (/[.!?]$/.test(right) ? "" : "."); }
+  return null;
+}
+function penerangan(q, ok){
+  const e = document.createElement("div"); e.className = "ex2";
+  let h = "<b>💡 Penerangan</b><br>";
+  if(!ok) h += q.picked == null ? (q.timeout ? "Masa tamat sebelum soalan ini dijawab. " : "Soalan ini tidak dijawab. ")
+                                 : `Jawapan "<b>${esc(q.picked)}</b>" kurang tepat. `;
+  const f = ayatFakta(q.q, q.right);
+  h += f ? f : `Jawapan yang betul ialah <b>${esc(q.right)}</b>.`;
+  if(q.exp) h += "<br>" + esc(q.exp);
+  e.innerHTML = h;
+  if(q.enQ){   // DLP: ayat yang sama dalam English
+    const er = (q.enOpt && q.enOpt[q.right]) || q.right, fe = ayatFakta(q.enQ, er);
+    const i = document.createElement("i"); i.className = "en";
+    i.innerHTML = (fe || `The correct answer is <b>${esc(er)}</b>.`) + (q.enExp ? " " + esc(q.enExp) : "");
+    e.appendChild(i);
+  }
+  return e;
+}
 function renderReview(f){
   const box = $("#reviewList"); box.innerHTML = "";
   const items = quiz.qs.map((q, i) => ({ q, i })).filter(({ q }) => f === "all" || q.picked !== q.right);
@@ -1080,7 +1110,7 @@ function renderReview(f){
       add("n", "Jawapan kamu: ", q.picked == null ? (q.timeout ? "— (masa tamat)" : "—") : q.picked);
       add("y", "Jawapan betul: ", q.right);
     }
-    if(q.exp){ const e = document.createElement("div"); e.className = "ex"; e.textContent = "💡 " + q.exp; if(q.enExp){ const i = document.createElement("i"); i.className = "en"; i.textContent = q.enExp; e.appendChild(i); } d.appendChild(e); }
+    d.appendChild(penerangan(q, ok));
     box.appendChild(d);
   });
 }

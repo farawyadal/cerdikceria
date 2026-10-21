@@ -564,7 +564,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "38";
+const VER = "39";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -814,9 +814,9 @@ function renderHome(){
       .catch(() => { subs.innerHTML = `<div class="loading">😕 Tak dapat muat soalan. Semak internet dan cuba lagi.</div>`; });
   } else {
     subs.innerHTML = "";
-    const list = subjectsFor(G);
+    const list = subjectsFor(G).filter(s => !(s.from && lv === "rendah" && p.year < s.from));   // subjek belum diajar (cth Sejarah T1–3) tidak dipaparkan
     list.forEach((s, i) => {
-      const locked = !!(s.from && lv === "rendah" && p.year < s.from);
+      const locked = false;
       const chs = chaptersOf(G, s.id);
       const b = document.createElement("button");
       b.className = `sub s-${s.id}` + (i === list.length - 1 && list.length % 2 ? " wide" : "") + (locked ? " lock" : "");

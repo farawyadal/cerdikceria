@@ -564,7 +564,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "39";
+const VER = "40";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -975,6 +975,7 @@ function startQuiz(){
   $("#qCard").style.background = col.getPropertyValue(`--${quiz.sub}`);
   $("#timerBox").style.display = quiz.time ? "flex" : "none";
   show("s-quiz"); renderQ();
+  track(`kuiz-mula/${gradeSlug(quiz.year)}/${quiz.sub}${quiz.dlp ? "-dlp" : ""}`, `Kuiz dimulakan: ${SUB[quiz.sub].name} ${gradeLabel(quiz.year)}`);
 }
 function renderQ(){
   const q = quiz.qs[quiz.i], n = quiz.qs.length;

@@ -67,12 +67,18 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .chip.inst{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chip.sok{background:#FFF1D6;border-color:#F5D9A6}
 .chip.awas{background:#FFF4D6;border-color:#F2D27A}
+.chip.doa{background:var(--jawi);border-color:#CDB8F2}
+.upkk .moon{font-size:46px;line-height:1;text-align:center}
+.upkk h2{text-align:center;text-wrap:balance;margin:6px 0 8px}
+.upkk h2 span{color:var(--jawi-d)}
+.upkk .tarikh{display:table;margin:0 auto 12px;background:var(--jawi);color:#4d3a86;border-radius:999px;padding:3px 14px;font-weight:800;font-size:14px}
+.upkk p{text-align:center;font-size:16px;line-height:1.5;margin:0 0 10px}
 .top .acts .chip{white-space:nowrap}
 @media (max-width:420px){ #btnLogout .tk{display:none} #btnLogout{padding:6px 9px;font-size:16px} }
 .top .acts{flex:0 0 auto}
 .top .acts{gap:6px}
 .top .acts .chip{padding:6px 10px;font-size:14px}
-.top .acts .chip.sok,.top .acts .chip.awas{padding:6px 9px;font-size:16px}
+.top .acts .chip.sok,.top .acts .chip.awas,.top .acts .chip.doa{padding:6px 9px;font-size:16px}
 .btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px 18px;border-radius:18px;font-weight:800;font-size:18px;font-family:var(--baloo);background:var(--ink);color:#fff;box-shadow:0 5px 0 #24213b;transition:transform .08s}
 .btn:active{transform:translateY(3px);box-shadow:0 2px 0 #24213b}
 .btn.ghost{background:var(--card);color:var(--ink);border:2px solid var(--line);box-shadow:0 4px 0 var(--line)}
@@ -296,6 +302,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
         <button class="chip inst" hidden title="Pasang app">⬇ App</button>
         <button class="chip awas" data-notis title="Notis untuk ibu bapa" aria-label="Notis untuk ibu bapa">⚠️</button>
         <button class="chip sok" data-sumbangan title="Sokong Cerdik Ceria" aria-label="Sokong Cerdik Ceria">☕</button>
+        <button class="chip doa" data-upkk hidden title="Ucapan UPKK" aria-label="Ucapan selamat menduduki UPKK">🤲</button>
         <button class="chip" id="btnLogout" aria-label="Tukar profil">🔄<span class="tk"> Tukar</span></button>
       </div>
     </div>
@@ -383,6 +390,16 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 </div></div>
 
 <!-- Sumbangan -->
+<!-- Ucapan UPKK (2–5 Nov 2026) -->
+<div class="overlay center" id="ovUpkk"><div class="sheet upkk" style="max-width:420px">
+  <div class="moon">🌙</div>
+  <h2>Selamat Menduduki <span>UPKK</span>!</h2>
+  <div class="tarikh">2 – 5 November 2026</div>
+  <p>Buat adik-adik yang akan menduduki UPKK, semoga Allah permudahkan urusan dan lapangkan dada kalian. Baca bismillah, tenangkan hati, dan jawab dengan yakin.</p>
+  <p><b>Kami doakan yang terbaik untuk anda.</b> 🤲</p>
+  <button class="btn" data-close>Aamiin</button>
+</div></div>
+
 <div class="overlay center" id="ovNotis"><div class="sheet" style="max-width:420px">
   <div style="font-size:42px;text-align:center">⚠️</div>
   <h2 style="text-align:center">Notis untuk ibu bapa</h2>
@@ -564,7 +581,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "40";
+const VER = "41";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -1295,6 +1312,15 @@ function maybeNotis(){
   if(seen || !me()) return;
   if(document.querySelector(".overlay.on")){ setTimeout(maybeNotis, 1500); return; }   // tunggu popup lain ditutup
   bukaNotis("auto");
+}
+/* ---------- ucapan UPKK 2–5 Nov 2026 — keluar sendiri sekali bagi setiap peranti; ikon kekal sehingga 5 Nov, hilang mulai 6 Nov ---------- */
+const UKEY = "cerdikceria.upkk2026";
+const upkkAktif = () => { const d = new Date(); return d.getFullYear() === 2026 && d.getMonth() === 10 && d.getDate() >= 2 && d.getDate() <= 5; };
+function bukaUpkk(src){ try{ localStorage.setItem(UKEY, "1"); }catch(e){} open("#ovUpkk"); track("ucapan-upkk/buka-" + src, "Ucapan UPKK dibuka"); }
+document.querySelectorAll("[data-upkk]").forEach(b => { b.hidden = !upkkAktif(); b.onclick = () => bukaUpkk("ikon"); });
+if(upkkAktif()){
+  let seenU = false; try{ seenU = !!localStorage.getItem(UKEY); }catch(e){}
+  if(!seenU) setTimeout(() => bukaUpkk("auto"), 400);
 }
 document.querySelectorAll("[data-mail]").forEach(b => b.onclick = () => { track("cadangan/emel", "Buka emel cadangan"); location.href = mailLink("Cadangan untuk Cerdik Ceria"); });
 // minta rating sekali sahaja selepas 3 kuiz selesai (jika belum beri / belum tolak)

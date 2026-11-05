@@ -588,7 +588,7 @@ sejarah: [
     ["Kubu Rentap yang terkenal terletak di…", "Bukit Sadok", "Bukit Bendera", "Bukit Kepong", "Bukit Fraser"],
     ["Dato' Bahaman dan Mat Kilau menentang British di…", "Pahang", "Perak", "Kelantan", "Negeri Sembilan"],
     ["Haji Abdul Rahman Limbong memimpin penentangan di…", "Terengganu", "Kedah", "Sabah", "Melaka"],
-    ["Tok Janggut menentang British kerana tidak puas hati dengan…", "sistem cukai yang baharu", "sukan bola sepak", "pembinaan sekolah", "harga buku"],
+    ["Tok Janggut menentang British kerana tidak puas hati dengan…", "sistem cukai yang baharu", "larangan menunaikan haji", "penjajahan oleh Jepun", "perintah menutup semua sekolah agama"],
     ["J.W.W. Birch dibunuh di Pasir Salak pada tahun…", "1875", "1957", "1511", "1946"],
     ["Pahlawan tempatan menentang penjajah kerana mahu…", "mempertahankan kedaulatan tanah air", "menjadi kaya", "pergi melancong", "belajar bahasa asing"]
   ]},

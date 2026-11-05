@@ -284,7 +284,7 @@ sejarah: [
     ["Negeri-negeri Melayu Bersekutu kaya dengan hasil…", "bijih timah", "minyak", "emas sahaja", "padi sahaja"]
   ]},
   { n: 4, t: "Pentadbiran Negeri-negeri Melayu Tidak Bersekutu", q: [
-    ["Negeri-negeri Melayu Tidak Bersekutu terdiri daripada Perlis, Kedah, Kelantan, Terengganu dan…", "Johor", "Pahang", "Perak", "Selangor"],
+    ["Negeri-negeri Melayu Tidak Bersekutu terdiri daripada Perlis, Kedah, Kelantan, Terengganu dan…", "Johor", "Pahang", "Melaka", "Pulau Pinang"],
     ["Perjanjian Bangkok 1909 menyebabkan Siam menyerahkan Kedah, Perlis, Kelantan dan Terengganu kepada…", "British", "Belanda", "Portugis", "Jepun"],
     ["Pegawai British di Negeri-negeri Melayu Tidak Bersekutu bergelar…", "Penasihat British", "Residen", "Gabenor", "Residen Jeneral"],
     ["Negeri yang terakhir menerima Penasihat British ialah…", "Terengganu", "Johor", "Kedah", "Perlis"],
@@ -349,7 +349,7 @@ geo: [
   { t: "Sumber Semula Jadi di Malaysia", q: [
     ["Sumber semula jadi yang boleh diperbaharui ialah…", "hutan dan air", "petroleum", "bijih timah", "arang batu"],
     ["Sumber semula jadi yang tidak boleh diperbaharui ialah…", "petroleum dan gas asli", "hutan", "air", "angin"],
-    ["Petroleum di Malaysia banyak ditemui di perairan…", "Terengganu, Sabah dan Sarawak", "Perlis", "Selat Johor", "Pulau Pinang"],
+    ["Petroleum di Malaysia banyak ditemui di perairan…", "Terengganu, Sabah dan Sarawak", "Perlis, Kedah dan Pulau Pinang", "Perak, Selangor dan Negeri Sembilan", "Kedah, Perak dan Melaka"],
     ["Bijih timah banyak dilombong di Lembah…", "Kinta", "Bujang", "Klang", "Lenggong"],
     ["Antara kegunaan sumber hutan ialah…", "kayu balak dan hasil hutan", "minyak petrol", "bijih timah", "garam"],
     ["Pengurusan sumber secara lestari bermaksud…", "menggunakan sumber tanpa menjejaskan generasi akan datang", "menghabiskan sumber", "menjual semua sumber", "tidak menggunakan sumber"]
@@ -359,7 +359,7 @@ geo: [
     ["Hutan paya bakau terdapat di kawasan…", "pinggir pantai berlumpur", "puncak gunung", "padang pasir", "tanah tinggi"],
     ["Hutan paya bakau berfungsi untuk…", "melindungi pantai daripada hakisan ombak", "menghasilkan padi", "membina bandar", "menyimpan salji"],
     ["Hidupan liar terancam di Malaysia termasuk…", "harimau Malaya dan orang utan", "ayam dan lembu", "kucing dan anjing", "itik dan kambing"],
-    ["Taman Negara yang tertua di Malaysia terletak di…", "Pahang, Kelantan dan Terengganu", "Johor", "Sabah", "Perlis"],
+    ["Taman Negara yang tertua di Malaysia terletak di…", "Pahang, Kelantan dan Terengganu", "Perak, Kedah dan Perlis", "Johor, Melaka dan Negeri Sembilan", "Sabah dan Sarawak"],
     ["Antara cara memulihara hutan ialah…", "penanaman semula dan pembalakan terpilih", "pembalakan berleluasa", "pembakaran terbuka", "pertanian pindah"],
     ["Hutan simpan kekal diwujudkan untuk…", "melindungi hutan daripada dimusnahkan", "dijadikan bandar", "kawasan kilang", "tapak pelupusan"]
   ]},
@@ -516,12 +516,12 @@ pi: [
     ["Hadis tentang menjaga lidah mengajar kita agar…", "berkata baik atau diam", "bercakap kasar", "mengumpat", "berbohong"],
     ["Hadis tentang kebersihan menyatakan bahawa kebersihan sebahagian daripada…", "iman", "harta", "ilmu sahaja", "kekayaan"],
     ["Hadis \"Sebaik-baik manusia ialah yang paling bermanfaat kepada manusia lain\" menggalakkan kita…", "membantu orang lain", "hidup sendirian", "mementingkan diri", "malas"],
-    ["Sunnah ialah amalan yang…", "dilakukan atau disarankan oleh Rasulullah SAW", "dilarang", "makruh", "rekaan"]
+    ["Sunnah ialah amalan yang…", "dilakukan atau disarankan oleh Rasulullah SAW", "diwajibkan dalam Al-Quran sahaja", "dilakukan oleh sahabat sahaja", "adat sesuatu kaum"]
   ]},
   { t: "Akidah", q: [
     ["Beriman kepada rasul bermaksud percaya bahawa Allah mengutus rasul untuk…", "menyampaikan wahyu kepada manusia", "menjadi raja", "berniaga", "berperang sahaja"],
     ["Sifat wajib bagi rasul ialah Siddiq, Amanah, Tabligh dan…", "Fatanah", "Kizib", "Khianat", "Kitman"],
-    ["Mukjizat ialah…", "perkara luar biasa yang dikurniakan kepada nabi", "sihir", "ilmu biasa", "kekayaan"],
+    ["Mukjizat ialah…", "perkara luar biasa yang dikurniakan kepada nabi", "perkara luar biasa yang dikurniakan kepada wali", "perkara luar biasa hasil sihir", "ilmu yang dipelajari daripada guru"],
     ["Mukjizat terbesar Nabi Muhammad SAW ialah…", "al-Quran", "tongkat", "unta", "kapal"],
     ["Mukjizat Nabi Musa a.s. ialah…", "tongkat yang menjadi ular", "membelah bulan", "kapal besar", "menghidupkan burung tanah liat"],
     ["Nabi Muhammad SAW ialah…", "nabi dan rasul terakhir", "nabi pertama", "bukan rasul", "malaikat"],
@@ -534,7 +534,7 @@ pi: [
     ["Zakat harta wajib apabila cukup nisab dan…", "haul (genap setahun)", "sebulan", "seminggu", "sehari"],
     ["Puasa sunat pada hari Isnin dan…", "Khamis", "Jumaat", "Sabtu", "Ahad"],
     ["Antara perkara yang membatalkan puasa ialah…", "makan dan minum dengan sengaja", "makan kerana terlupa", "mandi", "bersugi"],
-    ["Orang yang dibenarkan tidak berpuasa ialah…", "orang sakit dan musafir", "orang malas", "orang yang sibuk bermain", "orang kaya"]
+    ["Orang yang dibenarkan tidak berpuasa ialah…", "orang sakit dan musafir", "orang yang hanya berasa penat", "kanak-kanak yang sudah baligh", "orang sihat yang berniaga di pasar"]
   ]},
   { t: "Sirah", q: [
     ["Perjanjian Hudaibiyah dimeterai pada tahun…", "6 Hijrah", "1 Hijrah", "10 Hijrah", "2 Hijrah"],

@@ -248,7 +248,7 @@ akidah: [
   { t: "Beriman kepada Kitab dan Rasul",
     q: [
       ["Bilangan kitab yang wajib diketahui ialah…", "4", "5", "3", "10"],
-      ["Suhuf ialah…", "lembaran wahyu yang diturunkan kepada beberapa nabi", "nama malaikat", "nama masjid", "jenis solat"],
+      ["Suhuf ialah…", "lembaran wahyu yang diturunkan kepada beberapa nabi", "kitab yang diturunkan kepada Nabi Daud a.s.", "kitab yang diturunkan kepada Nabi Isa a.s.", "kitab yang diturunkan kepada Nabi Musa a.s."],
       ["Bilangan rasul yang wajib diketahui ialah…", "25", "20", "10", "313"],
       ["Rasul yang pertama ialah…", "Nabi Adam a.s.", "Nabi Nuh a.s.", "Nabi Ibrahim a.s.", "Nabi Musa a.s."],
       ["Rasul yang terakhir ialah…", "Nabi Muhammad s.a.w.", "Nabi Isa a.s.", "Nabi Musa a.s.", "Nabi Yahya a.s."],
@@ -282,7 +282,7 @@ akidah: [
   ]},
   { t: "Perkara yang Merosakkan Akidah", q: [
     ["Menyekutukan Allah dengan sesuatu dinamakan…", "syirik", "tauhid", "ikhlas", "tawakal"],
-    ["Dosa yang tidak diampunkan jika mati tanpa bertaubat ialah dosa…", "syirik", "lupa", "tertidur", "tersalah"],
+    ["Dosa yang tidak diampunkan jika mati tanpa bertaubat ialah dosa…", "syirik", "mengumpat", "berbohong", "mencuri"],
     ["Mempercayai tangkal boleh menolak bala adalah perbuatan…", "khurafat", "ibadah", "sunat", "tawakal"],
     ["Percaya bahawa burung gagak berbunyi membawa sial ialah contoh…", "tahyul", "ilmu sains", "tauhid", "adab"],
     ["Pergi berjumpa tukang tilik untuk mengetahui nasib adalah…", "dilarang dalam Islam", "digalakkan", "sunat", "harus"],

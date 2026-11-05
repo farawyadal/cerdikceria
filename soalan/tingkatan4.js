@@ -346,7 +346,7 @@ sains: [
     ["Ubat tradisional berasal daripada…", "tumbuhan dan haiwan", "plastik", "logam", "kaca"],
     ["Antibiotik mesti dihabiskan mengikut preskripsi supaya…", "bakteria tidak menjadi rintang", "cepat habis", "lebih murah", "tidak membazir sahaja"],
     ["Bahan aditif makanan seperti pengawet digunakan untuk…", "memanjangkan hayat makanan", "menambah berat", "mengubah warna sahaja", "menambah lemak"],
-    ["Kosmetik yang tidak berdaftar mungkin mengandungi…", "bahan berbahaya seperti merkuri", "air sahaja", "vitamin C", "sabun biasa"]
+    ["Antara bahan berbahaya yang pernah dikesan dalam kosmetik tidak berdaftar ialah…", "merkuri", "gliserin", "vitamin E", "air suling"]
   ]},
   { t: "Daya dan Gerakan", q: [
     ["Hukum Gerakan Newton Pertama dikenali sebagai hukum…", "inersia", "momentum", "tindakan-tindak balas", "graviti"],
@@ -361,7 +361,7 @@ sains: [
     ["Pelakuran nukleus berlaku di dalam…", "Matahari", "reaktor nuklear biasa", "bateri", "lampu"],
     ["Bahan api dalam reaktor nuklear biasanya…", "uranium", "arang batu", "petrol", "air"],
     ["Rod kawalan dalam reaktor nuklear berfungsi untuk…", "menyerap neutron dan mengawal tindak balas", "menambah haba", "menyejukkan air", "menghasilkan uranium"],
-    ["Kelebihan tenaga nuklear ialah…", "tidak membebaskan karbon dioksida semasa penjanaan", "tiada sisa", "sangat murah dibina", "tiada risiko"],
+    ["Kelebihan tenaga nuklear ialah…", "tidak membebaskan karbon dioksida semasa penjanaan", "menghasilkan sisa yang tidak berbahaya kepada alam", "kos pembinaan loji yang rendah", "bahan api uranium yang boleh diperbaharui"],
     ["Kelemahan tenaga nuklear ialah…", "sisa radioaktif yang sukar diurus", "menghasilkan banyak asap", "bergantung kepada angin", "hanya pada waktu siang"]
   ]}
 ],
@@ -556,7 +556,7 @@ bio: [
     ["Struktur membran plasma diterangkan oleh model…", "mozek bendalir", "kunci dan mangga", "atom Bohr", "heliks ganda dua"],
     ["Resapan ringkas ialah pergerakan molekul dari kawasan…", "kepekatan tinggi ke rendah", "kepekatan rendah ke tinggi", "bertenaga rendah ke tinggi", "gelap ke cerah"],
     ["Osmosis ialah resapan molekul… melalui membran separa telap.", "air", "glukosa", "protein", "kanji"],
-    ["Pengangkutan aktif memerlukan…", "tenaga (ATP) dan protein pembawa", "tiada tenaga", "air sahaja", "cahaya"],
+    ["Pengangkutan aktif memerlukan…", "tenaga (ATP) dan protein pembawa", "tenaga tetapi tanpa protein pembawa", "protein pembawa tetapi tanpa tenaga", "pergerakan mengikut kecerunan kepekatan tanpa tenaga"],
     ["Sel darah merah dalam larutan hipotonik akan…", "mengembang dan pecah (hemolisis)", "mengecut (krenasi)", "kekal sama", "bertukar warna"],
     ["Sel tumbuhan dalam larutan hipertonik mengalami…", "plasmolisis", "hemolisis", "segah", "pembahagian"],
     ["Larutan yang mempunyai kepekatan zat terlarut sama dengan sitoplasma dipanggil…", "isotonik", "hipotonik", "hipertonik", "neutral"],
@@ -691,7 +691,7 @@ sejarah: [
   { n: 1, t: "Warisan Negara Bangsa", q: [
     ["Negara bangsa bermaksud negara berdaulat yang didiami rakyat yang…", "bersatu dengan identiti yang sama", "tidak mempunyai kerajaan", "dijajah", "tiada sempadan"],
     ["Kerajaan Melayu Melaka diasaskan oleh…", "Parameswara", "Hang Tuah", "Sultan Mahmud Shah", "Tun Perak"],
-    ["Ciri negara bangsa Kesultanan Melayu Melaka termasuk mempunyai…", "kedaulatan, undang-undang dan wilayah", "tiada pemimpin", "tiada rakyat", "tiada bahasa"],
+    ["Ciri negara bangsa Kesultanan Melayu Melaka termasuk mempunyai…", "kedaulatan, undang-undang dan wilayah", "sistem demokrasi berparlimen dan pilihan raya", "perlembagaan bertulis dan Dewan Rakyat", "pemerintahan bersama Gabenor British"],
     ["Undang-undang bertulis Kesultanan Melayu Melaka ialah Hukum Kanun Melaka dan…", "Undang-undang Laut Melaka", "Perlembagaan 1957", "Kanun Keseksaan", "Undang-undang Tubuh Johor"],
     ["Bahasa yang menjadi lingua franca di Melaka ialah…", "bahasa Melayu", "bahasa Inggeris", "bahasa Portugis", "bahasa Belanda"],
     ["Konsep daulat bermaksud kuasa… raja.", "tertinggi", "terendah", "sementara", "terhad kepada istana"],

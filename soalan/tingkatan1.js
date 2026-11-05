@@ -293,7 +293,7 @@ sains: [
     ["Gas beracun yang dihasilkan oleh ekzos kenderaan ialah…", "karbon monoksida", "oksigen", "nitrogen", "argon"],
     ["Bahan yang menipiskan lapisan ozon ialah…", "CFC (klorofluorokarbon)", "oksigen", "wap air", "nitrogen"],
     ["Peningkatan gas rumah hijau menyebabkan…", "pemanasan global", "zaman ais", "udara lebih bersih", "hujan berkurang sahaja"],
-    ["Salah satu cara mengurangkan pencemaran udara ialah…", "menggunakan pengangkutan awam", "membakar sampah terbuka", "menebang hutan", "membuka semua kilang"]
+    ["Salah satu cara mengurangkan pencemaran udara ialah…", "menggunakan pengangkutan awam", "memasang cerobong asap yang lebih tinggi", "menggunakan kenderaan peribadi untuk jarak dekat", "menggunakan bahan api murah tanpa penapis"]
   ]},
   { t: "Cahaya dan Optik", q: [
     ["Imej dalam cermin satah adalah…", "tegak, maya dan sama saiz", "songsang dan nyata", "lebih besar", "lebih kecil dan nyata"],
@@ -365,9 +365,9 @@ sejarah: [
     ["Ibnu Khaldun menggunakan istilah ___ untuk tamadun.", "umran", "kultur", "polis", "civitas"],
     ["Perkataan Inggeris \"civilization\" berasal daripada perkataan Latin…", "civitas (bandar)", "polis", "madana", "kultur"],
     ["Ciri tamadun termasuk petempatan kekal, sistem pemerintahan dan…", "sistem tulisan", "telefon pintar", "kereta", "televisyen"],
-    ["Pengkhususan pekerjaan bermaksud…", "setiap orang melakukan pekerjaan tertentu", "semua orang bertani sahaja", "tiada pekerjaan", "berburu sahaja"],
+    ["Pengkhususan pekerjaan bermaksud…", "setiap orang melakukan pekerjaan tertentu", "semua orang melakukan pekerjaan yang sama", "kerja dibahagi mengikut umur sahaja", "hasil kerja dibahagi sama rata kepada semua"],
     ["Tamadun awal biasanya muncul di lembah…", "sungai", "gunung berapi", "padang pasir tanpa air", "kutub"],
-    ["Mengapakah tamadun awal muncul di lembah sungai?", "tanah subur dan bekalan air mencukupi", "tiada penduduk", "cuaca sangat sejuk", "tiada binatang"],
+    ["Mengapakah tamadun awal muncul di lembah sungai?", "tanah subur dan bekalan air mencukupi", "kawasan itu mudah dipertahankan daripada musuh", "kawasan itu kaya dengan bijih logam dan emas", "iklim sejuk sesuai untuk penternakan"],
     ["Konsep tamadun menurut Islam menekankan pembangunan…", "material dan kerohanian", "material sahaja", "ketenteraan sahaja", "hiburan sahaja"]
   ]},
   { n: 5, t: "Tamadun Awal Dunia", q: [
@@ -549,7 +549,7 @@ geo: [
     ["\"Reduce\" bermaksud…", "mengurangkan penggunaan", "kitar semula", "guna semula", "membuang"],
     ["Tempat sisa dibuang dan ditanam secara terkawal dipanggil…", "tapak pelupusan sanitari", "taman", "kilang", "empangan"],
     ["Membakar sampah secara terbuka boleh menyebabkan…", "pencemaran udara", "udara bersih", "hujan", "tanah subur"],
-    ["Salah satu cara mengurangkan sisa plastik ialah…", "membawa beg sendiri ketika membeli-belah", "menggunakan banyak beg plastik", "membuang plastik ke sungai", "membakar plastik"]
+    ["Salah satu cara mengurangkan sisa plastik ialah…", "membawa beg sendiri ketika membeli-belah", "membeli botol air baharu setiap hari", "membungkus setiap barang dengan plastik berasingan", "membuang semua plastik ke dalam tong sampah biasa"]
   ]}
 ],
 

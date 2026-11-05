@@ -598,11 +598,11 @@ bio: [
     ["Graf variasi selanjar berbentuk…", "taburan normal (loceng)", "carta bar terpisah", "garis lurus", "bulatan"],
     ["Mutasi ialah perubahan…", "bahan genetik secara rawak", "berat badan", "pakaian", "tabiat"],
     ["Sindrom Down disebabkan oleh…", "lebihan satu kromosom 21", "kekurangan vitamin", "jangkitan bakteria", "kemalangan"],
-    ["Faktor yang menyebabkan variasi termasuk…", "pindah silang dan persenyawaan rawak", "makan banyak", "tidur lewat", "warna baju"]
+    ["Faktor yang menyebabkan variasi termasuk…", "pindah silang dan persenyawaan rawak", "mitosis dan pembiakan aseksual", "pertumbuhan dan penyembuhan luka", "fotosintesis dan respirasi"]
   ]},
   { t: "Teknologi Genetik", q: [
     ["Kejuruteraan genetik melibatkan…", "pemindahan gen dari satu organisma ke organisma lain", "kacukan biasa", "pemakanan", "pembiakan aseks semula jadi"],
-    ["Insulin manusia kini dihasilkan menggunakan…", "bakteria terubah suai genetik", "daun pokok", "air laut", "batu"],
+    ["Insulin manusia kini dihasilkan menggunakan…", "bakteria terubah suai genetik", "ekstrak pankreas lembu dan babi", "sel kulit manusia yang dikultur", "tumbuhan yang disirami baja khas"],
     ["Profil DNA digunakan dalam…", "forensik dan ujian paterniti", "memasak", "pertanian sahaja", "penjanaan elektrik"],
     ["Terapi gen bertujuan untuk…", "merawat penyakit genetik", "menambah berat", "mengubah warna rambut", "membuat ubat batuk"],
     ["Klon ialah organisma yang…", "seiras secara genetik dengan induknya", "berbeza sepenuhnya", "tiada DNA", "haploid"],
@@ -653,7 +653,7 @@ sejarah: [
     ["Gagasan Malaysia diumumkan oleh Tunku Abdul Rahman pada tahun…", "1961", "1957", "1963", "1965"],
     ["Suruhanjaya yang meninjau pendapat rakyat Sabah dan Sarawak ialah…", "Suruhanjaya Cobbold", "Suruhanjaya Reid", "Suruhanjaya Pilihan Raya", "Suruhanjaya Templer"],
     ["Wilayah yang menyertai Persekutuan Tanah Melayu membentuk Malaysia ialah Sabah, Sarawak dan…", "Singapura", "Brunei", "Patani", "Riau"],
-    ["Negara yang tidak menyertai Malaysia walaupun pada awalnya dijemput ialah…", "Brunei", "Singapura", "Sabah", "Sarawak"],
+    ["Negara yang tidak menyertai Malaysia walaupun pada awalnya dijemput ialah…", "Brunei", "Singapura", "Filipina", "Indonesia"],
     ["Singapura keluar daripada Malaysia pada…", "9 Ogos 1965", "16 September 1963", "31 Ogos 1957", "1 Januari 1966"],
     ["Perjanjian yang memuatkan syarat penyertaan Sabah dan Sarawak ialah…", "Perjanjian Malaysia 1963", "Perjanjian Pangkor", "Perjanjian Inggeris-Belanda", "Perjanjian Bangkok"]
   ]},
@@ -672,7 +672,7 @@ sejarah: [
     ["Dasar yang menekankan perpaduan melalui kebudayaan ialah Dasar…", "Kebudayaan Kebangsaan", "Ekonomi Baru", "Pertanian Negara", "Pandang ke Timur"],
     ["Penyata Razak 1956 berkaitan dengan…", "pendidikan", "pertanian", "pertahanan", "kesihatan"],
     ["Program Latihan Khidmat Negara (PLKN) bertujuan untuk…", "memupuk patriotisme dan perpaduan", "melatih tentera upahan", "mengajar bahasa asing", "mengutip cukai"],
-    ["Jabatan yang bertanggungjawab memupuk perpaduan ialah…", "Jabatan Perpaduan Negara dan Integrasi Nasional", "JPJ", "LHDN", "Jabatan Laut"]
+    ["Jabatan yang bertanggungjawab memupuk perpaduan ialah…", "Jabatan Perpaduan Negara dan Integrasi Nasional", "Jabatan Penerangan", "Jabatan Kebajikan Masyarakat", "Jabatan Pendaftaran Negara"]
   ]},
   { n: 8, t: "Membina Kemakmuran Negara", q: [
     ["Dasar Ekonomi Baru (DEB) diperkenalkan pada tahun…", "1971", "1957", "1991", "2001"],
@@ -688,7 +688,7 @@ sejarah: [
     ["ASEAN ditubuhkan pada tahun 1967 melalui…", "Deklarasi Bangkok", "Deklarasi Kuala Lumpur", "Perjanjian Paris", "Piagam PBB"],
     ["Negara pengasas ASEAN termasuk Malaysia, Indonesia, Filipina, Singapura dan…", "Thailand", "Brunei", "Vietnam", "Myanmar"],
     ["Konsep ZOPFAN bermaksud zon…", "aman, bebas dan berkecuali", "perdagangan bebas", "ketenteraan", "pelancongan"],
-    ["Malaysia menganggotai Pertubuhan Kerjasama Islam (OIC) untuk…", "mengukuhkan hubungan dengan negara Islam", "berperang", "menjajah", "mengasingkan diri"],
+    ["Malaysia menganggotai Pertubuhan Kerjasama Islam (OIC) untuk…", "mengukuhkan hubungan dengan negara Islam", "menggantikan peranan PBB", "mengawal harga minyak dunia", "menyatukan mata wang negara Islam"],
     ["Dasar luar Malaysia pada masa kini bersifat…", "berkecuali dan bersahabat dengan semua negara", "memihak satu blok sahaja", "tertutup", "agresif"],
     ["Pertubuhan negara-negara bekas tanah jajahan British ialah…", "Komanwel", "ASEAN", "OIC", "NAM"]
   ]},
@@ -827,7 +827,7 @@ pi: [
   ]},
   { t: "Akidah", q: [
     ["Rukun iman ada…", "6", "5", "7", "4"],
-    ["Beriman kepada rasul termasuk mempercayai bahawa rasul bersifat…", "siddiq, amanah, tabligh dan fatanah", "pemarah", "lalai", "pendusta"],
+    ["Beriman kepada rasul termasuk mempercayai bahawa rasul bersifat…", "siddiq, amanah, tabligh dan fatanah", "siddiq, amanah dan tabligh sahaja", "amanah, tabligh, fatanah dan hikmah", "siddiq, taqwa, tabligh dan fatanah"],
     ["Mukjizat terbesar Nabi Muhammad SAW ialah…", "al-Quran", "tongkat", "unta", "kapal"],
     ["Perkara yang boleh merosakkan akidah ialah…", "khurafat dan tahyul", "berdoa kepada Allah", "membaca al-Quran", "bersedekah"],
     ["Ajaran sesat ialah ajaran yang…", "bertentangan dengan al-Quran dan sunnah", "diajar di sekolah", "disahkan ulama muktabar", "menggalakkan solat"],
@@ -836,11 +836,11 @@ pi: [
   { t: "Ibadah dan Muamalat", q: [
     ["Riba hukumnya…", "haram", "harus", "sunat", "wajib"],
     ["Jual beli yang sah memerlukan penjual, pembeli, barang, harga dan…", "sighah (ijab dan qabul)", "saksi seramai sepuluh", "resit bercetak", "cukai"],
-    ["Wakaf bermaksud…", "menyerahkan harta untuk kegunaan umum kerana Allah", "meminjam wang", "menjual tanah", "membayar hutang"],
+    ["Wakaf bermaksud…", "menyerahkan harta untuk kegunaan umum kerana Allah", "memberikan harta kepada waris semasa hidup", "mengeluarkan sebahagian harta setiap tahun kepada asnaf", "menjual harta lalu menyedekahkan hasilnya sekali sahaja"],
     ["Takaful ialah sistem insurans berasaskan…", "konsep saling membantu menurut syariah", "riba", "perjudian", "spekulasi"],
     ["Solat jamak bermaksud…", "menghimpunkan dua solat dalam satu waktu", "memendekkan solat empat rakaat", "solat berjemaah", "solat sunat"],
     ["Solat qasar bermaksud…", "memendekkan solat empat rakaat menjadi dua", "menghimpunkan dua solat", "solat di rumah", "solat sunat"],
-    ["Antara syarat qasar ialah jarak perjalanan sekurang-kurangnya…", "2 marhalah (lebih kurang 81 km)", "1 km", "10 km", "500 km"]
+    ["Antara syarat qasar ialah jarak perjalanan sekurang-kurangnya…", "2 marhalah (lebih kurang 81 km)", "16 km", "30 km", "150 km"]
   ]},
   { t: "Sirah dan Tamadun Islam", q: [
     ["Khalifah yang memperkenalkan kalendar Hijrah ialah…", "Saidina Umar al-Khattab", "Saidina Abu Bakar", "Saidina Uthman", "Saidina Ali"],

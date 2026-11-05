@@ -183,7 +183,7 @@ sains: [
     ["🦧|Orang utans are mostly found in…", "Sabah and Sarawak", "Perlis", "Melaka", "Penang"],
     ["The Sepilok Orang Utan Rehabilitation Centre is in…", "Sabah", "Pahang", "Johor", "Kedah"],
     ["Among the causes of extinction are…", "habitat destruction and illegal hunting", "rain", "wind", "sunlight"],
-    ["One way to conserve forests is…", "replanting trees", "burning forests", "cutting down all the trees", "throwing rubbish in the forest"],
+    ["One way to conserve forests is…", "replanting trees", "moving all forest animals to the zoo", "planting only the same type of tree everywhere", "building roads across the forest"],
     ["A protected area to take care of wildlife is a…", "national park", "supermarket", "factory", "highway"],
     ["Leatherback turtles are decreasing because…", "their eggs are taken and beaches are polluted", "there is too much food", "the sea is too clean", "the weather is cold"],
     ["The balance of nature must be maintained so that…", "all living things can continue to live", "forests run out quickly", "animals become extinct", "the air is polluted"]
@@ -229,7 +229,7 @@ sains: [
     ["The blue recycling bin is for…", "paper", "glass", "plastic", "food waste"],
     ["The brown recycling bin is for…", "glass", "paper", "plastic", "tins"],
     ["The orange recycling bin is for…", "plastic and aluminium cans", "paper", "glass", "food waste"],
-    ["Throwing away rubbish wrongly can cause…", "pollution and flash floods", "clean air", "clear rivers", "fertile soil"],
+    ["Throwing away rubbish wrongly can cause…", "pollution and flash floods", "acid rain", "prolonged drought", "earthquakes"],
     ["The 3R practice is reduce, reuse and…", "recycle", "burn", "throw away", "bury"]
   ]},
   { t: "Eclipses", q: [

@@ -191,7 +191,7 @@ sains: [
     ["🦧|Orang utan banyak ditemui di…", "Sabah dan Sarawak", "Perlis", "Melaka", "Pulau Pinang"],
     ["Pusat Pemulihan Orang Utan Sepilok terletak di…", "Sabah", "Pahang", "Johor", "Kedah"],
     ["Antara punca kepupusan hidupan ialah…", "pemusnahan habitat dan pemburuan haram", "hujan", "angin", "cahaya matahari"],
-    ["Salah satu cara memulihara hutan ialah…", "menanam semula pokok", "membakar hutan", "menebang semua pokok", "membuang sampah di hutan"],
+    ["Salah satu cara memulihara hutan ialah…", "menanam semula pokok", "memindahkan semua haiwan hutan ke zoo", "menanam pokok yang sama sahaja di semua kawasan", "membina jalan raya merentasi hutan"],
     ["Kawasan yang dilindungi untuk menjaga hidupan liar ialah…", "taman negara", "pasar raya", "kilang", "lebuh raya"],
     ["Penyu belimbing semakin berkurangan kerana…", "telurnya diambil dan pantai tercemar", "terlalu banyak makanan", "laut terlalu bersih", "cuaca sejuk"],
     ["Keseimbangan alam perlu dijaga supaya…", "semua hidupan dapat terus hidup", "hutan cepat habis", "haiwan pupus", "udara tercemar"]
@@ -237,7 +237,7 @@ sains: [
     ["Tong kitar semula berwarna biru adalah untuk…", "kertas", "kaca", "plastik", "sisa makanan"],
     ["Tong kitar semula berwarna coklat adalah untuk…", "kaca", "kertas", "plastik", "tin"],
     ["Tong kitar semula berwarna jingga adalah untuk…", "plastik dan tin aluminium", "kertas", "kaca", "sisa makanan"],
-    ["Pembuangan sampah yang tidak betul boleh menyebabkan…", "pencemaran dan banjir kilat", "udara bersih", "sungai jernih", "tanah subur"],
+    ["Pembuangan sampah yang tidak betul boleh menyebabkan…", "pencemaran dan banjir kilat", "hujan asid", "kemarau berpanjangan", "gempa bumi"],
     ["Amalan 3R ialah kurangkan, guna semula dan…", "kitar semula", "bakar", "buang", "tanam"]
   ]},
   { t: "Gerhana", q: [
@@ -282,7 +282,7 @@ sejarah: [
     ["Idea pembentukan Malaysia diumumkan oleh Tunku Abdul Rahman pada tahun…", "1961", "1957", "1963", "1965"],
     ["Malaysia dibentuk pada…", "16 September 1963", "31 Ogos 1957", "9 Ogos 1965", "1 Februari 1948"],
     ["Wilayah yang bersama-sama Persekutuan Tanah Melayu membentuk Malaysia ialah Singapura, Sabah dan…", "Sarawak", "Brunei", "Thailand", "Indonesia"],
-    ["Wilayah yang pada awalnya dijangka menyertai tetapi akhirnya tidak menyertai Malaysia ialah…", "Brunei", "Sabah", "Sarawak", "Singapura"],
+    ["Negara yang dijemput menyertai Malaysia tetapi akhirnya tidak menyertainya ialah…", "Brunei", "Singapura", "Filipina", "Indonesia"],
     ["Suruhanjaya yang meninjau pendapat rakyat Sabah dan Sarawak tentang Malaysia ialah…", "Suruhanjaya Cobbold", "Suruhanjaya Reid", "Suruhanjaya Brooke", "Suruhanjaya Light"],
     ["Perjanjian Malaysia ditandatangani di London pada…", "9 Julai 1963", "16 September 1963", "31 Ogos 1957", "9 Ogos 1965"],
     ["Singapura keluar daripada Malaysia pada…", "9 Ogos 1965", "16 September 1963", "31 Ogos 1957", "13 Mei 1969"],

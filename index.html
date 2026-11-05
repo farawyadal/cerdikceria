@@ -68,6 +68,12 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .chip.sok{background:#FFF1D6;border-color:#F5D9A6}
 .chip.awas{background:#FFF4D6;border-color:#F2D27A}
 .chip.doa{background:var(--jawi);border-color:#CDB8F2}
+.newbox{margin:12px 0 4px;background:var(--jawi);border:2px solid #CDB8F2;border-radius:18px;padding:12px 14px}
+.newbox h3{margin:0 0 6px;font-size:17px}
+.newbox .nv{display:flex;align-items:center;gap:8px;margin:2px 0 4px}
+.newbox .nv b{background:var(--jawi-d);color:#fff;border-radius:999px;padding:1px 10px;font-size:13px}
+.newbox ul{margin:0;padding-left:18px;display:grid;gap:3px;font-size:15px;line-height:1.4}
+.newbox .old{margin-top:8px;padding-top:6px;border-top:2px dashed #CDB8F2;font-size:14px;color:#4d3a86;line-height:1.5}
 .upkk .moon{font-size:46px;line-height:1;text-align:center}
 .upkk h2{text-align:center;text-wrap:balance;margin:6px 0 8px}
 .upkk h2 span{color:var(--jawi-d)}
@@ -445,6 +451,15 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 <!-- Tentang Cerdik Ceria -->
 <div class="overlay" id="ovAbout"><div class="sheet about">
   <div style="text-align:center"><img src="icon-192.png" alt="" width="72" height="72" style="border-radius:20px"><h2 style="margin:8px 0 2px">Tentang Cerdik Ceria</h2><div class="muted" id="abVer"></div></div>
+  <div class="newbox">
+    <h3>✨ Apa yang baharu</h3>
+    <div class="nv"><b>Versi 43</b></div>
+    <ul>
+      <li>Soalan dalam satu kuiz tak lagi berulang pada topik yang hampir sama.</li>
+      <li>Pilihan jawapan lebih mencabar untuk beberapa soalan Sejarah, Pendidikan Islam, Geografi, Sains dan UPKK.</li>
+    </ul>
+    <div class="old"><b>Versi 42</b> · Thumbnail kongsi WhatsApp ada UPKK.<br><b>Versi 41</b> · Ucapan selamat menduduki UPKK (2–5 Nov).</div>
+  </div>
   <p>Cerdik Ceria ialah app kuiz yang seronok untuk kanak-kanak dan pelajar Malaysia. Soalan disusun ikut topik dan bab buku teks supaya mudah diulang kaji di rumah. <b>100% percuma, tiada iklan.</b></p>
   <h3>🎓 Untuk siapa?</h3>
   <ul>
@@ -581,7 +596,7 @@ window.MK = (() => {
 (() => {
 "use strict";
 const $ = s => document.querySelector(s);
-const VER = "42";
+const VER = "43";
 const KEY = "cerdikceria.v1";   // unik supaya tak bercampur dengan app lain di github.io yang sama
 const AVATARS = ["🦊","🐼","🐯","🐰","🐸","🦄","🐨","🐧","🐱","🐶","🦁","🐵","🐙","🦋"];
 const SUBJECTS = [
@@ -936,6 +951,17 @@ $("#btnStart").onclick = () => { close($("#ovSetup")); startQuiz(); };
 let quiz = null, tick = null;
 const shuffle = MK.shuffle;
 const keyOf = (sub, year, text) => `${year}|${sub}|${text}`;
+/* Kata topik: perkataan khusus (>=7 huruf) yang muncul pada 2–4 soalan sahaja dalam satu subjek/tahun, cth "Konfrontasi".
+   Dua soalan yang berkongsi kata topik dianggap rapat dan cuba dielakkan dalam satu set. */
+const TOPIK_BIASA = new Set("termasuk bermaksud seperti dikenali mempunyai menyebabkan berikut manakah apabila kerana bahawa antara sebagai digunakan dinamakan dipanggil contohnya ditunjukkan berfungsi bagaimana mengapakah".split(" "));
+const _topikCache = {};
+function topikSoalan(sub, year){
+  const ck = year + "|" + sub; if(_topikCache[ck]) return _topikCache[ck];
+  const all = [], df = {};
+  chaptersOf(year, sub).forEach(c => (c.q || []).forEach(q => { const w = new Set((String(q[0]).toLowerCase().match(/[a-zà-ÿ]{7,}/g) || []).filter(x => !TOPIK_BIASA.has(x))); all.push([q[0], w]); w.forEach(x => df[x] = (df[x] || 0) + 1); }));
+  const m = new Map(); all.forEach(([t, w]) => m.set(t, [...w].filter(x => df[x] >= 2 && df[x] <= 4)));
+  return _topikCache[ck] = m;
+}
 function buildQuestions(p, sub, year, babs, n){
   const chs = chaptersOf(year, sub), en = enChaptersOf(year, sub);
   const idx = babs.length ? babs : chs.map((_, i) => i);
@@ -950,7 +976,13 @@ function buildQuestions(p, sub, year, babs, n){
   const fixedOrder = fresh.concat(old);
   const out = [], used = new Set();
   const nFixed = gens.length ? Math.min(fixedOrder.length, Math.max(1, Math.round(n * 0.35))) : Math.min(n, fixedOrder.length);
-  for(const x of fixedOrder){ if(out.length >= nFixed) break; if(used.has(x.q[0])) continue; used.add(x.q[0]); out.push(x); }
+  // elak dua soalan yang topiknya terlalu rapat dalam satu set; jika soalan tak cukup, baru ambil yang rapat
+  const topik = topikSoalan(sub, year), diambil = new Set(), tangguh = [];
+  for(const x of fixedOrder){ if(out.length >= nFixed) break; if(used.has(x.q[0])) continue;
+    const tw = topik.get(x.q[0]) || [];
+    if(tw.some(w => diambil.has(w))){ tangguh.push(x); continue; }
+    tw.forEach(w => diambil.add(w)); used.add(x.q[0]); out.push(x); }
+  for(const x of tangguh){ if(out.length >= nFixed) break; if(used.has(x.q[0])) continue; used.add(x.q[0]); out.push(x); }
   let guard = 0;
   while(out.length < n && gens.length && guard < 800){
     guard++;

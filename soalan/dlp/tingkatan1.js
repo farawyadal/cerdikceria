@@ -284,7 +284,7 @@ sains: [
     ["A poisonous gas produced by vehicle exhaust is…", "carbon monoxide", "oxygen", "nitrogen", "argon"],
     ["A substance that thins the ozone layer is…", "CFC (chlorofluorocarbon)", "oxygen", "water vapour", "nitrogen"],
     ["An increase in greenhouse gases causes…", "global warming", "an ice age", "cleaner air", "less rain only"],
-    ["One way to reduce air pollution is…", "using public transport", "open burning of rubbish", "cutting down forests", "opening all factories"]
+    ["One way to reduce air pollution is…", "using public transport", "installing taller chimneys", "using private vehicles for short distances", "using cheap fuel without filters"]
   ]},
   { t: "Light and Optics", q: [
     ["The image in a plane mirror is…", "upright, virtual and the same size", "inverted and real", "bigger", "smaller and real"],
